@@ -1,0 +1,11 @@
+Generic class - 
+   1. Generics mean parameterized types.
+   2. Using Generics, it is possible to create classes that work with different data types.
+   3. An entity such as class, interface or method that operated on a parameterized type is a generic entity.
+   4. we have to create class 
+   5. then in that class we have to declare variables without mentioning its data type, we just have to add capital letter/s 
+      in place of data type because this generic class will be used for Collection framework and as we know Collection framework doesn't support primitive data types. so we have to mention in capital letter/s to them & informed class about such variables we used such varible in <> for variable creation.
+   6. we can return variable by mentioning capital letters we used for variable creation.
+   7. While creating object of generic class, we have to state object data type of variables we used in generic class in <> 
+      strictly in sequence of creation of variable.
+   8. we can access elements of class for object as we do for normal class.

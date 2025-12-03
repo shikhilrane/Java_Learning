@@ -1,0 +1,19 @@
+Queue :
+    1. The Queue interface of Java Collection Framework Provides the functionality of the queue data structure. It extends Collection Interface
+    2. Queue follows FIFO principle
+                    __________________________
+      Addition ->   | 1  | 2  | 3  | 4  | 5  |    -> Deletion
+                    --------------------------
+                      ^                   ^
+                      |                   |
+                     Rear               Front
+
+
+    3. Methods of Queue Interface :
+        Method	                Description
+        boolean add(E e)	    Inserts the specified element into the queue. Throw exception if the queue is full.
+        boolean offer(E e)	    Inserts the specified element into the queue, true if an element was added and returns false if it fails.   (Recommended)
+        E remove()	            Retrieves and removes the head of the queue. Throw an exception if the queue is empty.
+        E poll()	            Retrieves and removes the head of the queue, or returns null if the queue is empty.         (Recommended)
+        E element()	            Retrieves, but does not remove, the head of the queue. Throw an exception if the queue is empty.
+        E peek()	            Retrieves, but does not remove, the head of the queue, or returns null if the queue is empty.   (Recommended)

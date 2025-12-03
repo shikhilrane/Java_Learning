@@ -1,0 +1,2 @@
+1. Methods or Function is a block of code which we can use repeatedly in our code,
+2. A method is a block of code or collection of statements or a set of code grouped together to perform a certain task or operations.

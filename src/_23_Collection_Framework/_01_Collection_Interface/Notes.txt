@@ -1,0 +1,16 @@
+The collection Interface includes various methods that can be used to preform different operations on objects.
+
+Key features of List Interface: Order Preservation, Index-based access, allows duplicates.
+
+Methods of Collection Interface :
+    1. int size() - Returns the number of elements in collection.
+    2. boolean isEmpty() : Returns true if the collection contains no elements.
+    3. boolean contains(Object o) : Returns true if the collection contains the specified element
+    4. boolean add (E e) : Add the specific element to the collection. Returns true if the collection changed as the result.
+    5. boolean remove(Object o) : Removes a single instance of the specified element from the collection, if it is present.
+    6. boolean containAll(Collection<> c) : Returns true if the collection contains all the elements of the specified collection.
+    7. boolean addAll(Collection<> c) : Adds all elements from the specified collection to the collection.
+    8. boolean removeAll(Collection<> c) : Removes all the elements in the collection that are also contains in specified collection.
+    9. boolean retainAll(Collection<> c) : Removes all the elements from the collection that are not present in the specified collection.
+    10. void clear() : Removes all elements from the collection.
+    11. Object[] toArray() : Returns an array containing all the elements in the collection.

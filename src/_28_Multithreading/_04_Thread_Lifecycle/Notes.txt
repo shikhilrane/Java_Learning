@@ -1,0 +1,11 @@
+Thread Lifecycle :
+    1. NEW : A thread is in this state when it is created but not yet started
+    2. RUNNABLE: After the start method is called, the thread becomes runnable. It's ready to run and is waiting for CPU time.
+    3. RUNNING : The thread is in his state when it is executing.
+    4. BLOCKED/WAITING :  A thread is in this state when it is waiting for resource or for another thread to perform an action.
+    5. TIME-WAITING : Thread state for a waiting thread with a specified waiting time. (Optional it happens if we use methods like Thread.sleep())
+    5. TERMINATION : A thread is in this state when it has finished executing.
+
+to see all the states of the Thread : click on .getState() then State then all these things are listed there
+
+Running is not listed there because RUNNING state means program is in running state and it can't be printed during RUNNING

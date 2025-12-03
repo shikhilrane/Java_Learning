@@ -1,0 +1,4 @@
+Que. :- How do arrays work?
+Ans. :- if we have to store 3 students data then we make separate variable for each data
+        but what if we want to store data of billions counts, in that case it will be very hectic to make variable for each and every data
+        In that picture, arrays come into the picture we save n number of data within a single array

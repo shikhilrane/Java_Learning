@@ -1,0 +1,7 @@
+hashCode(); method - 
+    1. hashCode(); method is use to check hashCode (i.e. unique code for object) of object
+    2. It is used in hashset and hashmap 
+    3. so, it is there are lots of objects present in hashset and hashmap, so by using hashCode we distinguish that two objects 
+       are different or not
+    4. Contract between hashCode(); and equals(); - hashCode and equality must be same of two objects
+    5. Collision occurrence between two objects happens when hashCode of them are same and their value is different.

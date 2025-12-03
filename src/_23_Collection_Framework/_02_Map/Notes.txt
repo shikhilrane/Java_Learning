@@ -1,0 +1,20 @@
+Map :
+    1. It doesn't extends Iterables
+    2. In Java, a map is an object that maps keys to values. It can't contain duplicate keys, and each key can map to at most one value. Think of it is like a dictionary, where you look uo for word(key) to find its definition(value).
+    3. Key-Characteristics of Map :
+        Key-value pair : Each entry in a map consists of a key and a value.
+        Unique Keys : No two entries can have same key.
+        One value per key : Each key maps to single value.
+        order : Some implemetation contains insertion order (LinkedHashMap), Natural Order(TreeMap), No Order(HashMap).
+    4. Example :
+        Id(key)         Name(value)
+          1             A
+          2             B
+          3             C
+          4             D
+          5             B
+          6             A
+          7             D
+          From above example, we can conclude that key must be unique whereas values can be repetitive.
+
+

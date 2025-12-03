@@ -1,0 +1,36 @@
+1. Runnable
+        Package : java.lang
+
+        Method:
+        void run();
+
+        Does not return a value.
+        Cannot throw checked exceptions.
+        Used with Thread, Executor, and ExecutorService.
+        Lightweight task representation.
+
+        Example:
+        Runnable task = () -> System.out.println("Running a task");
+
+
+2. Callable<V>
+       Package: java.util.concurrent
+
+       Method:
+       V call() throws Exception;
+
+       Returns a result of type V.
+       Can throw checked exceptions.
+       Used with ExecutorService.submit(...) to get a Future<V>.
+       Designed for tasks that return a result or might fail.
+
+       Example:
+       Callable<String> task = () -> "Task Result";
+
+Summary Table:
+Feature	            Runnable	        Callable<V>
+Returns a result	❌ No	            ✅ Yes (V)
+Throws exception	❌ No	            ✅ Yes (checked allowed)
+Method name	        run()	            call()
+Introduced in	    Java 1.0	        Java 5 (with concurrency)
+Used with	        Thread, Executor	ExecutorService.submit()

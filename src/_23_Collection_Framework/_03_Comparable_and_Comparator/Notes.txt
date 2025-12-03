@@ -1,0 +1,2 @@
+1. To sort custom objects like students or employees, we need to provide explicit sorting logic.
+2. To achieve this, Java provides Comparable and Comparator interface. Comparable and Comparator in java allow us to define custom sorting behavior for objects, including sorting based on multiple data members.

@@ -1,0 +1,48 @@
+Object class - 
+    1. Object class upper most class. (Root of java classes)
+    2. Object class is present in java.lang package.
+    3. Every class is directly or indirectly derived from Object class.
+    4. If class is not extended by any other class then it is direct child of Object class and if class is extended by any 
+       other class then it is indirectly child of Object class.
+    5. Therefore Object class methods are available in all over the classes
+    6. Hence, Object class acts as root of the inheritance hierarchy in any java program.
+
+                                        |-------------|
+                                        | Object Class|
+                                        |-------------|
+                                               ^
+                                               |
+                                        |-------------|       |-------------|      |-------------|
+                                        |      A      |<------|      N      |<-----|      M      |                     
+                                        |    move();  |       |    move();  |      |    move();  |                      
+                                        |-------------|       |-------------|      |-------------|                   
+                                               ^
+                                               |
+                                        |-------------|
+                                        |      B      |
+                                        |    move();  |
+                                        |-------------|
+                                               ^
+                                               |
+                                        |-------------|
+                                        |      C      |
+                                        |    move();  |
+                                        |-------------|
+
+    7. here A is a main class which has two child B and N, B has child C and N has child Method
+    8. A is upper most class we have created
+    9. & there is a Object class which is parent class of our upper most class (i.e. Object class is parent class of class A). 
+   10. Object class is created by java developers and we get this class in JDK. We dont have to create Object class by our own. 
+   11. All the methods Object class contains, is available for all the classes (either parent class or child class) in package.
+       i.e. even classes B,N,C,M will get methods of Object class as class A getting it.
+   12. Methods of Object Class - 
+       1. getClass();   // it is a final method we can't override it. used to get to which class object belongs to (done)
+       2. hashCode();   // this can be override (done)
+       3. wait();       // we will not see this method
+       4. toString();   // use to convert object reference to human readable form (done)
+       5. clone();      // use to clone Obejct
+       6. equals();     // use to check equality of object (done)
+       7. finalize();   // It is used by garbage collector
+       8. notify();     // use with thread so we will not see this method
+       9. notifyall();  // use with thread so we will not see this
+       

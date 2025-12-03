@@ -1,0 +1,15 @@
+Synchronization is the process of controlling access to shared resources in a multithreaded environment to prevent conflicts (like race conditions).
+
+Example (3 Kids & 1 Notebook):
+
+    Imagine 3 kids trying to write in 1 notebook at the same time.
+        Kid1 starts writing
+        Kid2 also grabs the pen and writes at the same time
+        The writing gets messy or overwritten
+        Problem: Shared resource (notebook) used by multiple kids at once → confusion (like in unsynchronized threads).
+
+    With Synchronization:
+        Only one kid at a time is allowed to write in the notebook.
+        Others wait until their turn.
+        Writing stays clean and correct.
+        This is exactly what synchronized does in Java — it ensures one thread at a time can access the critical section (like the notebook).

@@ -1,0 +1,22 @@
+Wrapper Class - 
+    1. A wrapper class in java is a class whose object wraps or contains primitive data types.
+    2. When we create an object to a wrapper class, it contains a field, and in that field we can store primitive data types.
+    3. We dont need to make Wrapper class explictly because it already present in JDK.
+    4. The classes in java.util package handles only objects and hence wrapper classes helps in this class also
+    5. Data structure in collection framework, such as ArrayList and Vector, store only objects(reference types) and not 
+       primitive data types.
+    6. It means in collection framework, ArrayList, LinkList, stack, map, queue, set does not support primitive data type so we 
+       need to use object there in that case Wrapper class helps there.
+    7. Wrapper class is present in java.util package
+    8. An Object is need to support synchronization in multithreading
+    9.
+                              primitive data types                        Wrapper Class
+                            --------------------------------------------------------------
+                                    char                                    Character
+                                    byte                                    Byte
+                                    short                                   Short
+                                    int                                     Integer
+                                    long                                    Long
+                                    float                                   Float
+                                    double                                  Double
+                                    boolean                                 Boolean

@@ -1,0 +1,11 @@
+Encapsulation
+    1. Encapsulation is a fundamental concept of OOPS that involves bundling data and methods into a single unit, usually a class.
+    2. In Encapsulation, we will learn about data hiding because as we know, data security is even more important & Encapsulation let us do that
+    3. In Encapsulation,we will learn about :
+        1. Java Packages
+        2. Access modifiers
+        3. Java Encapsulation
+        4. Data Hiding
+        5. The static keyword
+
+NOTE : code attached with this are to understand basics without packages and import, if want to know proper code then open these program (Macintosh > Uses > shikhilrane > Ideaprojects > Encapsulation) in intellij code editor

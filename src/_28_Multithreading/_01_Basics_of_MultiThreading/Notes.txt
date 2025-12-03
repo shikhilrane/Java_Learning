@@ -1,0 +1,57 @@
+MultiThreading :
+    CPU : The program runs in CPU.
+          Whatever we write in code runs in CPU.
+          Intel, Amd, apple silicon are the examples of CPU
+
+    Core :  A core is an individual processing unit in CPU
+            A modern cpu can have multiple cores that allows them to perform multiple tasks simultaneously.
+            single core, dual-core (2 cores in cpu), quad core(4 cores in cpu), octa core (8 cores). These are processes.
+            multicore can handle separate tasks individually.
+            Example Usage:
+                A quad-core CPU can simultaneously run different programs on different cores:
+                    Core 1 → MS Word
+                    Core 2 → Google Chrome
+                    Core 3 → Safari
+                    Core 4 → IntelliJ IDEA
+
+    Thread : A thread is a smallest unit of execution within a process.
+             A process can have multiple threads, which share the same resources but can run independently.
+             It means in single processes there re multiple works. like if we are working on MS Word then in that process multiple other works are even going in it like we are typing then it is one work and spelling check is an another work, autocorrect, autosave so these can be referred as multiple threads.
+             These small works in process is called threads.
+             How Many Threads Can a Single Core Have?
+                A single core can run one thread at a time, but:
+             Key Concepts
+                 1. Single Core, Single Thread (Basic Case)
+                 In traditional CPUs, one core handles one thread at a time.
+                 So, 1 core = 1 thread (executing at a given moment).
+                 2. Simultaneous Multithreading (SMT) / Hyper-Threading
+                 Modern CPUs (like Intel CPUs with Hyper-Threading) allow one physical core to handle multiple threads simultaneously.
+             Typically:
+             1 core = 2 threads (using Hyper-Threading or SMT)
+             So a quad-core CPU with Hyper-Threading can handle 8 threads at the same time.
+             Without SMT/Hyper-Threading:
+                1 Core = 1 Thread at a time
+             With SMT/Hyper-Threading:
+                1 Core = 2 Threads concurrently (logical threads)
+
+    Multitasking : Multitasking allows an OS to run multiple processes simultaneously.
+                   On single core CPU, multitasking is done by timesharing and rapidly switching between tasks
+                   On multicore CPU, true parallel execution occurs with tasks distributed across cores. The OS scheduler balance the load, ensuring efficient and responsive system performance.
+                   Multitasking utilisez the capabilities of CPu and its cores. When OS performs multitasking, it can assign different tasks to different cores. This is more efficient than assigning all tasks to single core.
+
+    MultiThreading : Multithreading refers to the ability to executes multiple threads within a single process concurrently (Single process can have multiple threads).
+                     We are browsing the internet while listening to music from browser and downloading a file.
+                     A web browser can use multithreading by having seperate threads for rendering the page. running Javascript, and managing user inputs. This makes the browser more responsive and efficient.
+                     In single-core system : Both threads and processes managed my OS scheduler through time slicing and context switching to create illusion of simultaneous switching
+                     In multi-core system : Both threads and processes can run parallel on different cores, with the OS Scheduler distributing tasks across the cores to optimize performance
+
+    Time Slicing : Time-slicing divides CPU time into small intervals called time slices or quanta.
+                   Function : The OS scheduler allocates these time slices to different processes, ensuring each gets a fair share of CPU.
+                   Purpose : This prevents any single process or thread from monopolizing the CPU, improving responsiveness and enabling concurrent execution.
+
+    Context-switching : Context switching is the process of saving the state of a currently running process or a thread and loading the state of the next one to execute.
+                        Function : When a process or thread's time expires, then OS scheduler performs context switch to move CPU's focus to another process or thread.
+                        Purpose : This allows multiple processes and threads to share CPU, giving the appearance  of simultaneous execution on a single core CPU or improving parallerlism on multicore CPU.
+
+    Examples : 1. Manager gave 4 different projects to 4 different teams (multitasking). Employees in those teams will work on their respective projects (multithreading).
+               2. In computer, firefox and chrome is running (multitasking). work insides them is (multithreading)

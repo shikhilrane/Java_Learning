@@ -1,0 +1,40 @@
+
+                                                                List Interface
+                                                                        |
+                                    ------------------------------------------------------------------------------
+                                    |                           |                        |                       |
+                                    V                           V                        V                       V
+                               ArrayList Class            LinkedList Class           Stack Class             Vector Class
+
+    Methods of Collection Interface (applicable on Collection i.e. on List, Set, Queue, Deque) :
+        1. add(E element) – Adds element to end of list
+        2. addAll(Collection<? extends E> c) – Adds all elements from collection to list
+        3. remove() -
+            3.1 remove(Object o) –  Removes first occurrence of the specified element
+            3.2 remove(int index) – Removes element at specified index
+            3.3 remove by index (for INTEGER)
+            3.4 remove by value (for INTEGER)
+        4. removeAll(Collection<?> c) – Removes all matching elements from list
+        5. retainAll(Collection<?> c) – Keeps only elements present in specified collection
+        6. contains(Object o) – Checks if element exists in list
+        7. containsAll(Collection<?> c) – Checks if list contains all elements of the collection
+        8. isEmpty() – Returns true if list has no elements
+        9. size() – Returns number of elements in list
+        10. iterator() – Returns iterator to traverse list
+        11. toArray() – Converts list to array of Objects
+        12. <T> T[] toArray(T[] a) – Converts list to typed array
+        13. clear() – Removes all elements from list
+
+    Methods of List Interface (Only applicable on Lists i.e. on ArrayList, LinkedList, Stack, Vector) :
+        1. add(int index, E element) – Inserts element at specified index
+        2. addAll(int index, Collection<? extends E> c) – Inserts collection at specified index
+        3. get(int index) – Returns element at specified index
+        4. set(int index, E element) – Replaces element at index with new value
+        5. remove(int index) – Removes element at specified index
+        6. indexOf(Object o) – Returns index of first occurrence
+        7. lastIndexOf(Object o) – Returns index of last occurrence
+        8. listIterator() – Returns ListIterator for forward/backward traversal
+        9. listIterator(int index) – Returns ListIterator starting from given index
+        10. subList(int fromIndex, int toIndex) – Returns a view of the list between indices
+        11. equals(Object o) – Compares list with another for equality
+        12. hashCode() – Returns hash code of the list

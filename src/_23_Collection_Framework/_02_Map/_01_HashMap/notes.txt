@@ -1,0 +1,38 @@
+Internal Structure of HashMap :
+    Key -> Identifier use to retrieve value.
+    Value -> The data associated with key.
+    Bucket -> It is a array in which key-value of hashmap is stored. (Initial size = 16)
+    Hash function -> takes the key from bucket into index for storage. It is algorithm that takes an key and returns fixed size string of bytes, typically a numeric value. The output is known as hashcode or hash value or simply hash. It will always produce the same output for the same input. This is a fast algorithm.
+
+How data is stored in HashMap :
+    Step 1 -> Hashing the key
+        The key is passed through hash fucntion so that unique hascode is generated. So according to hashcode, key value pair is stored in array (called bucket array).
+    Step 2 -> Calculating the index
+        The hash code is then used to calculate an index in the array(bucket location) using formula = int index = hashcode % arraySize.
+        This index decides which bucket will hold this key-value pair.
+        e.g. If the array size is 16, the key's hashcode will be divided by 16 and remainder will be the index
+    Step 3 -> Storing in the bucket
+        The key-value is stored in the bucket at the calculated index. Each bucket can hold multiple key-value pairs (This is called collision handling mechanism)
+
+    Collision handling -> different keys can generate same hashcode so that it can be stored in same index of array and there collision handling happen.
+
+    So, how multiple key-value stored at same it is because, every key-value stored as a linkedlist at an index.
+
+    Rehashing = As we know capacity of ArrayList can be increase or decrease with the help of threshold, We can use same mechanism for Bucket as well. Initial threshold for bucket is 0.75
+
+    e.g. =>
+        HashMap<String, Integer> fruits = new HashMap<>();
+        fruits.put("apple", 30);    Hashcode from hashfunction = 3544354    => saved at 4th index
+        fruits.put("banana", 40);   Hashcode from hashfunction = 2154566    => saved at 7th index
+        fruits.put("orange", 50);   Hashcode from hashfunction = 2154566    => saved at 7th index
+
+        Bucket Array
+        0   ->
+        1   ->
+        2   ->
+        3   ->
+        4   ->  "apple", 30
+        5   ->
+        6   ->
+        7   ->  "banana", 40 -> "orange", 50    // This will be linkedlist
+        8   ->

@@ -1,0 +1,10 @@
+Autoboxing -
+    1. The conversion of primitive types to the object of their corresponding wrapper class is known as Autoboxing.
+    2. Example : conversion of int to Integer, long to Long, double to Double.
+
+Unboxing - 
+    1. Unboxing is a reverse process of Autoboxing. 
+    2. Automatically converting an object of wrapper class to its corresponding primitive data type is known as Unboxing.
+    3. Example : conversion of Integer to int, Long to long, Double to double
+
+    NOTE : we saw code of Autoboxing and Unboxing in Wrapper Class program

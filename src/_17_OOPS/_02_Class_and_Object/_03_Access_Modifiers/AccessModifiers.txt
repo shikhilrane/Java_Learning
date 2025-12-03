@@ -1,0 +1,38 @@
+Access modifiers
+    1. It defines accessibility of class, method, field variable, etc. , everywhere where we want to control access
+    2. There are 4 types of access modifiers in java , 1.Public 2.protected 3.private 4.default
+    3. access modifiers or access specifiers, these are keywords that tells which data is accessible to whom, means which data and function can
+       be use by part of code
+
+    Access modifiers        within class        within package      outside package by subclass only        outside package
+    1. Private                   Y                    N                             N                              N
+    2. Default                   Y                    Y                             N                              N
+    3. Protected                 Y                    Y                             Y                              N
+    4. Public                    Y                    Y                             Y                              Y
+
+
+
+    NOTE : This is just introduction to access modifiers, we will see complete access modifiers later in the chapter
+           along with access modifiers we will also see getters and setters
+
+
+
+   Understanding whole packaging :
+      16OOPS > 04Encapsulation > 04AccessModifiers > AccessModifiers.java
+      so in file it will be like,
+
+      package 16OOPS.04Encapsulation.04AccessModifiers;
+
+      public class AccessModifiers{
+
+      }
+   this is how we can have packaging
+
+   Understanding importing package :
+      package 16OOPS.04Encapsulation.04AccessModifiers;
+
+      import java.16OOPS.15BitManupulation.*;
+
+      public class AccessModifiers{
+
+      }

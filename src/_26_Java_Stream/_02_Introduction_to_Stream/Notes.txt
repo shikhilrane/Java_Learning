@@ -1,0 +1,35 @@
+Stream is a feature introduced in Java 8.
+With the help of Streams we can process collections of data in a functional and declarative manner
+Before java streams, We have to use loops and conditionals that makes our code looks bigger that increases readability
+Simplify Data Processing
+Embrace functional Programming
+Enable easy parallelism without dealing with multithreading's complexity
+
+what is stream?
+A sequence of elements supporting functional and declarative programming (conversion of collection into stream so that you can use functional and declarative on it)
+
+How to use Stream?
+it requires source, intermediate operation and terminal operation
+e.g.
+List<Integer> numbers = Arrays.asList(1,2,3,4,5);
+numbers.stream().filter(x -> x % 2 == 0).count()
+here, numbers = source
+      intermediate operation = filter(x -> x % 2 == 0)
+      terminal operation = count()
+
+Creating Stream ->
+1 From Collections
+List<Integer> list = Arrays.asList(1,2,3,4,5);
+Stream<Integer> stream = list.stream();
+2 from Arrays
+String[] array = {"a", "b", "c"};
+Stream<String> stream1 = Arrays.stream(array);
+3 Using Stream.of()
+Stream<String> stream2 = Stream.of("x", "y", "z");
+4 Infinite Stream
+Stream<Integer> stream3 = Stream.generate(() -> 1).limit(10); //all the stream will have 1 in it if we add limit then only 10 streams (we will this see later)
+     2nd way of creating infinite stream
+Stream.iterate(1, x -> x + 1);
+     seed = initial position, integer = operation on next
+     1, x -> x + 1 = 1 + 1 = 2
+     2, x -> x + 1 = 2 + 1 = 3 and so on...

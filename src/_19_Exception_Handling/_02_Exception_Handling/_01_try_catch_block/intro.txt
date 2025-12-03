@@ -1,0 +1,10 @@
+try...catch block
+    1. The try...catch block in Java used to handle exceptions and prevents the abnormal termination of the program.
+    2. try{
+          // code
+       }
+       catch(exception){
+          // code
+       }
+    3. In try block we put part of code, that we think it can give Exception.
+    4. If any exception caught by try block then code inside catch block will execute

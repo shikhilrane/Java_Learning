@@ -1,0 +1,5 @@
+equals(); method - 
+    1. This method is use to check if reference of objects
+    2. equals() method use to compare values of object values that we pass in constructor of object
+    3. whereas (obj1==obj2) use to compare values of object reference
+    4. equals(); is heavily used in hash set.

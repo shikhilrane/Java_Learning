@@ -1,0 +1,316 @@
+Collection FrameWork and Lists :
+    Implementation of multiple types of Data Structure is given by Java. So we dont have to create them manually.
+
+    Q.What is collection?
+    ans. collection is a simply object that represent a group of objects
+
+    Q.What is collection Framework?
+    ans. In Collection Framework there are interfaces and classes to manage collections
+
+    We can apply loops on collection interface as it implements Iterable interface
+
+Java Collection Framework :
+    Java Collection Framework provides a set of interfaces and classes to implement various data structures and algorithms.
+    These include several methods to perform different operations on collections.
+
+                                                            1.Iterable
+                                                                |
+                                                                V
+                                                        Collection Interface
+                                                                |
+                                                                V
+                                    ----------------------------------------------------------
+                                    |                           |                            |
+                                    V                           V                            V
+                               List interface             Set Interface               Queue Interface--------->Deque Interface
+                                    |                           |                            |                        |
+                                    V                           V                            V                        V
+                               ArrayList                    HashSet                     LinkedList                ArrayDeque
+                               LinkedList                   LinkedHashSet               PriorityQueue             LinkedList
+                               Vector                       TreeSet                     BlockingQueue             ConcurrentLinkedDeque
+                               Stack                        EnumSet                     ArrayBlockingQueue
+                               CopyOnWriteArrayList         ConcurrentSkipListSet       LinkedBlockingQueue
+                                                            CopyOnWriteArraySet         PriorityBlockingQueue
+                                                                                        Synchronous Queue
+                                                                                        DelayQueue
+                                                                                        ConcurrentLinkedQueue
+
+
+                                                                2.Map
+                                                                  |
+                                                                  V
+                                ---------------------------------------------------------------------
+                                |                   |                       |                       |
+                                V                   V                       V                       V
+                              HashMap            HashTable              SortedMap             ConcurrentMap
+                                |                (Legacy)                   |                       |
+                           LinkedHashmap                                    V                       V
+                           WeakHashMap                                 TreeMap                  ConcurrentHashmap
+                           IdentityHashMap                             NavigableMap             ConcurrentSkipListMap
+
+
+    Description of each Interface and class :
+
+        Iterable: Base interface that allows iteration over a collection’s elements.
+
+            Collection Interface: Root interface for most collection types in Java.
+
+                // ============================
+                // List Interface
+                // ============================
+
+                List Interface:
+                    - Ordered collection that allows duplicate elements.
+                    - Methods: add, get, set, remove, iterator, listIterator, etc.
+
+                Implementations of List:
+
+                    1. ArrayList
+                        - Implements: List, RandomAccess, Cloneable, Serializable
+                        - Extends: AbstractList
+
+                        ✔️ Fast random access, resizable array.
+
+                    2. LinkedList
+                        - Implements: List, Deque, Queue, Cloneable, Serializable
+                        - Extends: AbstractSequentialList
+
+                        ✔️ Efficient insertions and deletions.
+
+                    3. Vector (Legacy)
+                        - Implements: List, RandomAccess, Cloneable, Serializable
+                        - Extends: AbstractList
+
+                        ✔️ Thread-safe (synchronized), but legacy.
+
+                    4. Stack
+                        - Implements: List, RandomAccess, Cloneable, Serializable
+                        - Extends: Vector
+
+                        ✔️ LIFO stack operations.
+
+                    5. CopyOnWriteArrayList
+                        - Implements: List, RandomAccess, Cloneable, Serializable
+                        - Extends: AbstractList
+
+                        ✔️ Thread-safe version of ArrayList (good for more reads, fewer writes).
+
+
+                // ============================
+                // Set Interface
+                // ============================
+
+                Set Interface:
+                    - Collection of unique elements, no duplicates allowed.
+
+                Implementations of Set:
+
+                    1. HashSet
+                        - Implements: Set, Cloneable, Serializable
+                        - Extends: AbstractSet
+
+                        ✔️ Backed by a HashMap (unordered, fast access).
+
+                    2. LinkedHashSet
+                        - Implements: Set, Cloneable, Serializable
+                        - Extends: HashSet
+
+                        ✔️ Maintains insertion order.
+
+                    3. TreeSet
+                        - Implements: NavigableSet, SortedSet, Cloneable, Serializable
+                        - Extends: AbstractSet
+
+                        ✔️ Sorted set backed by Red-Black tree.
+
+                    4. EnumSet
+                        - Implements: Set, Cloneable, Serializable
+                        - Extends: AbstractSet (abstract class internally)
+
+                        ✔️ Specialized high-performance Set for enum types.
+
+                    5. ConcurrentSkipListSet
+                        - Implements: NavigableSet, SortedSet
+                        - Extends: AbstractSet
+
+                        ✔️ Thread-safe and sorted.
+
+                    6. CopyOnWriteArraySet
+                        - Implements: Set, Cloneable, Serializable
+                        - Internally backed by: CopyOnWriteArrayList
+
+                        ✔️ Thread-safe, maintains insertion order.
+
+
+                // ============================
+                // Queue Interface
+                // ============================
+
+                Queue Interface:
+                    - Designed for holding elements prior to processing (FIFO or priority-based).
+
+                Implementations of Queue:
+
+                    1. LinkedList
+                        - Implements: List, Deque, Queue, Cloneable, Serializable
+                        - Extends: AbstractSequentialList
+
+                        ✔️ Doubly linked list implementing both List and Queue.
+
+                    2. PriorityQueue
+                        - Implements: Queue, Serializable
+                        - Extends: AbstractQueue
+
+                        ✔️ Orders elements according to natural order or comparator.
+
+                    3. ArrayBlockingQueue
+                        - Implements: BlockingQueue, Serializable
+                        - Extends: AbstractQueue
+
+                        ✔️ Bounded, thread-safe queue backed by array.
+
+                    4. LinkedBlockingQueue
+                        - Implements: BlockingQueue, Serializable
+                        - Extends: AbstractQueue
+
+                        ✔️ Unbounded thread-safe queue backed by linked nodes.
+
+                    5. PriorityBlockingQueue
+                        - Implements: BlockingQueue, Serializable
+                        - Extends: AbstractQueue
+
+                        ✔️ Thread-safe priority queue (sorted).
+
+                    6. DelayQueue
+                        - Implements: BlockingQueue
+                        - Extends: AbstractQueue
+
+                        ✔️ Elements become available after delay (e.g., scheduling).
+
+                    7. ConcurrentLinkedQueue
+                        - Implements: Queue
+                        - Extends: AbstractQueue
+
+                        ✔️ Thread-safe non-blocking FIFO queue.
+
+                    8.  Deque Interface:
+                           Double Ended Queue; supports element insertion, removal at both ends (head and tail).
+                           Extends: Queue Interface
+                           Methods: addFirst, addLast, removeFirst, removeLast, peekFirst, peekLast, etc.
+                           Can be used as FIFO queue or LIFO stack.
+
+                       Implementations of Deque:
+                           ArrayDeque
+                               Implements: Deque, Cloneable, Serializable
+                               Extends: AbstractCollection
+                               ✔️ Resizable-array implementation of the Deque interface.
+                               ✔️ No capacity restrictions (resizes as needed).
+                               ✔️ Not thread-safe but very efficient for stack and queue operations.
+
+                           LinkedList
+                               Implements: List, Deque, Queue, Cloneable, Serializable
+                               Extends: AbstractSequentialList
+                               ✔️ Doubly-linked list implementation supporting all deque operations.
+                               ✔️ Can be used as both List and Deque.
+                               ✔️ Allows null elements.
+
+                           ConcurrentLinkedDeque
+                               Implements: Deque, Serializable
+                               Extends: AbstractQueue
+                               ✔️ Thread-safe, non-blocking, unbounded deque based on linked nodes.
+                               ✔️ Suitable for highly concurrent applications.
+                               ✔️ No capacity restrictions.
+
+
+
+
+        // ============================
+        // Map Interface
+        // ============================
+
+        Map Interface:
+            - Object that maps keys to values.
+            - Each key is unique; one value per key.
+            - Methods: put, get, remove, containsKey, containsValue, keySet, entrySet, etc.
+
+        Implementations and Subinterfaces of Map:
+
+            1. HashMap
+                - Implements: Map, Cloneable, Serializable
+                - Extends: AbstractMap
+
+                ✔️ Most commonly used Map.
+                ✔️ Allows one null key and multiple null values.
+                ✔️ Unordered (no guaranteed order).
+                ✔️ Not thread-safe.
+
+            2. LinkedHashMap
+                - Implements: Map, Cloneable, Serializable
+                - Extends: HashMap
+
+                ✔️ Maintains insertion order.
+                ✔️ Slightly slower than HashMap due to ordering.
+
+            3. WeakHashMap
+                - Implements: Map
+                - Extends: AbstractMap
+
+                ✔️ Keys are held with **weak references**.
+                ✔️ Automatically removes entries when keys are no longer in ordinary use (GC eligible).
+
+            4. IdentityHashMap
+                - Implements: Map, Serializable, Cloneable
+                - Extends: AbstractMap
+
+                ✔️ Uses `==` (reference equality) instead of `equals()` for key comparison.
+                ✔️ High-performance, low-level Map.
+
+            5. Hashtable (Legacy)
+                - Implements: Map, Cloneable, Serializable
+                - Extends: Dictionary (abstract class)
+
+                ✔️ Thread-safe, synchronized.
+                ✔️ Legacy class — use `ConcurrentHashMap` instead.
+
+            6. SortedMap (Interface)
+                - Extends: Map
+
+                ✔️ Keys are sorted in **natural order** or by provided `Comparator`.
+                ✔️ Returns sorted views of keys and entries.
+
+            7. NavigableMap (Interface)
+                - Extends: SortedMap
+
+                ✔️ Provides navigation methods like `lowerKey`, `higherKey`, `floorEntry`, `ceilingEntry`, etc.
+                ✔️ Allows range views and reversed-order views.
+
+            8. TreeMap
+                - Implements: NavigableMap, SortedMap, Cloneable, Serializable
+                - Extends: AbstractMap
+
+                ✔️ Red-Black tree-based implementation.
+                ✔️ Maintains **sorted order** of keys.
+                ✔️ Not thread-safe.
+
+            9. ConcurrentMap (Interface)
+                - Extends: Map
+
+                ✔️ Defines atomic operations for thread-safe maps.
+                ✔️ Commonly used in concurrent environments.
+
+            10. ConcurrentHashMap
+                - Implements: ConcurrentMap, Serializable
+                - Extends: AbstractMap
+
+                ✔️ High-performance thread-safe map.
+                ✔️ Allows concurrent read and write operations.
+                ✔️ No locking of the entire map.
+
+            11. ConcurrentSkipListMap
+                - Implements: ConcurrentMap, NavigableMap
+                - Extends: AbstractMap
+
+                ✔️ Thread-safe and **sorted**.
+                ✔️ Non-blocking and scalable in concurrent environments.
+                ✔️ Backed by a **Skip List** (logarithmic time complexity).
+

@@ -1,0 +1,7 @@
+Enum -
+    0. Use when we have to use any specific properties multiple times, in that case we make separate enum class and store them there and fetch those values from there
+    1. Enum means Enumeration.
+    2. Enumeration means listing things like months in year, number of dept in college, number of days in week, etc.
+    3. Enums are like class but using public static final keyword its easier to access them through Enum class
+    4. Values we write in Enums are the instance of that Enum
+    5. We can even make custom constructors in enum as it will get converted in to class during compilation

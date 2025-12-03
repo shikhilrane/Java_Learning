@@ -1,0 +1,390 @@
+JDBC (Java DataBase Connectivity)
+
+What is JDBC? :
+    JDBC is a Java API for connecting and interacting with databases.
+    We use JDBC API here to connect
+
+How JDBC works:
+                        ___________________________                                               ___________________________
+                        |                         |                ---------------                |                         |
+                        |         Java APP        |--------------->|   DRIVER    |--------------->|         DataBase        |
+                        |                         |                ---------------                |                         |
+                        ---------------------------                                               ---------------------------
+         Java App doesn't know the language of DataBase neither DataBase knows language of Java App so Driver is responsible here for communication between Java App and DB
+
+Steps for DB connection
+    1. Load and Register Driver ->
+        try {
+            Class.forName("com.mysql.cj.jdbc.Driver");
+        }catch (ClassNotFoundException e){
+            System.out.println(e.getMessage());
+        }
+        This is a driver for MySQL (to use this statement we have to add .jar file in External libraries as i did already. JAr file is connector)
+    2. Create Connection -> Connection creation
+        private static final String url = "jdbc:mysql://127.0.0.1:3306/name_of_database";
+        private static final String username = "root";
+        private static final String password = "password";
+        Connection connection = DriverManager.getConnection(url, username, password);   // This will create connection
+    3. Create Statement -> Statement carries data from Java App to DB
+        PreparedStatement preparedStatement = connection.prepareStatement(sql query);
+    4. Execute SQL statements -> Carried data from create statement is stored in DB with the use of SQL statements
+        statement.executeQuery(query);  // This will we used when we have select query (It will return ResultSet)
+        statement.executeUpdate(query);  // query for create, insert, update, delete (It will return int)
+    5. Process the Result -> In this step we check the result // If rowsAffected then out updation is successful
+        if (rowsAffectd > 0) {
+            System.out.println("Data Updated successfully");
+        }else{
+            System.out.println("Data not updated");
+        }
+    6. Close the connection -> is use to close the connection
+        connection.close();
+
+JDBC Drivers :
+    JDBC drivers are software components that provide the necessary functionality to connect Java application to different types of DBs. (JDBC connects Java with DB with the help of JDBC drivers)
+    There are 4 types of JDBC drivers:
+        1. Type 1 : JDBC-ODBC bridge driver
+            * Uses ODBC (Open Database Connectivity) driver to communicate with DB
+            * It is the oldest driver
+            * It is written in C language
+            * Performance wise it is not that good
+            * Scalability issues
+            * Outdated
+            * Client (Java App) ---> JDBC-ODBC Bridge Driver ---> ODBC Driver ---> Database
+
+        2. Type 2 : Native-API Partly Java driver
+            * It provides DB vendors (MySQL, Oracle, IBM, PostgreSQL)
+            * DataBase vendors Provides there database to store data and to access those data they provide API
+            * Faster than Type-1
+            * Requires vendor-specific native library to be installed on client machine
+            * Client (Java App) ---> Type-2 JDBC Driver (Java + Native) ---> Native API (Vendor Library) ---> Database
+
+        3. Type 3 : Network Protocol pure java driver
+            * Written in Java
+            * It it uses extra layer (intermediatary layer called as middleware) to connect with DBs
+                Client (Java App) ---> Type-3 JDBC Driver ---> Middleware ---> Database
+                Middleware converts Native-API calls to DB calls.
+            * It is good but not that much efficient
+
+        4. Type 4 : Thin Driver (also known as direct to Database Pure Java Driver)
+            * Written purely in Java
+            * It minimizes cons of above all 3 drivers
+
+JDBC Components :
+    In addition to JDBC drivers, there are several other components that make up JDBC API, including
+        1. DriverManager Class
+            * With the help of DriverManager class we can connect with DB
+            * It has method .getConnection()
+
+        2. Connection interface
+            * As we have connected with DB, so we have to hold that connection somewhere and we do that with the help of Connection Interface, so later we can perform operation on DB by using this Connection interface.
+            * To perform operation on DB we need instance of Connection Interface
+
+        3. Statement and PreparedStatements interface
+            * Use to run SQL queries
+
+        4. ResultSet Interface
+            * Output come after running SQL queries comes in the form of ResultSet
+            * ResultSet means table
+            * It will hold the table, which come from DB
+            * Object will be created of ResultSet Interface and that Object will hold that table
+            * Further we can perform operations on that object.
+
+        DriverManager → Connect to DB
+        Connection → Holds the connection
+        Statement/PreparedStatement → Executes SQL queries
+        ResultSet → Holds the query results
+
+Program Flow :
+    1 --> Connect your IDE with DB using necessary connector
+    2 --> Load necessary drivers
+    3 --> Create Connection
+    4 --> Create Statement
+    5 --> Execute Query
+
+Setting up JDBC :
+    1 --> Connect your IDE with DB using necessary connector
+        1 -> Go to https://dev.mysql.com/downloads/connector/j/
+        2 -> download Platform Independent with ZIP file
+        3 -> extract the folder and copy .jar file in your project folder
+        4 -> go to > File > Project Structure > Libraries > + > Java > Add that file, that connector will be seen on external libraries
+
+    2 --> Load necessary drivers
+                     try {
+                         Class.forName("com.mysql.cj.jdbc.Driver");
+                     }catch (Exception e){
+                         System.out.println(e.getMessage());
+                     }
+               and import, import java.sql.*;
+
+    3 --> Create Connection
+        1. Write these lines before main method :
+            private static final String url = "jdbc:mysql://127.0.0.1:3306/?user=root"; (to get url go to MySQL workbench, right click on one the connection and copy JDBC connection string)
+            private static final String username = "root";
+            private static final String password = "Shikhil@4";
+        2. try {
+               Connection connection = DriverManager.getConnection(url, username, password);
+           }catch (SQLException e){
+               System.out.println(e.getMessage());
+           }
+
+    4 --> Create Statement
+        try {
+            Connection connection = DriverManager.getConnection(url, username, password);
+            Statement statement = connection.createStatement();
+        }
+
+    5. --> Execute Query
+        Statement :
+            1. Create
+                try {
+                    Connection connection = DriverManager.getConnection(url, username, password);
+                    Statement statement = connection.createStatement();
+                    String query = "SELECT * FROM student";
+                    ResultSet resultSet = statement.executeQuery(query);
+                    while(resultSet.next()){
+                        int rollno = resultSet.getInt("rollno");
+                        String name = resultSet.getString("name");
+                        System.out.println("Roll Number : " + rollno);
+                        System.out.println("Name : " + name);
+                    }
+                }
+
+            2. Insert
+                try {
+                    Connection connection = DriverManager.getConnection(url, username, password);
+                    Statement statement = connection.createStatement();
+                    String query = String.format("INSERT INTO student (rollno, name) VALUES (%d, '%s')", 104,"EFG");
+                    int rowsAffectd = statement.executeUpdate(query);
+                    if (rowsAffectd > 0) {
+                        System.out.println("Data Inserted successfully");
+                    }else{
+                        System.out.println("Data not inserted");
+                    }
+                }
+
+            3. Update
+                try {
+                    Connection connection = DriverManager.getConnection(url, username, password);
+                    Statement statement = connection.createStatement();
+                    String newName = "IJK";
+                    int roll = 103;
+                    String query = String.format("UPDATE student SET name = '%s' WHERE rollno = %d", newName, roll);
+                    int rowsAffectd = statement.executeUpdate(query);
+                    if (rowsAffectd > 0) {
+                        System.out.println("Data Updated successfully");
+                    }else{
+                        System.out.println("Data not updated");
+                    }
+                }
+
+            4. Delete
+                try {
+                    Connection connection = DriverManager.getConnection(url, username, password);
+                    Statement statement = connection.createStatement();
+                    String query = String.format("DELETE FROM student WHERE rollno = 102");
+                    int rowsAffectd = statement.executeUpdate(query);
+                    if (rowsAffectd > 0) {
+                        System.out.println("Data Deleted successfully");
+                    }else{
+                        System.out.println("Data not Deleted");
+                    }
+                }
+
+        PreparedStatement :
+            1. Retrieve
+                try {
+                    Connection connection = DriverManager.getConnection(url, username, password);
+                    String query = "SELECT rollno, name FROM student";
+                    PreparedStatement preparedStatement = connection.prepareStatement(query);
+                    ResultSet resultSet = preparedStatement.executeQuery();
+                    while (resultSet.next()) {
+                        int rollno = resultSet.getInt("rollno");
+                        String name = resultSet.getString("name");
+                        System.out.println("Roll No: " + rollno + ", Name: " + name);
+                    }
+                }
+
+            2. Insert
+                try {
+                    Connection connection = DriverManager.getConnection(url, username, password);
+                    String query = "INSERT INTO student (rollno, name) VALUES (?, ?)";
+                    PreparedStatement preparedStatement = connection.prepareStatement(query);
+                    preparedStatement.setInt(1, 105);
+                    preparedStatement.setString(2, "UVW");
+                    int rowsAffectd = preparedStatement.executeUpdate();
+                    if (rowsAffectd > 0) {
+                        System.out.println("Data Inserted successfully");
+                    }else{
+                        System.out.println("Data not Inserted");
+                    }
+                }
+
+            3. Update
+                try {
+                    Connection connection = DriverManager.getConnection(url, username, password);
+                    String query = "UPDATE student SET name = ? WHERE rollno = ?";
+                    PreparedStatement preparedStatement = connection.prepareStatement(query);
+                    preparedStatement.setString(1, "OPQ"); // New name
+                    preparedStatement.setInt(2, 105);      // Target rollno
+
+                    int updateCount = preparedStatement.executeUpdate();
+                    if (updateCount > 0) {
+                        System.out.println("Data updated successfully");
+                    } else {
+                        System.out.println("Data not updated");
+                    }
+                }
+
+            4. Delete
+                try {
+                    Connection connection = DriverManager.getConnection(url, username, password);
+                    String query = "DELETE FROM student WHERE rollno = ?";
+                    PreparedStatement prepareStatement = connection.prepareStatement(query);
+                    prepareStatement.setInt(1, 105);
+
+                    int updateCount = prepareStatement.executeUpdate();
+                    if (updateCount > 0) {
+                        System.out.println("Data Deleted successfully");
+                    } else {
+                        System.out.println("Data not Deleted");
+                    }
+                }
+
+Batch Processing :
+    1. Statement
+        try {
+            Connection connection = DriverManager.getConnection(url, username, password);
+            Statement statement = connection.createStatement();
+            Scanner scn = new Scanner(System.in);
+            while (true){
+                System.out.print("Enter roll no : ");
+                int roll_no = scn.nextInt();
+                System.out.print("Enter name : ");
+                String name = scn.next();
+                System.out.print("Do you want to insert more data (Y/N) : ");
+                String choice = scn.next();
+                String query = String.format("INSERT INTO student (rollno, name) VALUES (%d, '%s')",roll_no, name);
+                statement.addBatch(query);
+                if (choice.equalsIgnoreCase("N")) {
+                    break;
+                }
+            }
+
+            int rowsAffectd[] = statement.executeBatch();
+            for (int i = 0; i < rowsAffectd.length; i++) {
+                if (rowsAffectd[i] == 0){
+                    System.out.println("Query " + i + " not executed successfully");
+                }
+            }
+        }
+
+    2. PreparedStatement
+        try {
+            Connection connection = DriverManager.getConnection(url, username, password);
+            String query = "INSERT INTO student (rollno, name) VALUES (?, ?)";
+            PreparedStatement preparedStatement = connection.prepareStatement(query);
+            Scanner scn = new Scanner(System.in);
+            while (true){
+                System.out.print("Enter roll no : ");
+                int roll_no = scn.nextInt();
+                System.out.print("Enter name : ");
+                String name = scn.next();
+                System.out.print("Do you want to insert more data (Y/N) : ");
+                String choice = scn.next();
+                preparedStatement.setInt(1, roll_no);
+                preparedStatement.setString(2, name);
+                preparedStatement.addBatch();
+                if (choice.equalsIgnoreCase("N")) {
+                    break;
+                }
+            }
+
+            int rowsAffectd[] = preparedStatement.executeBatch();
+            for (int i = 0; i < rowsAffectd.length; i++) {
+                if (rowsAffectd[i] == 0){
+                    System.out.println("Query " + i + " not executed successfully");
+                }
+            }
+        }
+
+Transaction Handling :
+
+    Data Inconsistency: When we have 2 bank accounts in one bank, then if one bank account has Rs.500 and second bank has Rs.1000. If we tried to send Rs.500 from one bank account to second bank account and because of some issues transaction failed and in that case Rs.500 debited from one bank account but didn't get credit in second bank account so that case is known as Data Inconsistency.
+
+    Data Consistency: So to minimise Data Inconsistency kind of situation we have to maintain data Consistency.
+        To maintain data consistency we have learn two important things
+            1. Commit - when we executes a query, it gets autocommit to sql db via Connection in JDBC code.
+                        But in case of Transaction handling, we first have to check transaction status gets completed or not, if transaction is successful then we commit to connection or else we won't commit.
+            2. Rollback - If amount doesn't get credited in receiver's account, then it will rollback to it's prevoius state (i.e. state before last commit).
+
+    Transaction handling code :
+    package _29_JDBC;
+
+    import java.sql.*;
+    import java.util.Scanner;
+
+    public class JDBC {
+        private static final String url = "jdbc:mysql://127.0.0.1:3306/Transaction";
+        private static final String username = "root";
+        private static final String password = "Shikhil@4";
+
+        public static void main(String[] args) {
+            try {
+                Class.forName("com.mysql.cj.jdbc.Driver");
+            }catch (ClassNotFoundException e){
+                System.out.println(e.getMessage());
+            }
+
+            try {
+                Connection connection = DriverManager.getConnection(url, username, password);
+                connection.setAutoCommit(false);
+                String debitQuery = "UPDATE accounts set balance = balance - ? WHERE account_number = ?";
+                String creditQuery = "UPDATE accounts set balance = balance + ? WHERE account_number = ?";
+                PreparedStatement debitPS = connection.prepareCall(debitQuery);
+                PreparedStatement creditPS = connection.prepareCall(creditQuery);
+                Scanner scn = new Scanner(System.in);
+                System.out.print("Enter amount that you want to transfer : ");
+                double amount = scn.nextDouble();
+                System.out.print("Enter account number that you want to transfer from : ");
+                int debit_account_number = scn.nextInt();
+                System.out.print("Enter account number that you want to transfer to : ");
+                int credit_account_number = scn.nextInt();
+                debitPS.setDouble(1, amount);
+                debitPS.setInt(2, debit_account_number);
+                creditPS.setDouble(1, amount);
+                creditPS.setInt(2, credit_account_number);
+                debitPS.executeUpdate();
+                creditPS.executeUpdate();
+                if (isSufficient(connection, debit_account_number, amount)) {
+                    connection.commit();
+                    System.out.println("Transaction successful");
+                }else{
+                    connection.rollback();
+                    System.out.println("Transaction Failed");
+                };
+
+            }catch (SQLException e){
+                System.out.println(e.getMessage());
+            }
+        }
+
+        static boolean isSufficient(Connection connection, int account_number, double amount){
+            try {
+                String query = "SELECT balance FROM accounts WHERE account_number = ?";
+                PreparedStatement preparedStatement = connection.prepareStatement(query);
+                preparedStatement.setInt(1, account_number);
+                ResultSet resultSet = preparedStatement.executeQuery();
+                if (resultSet.next()){
+                    double current_balance = resultSet.getDouble("balance");
+                    if (amount > current_balance) {
+                        return false;
+                    }else {
+                        return true;
+                    }
+                }
+            }catch (SQLException e){
+                System.out.println(e.getMessage());
+            }
+            return false;
+        }
+    }

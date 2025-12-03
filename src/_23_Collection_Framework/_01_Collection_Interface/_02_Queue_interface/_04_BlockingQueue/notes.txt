@@ -1,0 +1,10 @@
+Blocking Queue  :
+    1. It is a thread-safe queue unlike LinkedList and Priority queue.
+    2. It wait for queue to become non-empty / wait for spaces
+        Standard Queue - Immediately runs even if spaces if empty or full (i.e. it doesn't check for space)
+            empty -> remove (no wait to check if queue is empty or not, so it will throw an exception)
+            full -> add ((no wait to check if queue is full or not, so it will throw an exception))
+        Blocking Queue -
+            put -> Blocks if the queue is full until space becomes available to add
+            take -> Blocks if the queue is empty until an element becomes available to remove
+            offer -> waits for space to become available, up to specified timeout.

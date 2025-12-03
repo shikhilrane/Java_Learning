@@ -1,0 +1,400 @@
+01. Boilerplate code -
+    package package_name;
+
+    public class Boilerplate_code {
+        public static void main(String[] args) {
+            ... //code
+        }
+    }
+
+
+
+
+
+02. Outputs -
+     1. output displays the result of the program in console
+     2. three ways to display output -
+         i] System.out.print("first java program"); <- no new line
+         ii] System.out.println("first java program"); <- new line after o/p from this statement
+         iii] System.out.print("first java \n program");  <- new line after \n
+     3. String output -
+         System.out.println("Hey \t \t good\t afternoon");   // tab
+         System.out.println("Hey \n good\n afternoon");      // new line
+         System.out.println("Hey \" good\" afternoon");      // add ""
+         System.out.println("Hey \'' good\'' afternoon");    // add '
+         System.out.println("Hey \\ good\\ afternoon");      // add \
+         System.out.println("Hey \bgood afternoon");         // backspace
+
+
+
+
+
+03. Comments -
+    Line of code use to for the understanding of developer
+    single line comment - //
+    multi line comment - /*
+                          *
+                          *
+                          *
+                         /*
+
+
+
+
+
+04. Variables -
+    It is a name given to specific data
+    Naming convention :-
+        lowercase -> macbookpro (for packages)
+        UPPERCASE -> MACBOOKPRO (for constants)
+        camelCase -> macBookPro (for functions and variables)
+        PascalCase -> MacBookPro (for classes)
+        SNAKE_CASE (upper) -> MACBOOK_PRO (for constants with space)
+        snake_case -> macbook_pro (general)
+    Only you can start variable name by letter, _(underscore), $
+    all lowercase should be used when creating a single word variable
+    give a meaningful names to variable
+    Java keyword can't be used
+
+
+
+
+
+05. Data Types -
+      1. it defines type of data
+      2. 1 byte = 8 bit (bit is smallest memory)
+      3. there are 2 types of data type ->
+         i] primitive data type -> it is built-in, holds single value, can't be divided into simpler data type
+                                   a] boolean (1 byte) => range - true or false
+                                   b] char (2 byte)    => range - A to Z, a to z, special characters, single digit
+                                   c] byte (1 byte)    => range - -128 to 127 (-2^7 to 2^7 - 1)
+                                   d] short (2 byte)   => range - -32768 to 32767 (-2^15 to 2^15 - 1)
+                                   e] int (4 byte)     => range - -2 billion to 2 billion (-2^31 to 2^31 -1)
+                                   f] long (8 byte)    => range - (-2^64 to 2^64 -1)
+                                   g] float (4 byte)   => range - -2 billion to 2 billion (-2^31 to 2^31 -1)
+                                   h] double (8 byte)  => range - (-2^64 to 2^64 -1)
+         ii] non-primitive data type -> user define, memory address, can be divided, complex and multiple values can be store
+                                   a] string
+                                   b] array
+                                   c] class
+                                   d] object
+                                   e] interface
+
+
+
+
+
+06. User Input -
+    It uses Scanner class to take user input
+    it is use to print input of primitive data type
+    to take input,
+        boolean = nextBoolean();
+        single word = next();
+        multiple word = nextLine();
+        byte = nextByte();
+        short = nextShort();
+        int = nextInt();
+        long = nextLong();
+        float = nextFloat();
+        double = nextDouble();
+
+
+
+
+
+07. Data Conversion -
+    1. Type Conversion - byte => short => int => long => float => double
+    2. Type Coercion or Type Casting - converting higher data type to lower data type is called type casting
+    3. Type Promotion -
+         1. type conversion happens only in expressions like a+b+c
+         2. char, byte, short, automatically gets converted into int when evaluating the expression
+         3. if one operand is long float or double the whole expression gets promoted to long, float or double respectively
+
+
+
+
+
+08. Binary Number System - It represents numbers in different form like binary (base 2) and decimal (base 10)
+    1. Representation -
+           Binary = (1001) to base 2 = (1*2^3) + (0*2^2) + (0*2^1) + (1*2^0) = 8 + 0 + 0 + 1 = 9, So 1001 is a binary representation of 9 (conversion)
+           Decimal = (3451) to base 10 = (3*10^3) + (4*10^2) + (5*10^1) + (1*10^0) = 3451
+                     Decimal to binary conversion -
+                                    2   |   11  1
+                                    ----|-----
+                                    2   |   5   1
+                                    ----|-----
+                                    2   |   2   0
+                                    ----|-----
+                                        |   1
+                                1011 is a binary representation of 11
+    2. Binary Addition - addition of two binary numbers, normally as we do
+    3. Subtraction Addition - if subtraction, then take 2nd numbers compliment (make it negative) then add it in first number
+    4. Why 128 is -128 in byte? -
+            In binary, 128 is represented as 10000000 and byte memory is of 8 bits |1|0|0|0|0|0|0|0|
+            in any memory first bit is MSB (Most Significant Bit) and last bit is LSB (Least Significant Bit)
+            if digit at MSB is 1 then that number is negative in that memory and if 0 then number is positive
+            so in byte (8-bit), at MSB position digit is 1 so number is negative
+
+
+
+
+
+09. Operators -
+    1. Arithmetic Operators - +, -, *, /, %
+    2. Assignment Operators - =, +=, -=, *=, /=, %=
+    3. Relational Operators - ==, !=, >, <, >=, <=
+    4. Logical Operators - &&, ||, !
+    5. Unary Operators - ++a, a++, --a, a--
+
+
+
+
+
+10. Conditional Statements - Use to apply condition
+    1. if
+    2. if...else
+    3. if...elseIf...else
+    4. Nested conditionals
+    5. Switch Cases
+    6. Ternary
+
+
+
+
+11. Loops - Use to iterate
+    1. for loops
+    2. while loops
+    3. do...while
+    4. break and continue statement
+    5. Nested loop
+    6. label break and label continue
+
+
+
+
+12. Method or Function - block of code which we can use repeatedly in our code
+    1. Method without return type
+    2. Method with return type
+
+
+
+
+
+16. Bit Manipulation -
+    1. BitwiseAND - Bitwise AND returns 1 only if both comparing values are 1, else 0
+    2. BitwiseOR - Bitwise OR, returns 0 only if all the values are 0, else 1
+    3. BitwiseNOT - It inverts all the bits of the number
+    4. XOR - it returns 0 if both comparing values are same and it returns 1 if both comparing values are different
+    5. Right Shift Operator - It shifts the binary of the first number to the right side according to the second number in the memory
+        e.g. 9>>2
+             binary of 9 shifted 2 places to right
+             binary of 9 is 1001
+             _ _ _ _ 1 0 0 1
+             and when we applied right shift 2,
+             _ _ _ _ _ _ 1 0
+             here 1001 got shifted to right and last two digit (i.e. 01) got eliminated from memory
+             right shift = a/(2^b)
+    6. Left Shift Operator - It shifts the binary of the first number to left according to second number in the memory
+        e.g. 9<<2
+             binary of 9 shifted 2 places to left
+             binary of 9 is 1001
+             _ _ _ _ 1 0 0 1
+             and when we applied left shift 2,
+             _ _ 1 0 0 1 0 0
+             here 1001 got shifted to left and that black space got occupied by 0
+             left shift = a*(2^b)
+
+
+
+
+
+17. OOPS :
+    1. Class - two types, Predefined class and User defined class (It has properties, constructors, and methods)
+
+    2. Object - Instance of class
+
+    3. Access Modifiers -
+            Access modifiers        within class        within package      outside package by subclass only        outside package
+            1. Private                   Y                    N                             N                              N
+            2. Default                   Y                    Y                             N                              N
+            3. Protected                 Y                    Y                             Y                              N
+            4. Public                    Y                    Y                             Y                              Y
+
+    4. Method Overloading - Same name of methods or constructors but with different number of parameters or different parameter data type
+
+    5. Constructors -
+        A constructor in Java is a method that automatically runs when an object is created, setting up its initial state.
+        It has the same name as the class and does not have a return type.
+        Types of constructors - default(No parameters), parameterized(Accepts arguments to initialize fields.), or copy constructors(Creates new object by copying another)
+
+    6. This keyword - this keyword is used to refer a current object inside method or constructor
+
+    7. Inheritance -
+        Inheritance means a class (parent class) can inherit its properties and methods to its subclass (child class of parent class)
+        Method Overriding - Method Overriding allows a child class to provide its own implementation of a method that's already defined in its parent class.
+        super keyword - super is useful to invoke parent and to access immediate parent methods and constructors(const. of all parent classes).
+        final keyword - the final keyword is a non-access modifier that is used to define entities can't be changed or modified.
+
+    8. Encapsulation -
+        Encapsulation is a fundamental concept of OOPS that involves bundling data and methods into a single unit, usually a class.
+        Package - Packages simply a container that groups related types (Java classes, Interfaces, enumerations(not imp) & annotations(not imp)).
+        Encapsulation - It is basically use for data hiding using setters (use to set) and setters (use to get)
+        static keyword - If we want to access class member without creating an object of the class, we need to declare class member as static keyword.
+            Static variables can be accessed by calling the name of the class.
+                   Example : class ClassName {
+                                static int i = 10;
+                             }
+                             psvm{
+                                System.out.println(ClassName.i) => o/p = 10
+                             }
+        static block - static block executes all the before methods
+
+    9. Abstraction -
+            By using this conceptual class, we can make as many of the subclasses by using data of abstract class, by making abstract class as parent class of other class as it can inherit all the methods and properties to its child class
+            Abstract can be classes and methods.
+            Interface - Interfaces are fully abstract class. it includes a group of abstract methods (Methods without body)
+            Inner class - non-static class
+            Nested class - static class
+            Anonymous class - A nameless subclass created on the spot to override or implement methods of a class or interface, used for one-time use. It can be use only for one time
+            Anonymous Interface - Java does not support anonymous interfaces directly; instead, anonymous classes are used to implement interfaces anonymously.(technically, anonymous interface doesn't exist — it's always an anonymous class implementing an interface.)
+            Functional interface - Interface having only one method, later it will be implemented by class and override that single method and then make object of it in main method
+            Lambda Function - Directly implementing interface in main method with = () -> {}
+
+    10. Java Memory -
+        1. Stack Memory - variables, primitive data type values, local variables and object references gets stored.
+        2. Heap Memory - data is stored in an unorganized manner.
+
+    11. Java Object class -
+        1. toString() -> It is use to convert object reference into human-readable form.
+        2. equals() -> It is use to check if reference of objects (.equals() checks the value and == checks the object reference) (used in hashset)
+        3. hashCode() -> It is use to check hashCode (i.e. unique code for object) of object. (used in hashset and hashmap )
+        4. getClass() -> It is use to check object belongs to which class.
+        5. clone() -> It is use to clone an object
+
+    12. Polymorphism -
+            Polymorphism allows us to perform single action in different ways.
+            1. Run-time Polymorphism  -  (Method Overriding)
+                Run-time Polymorphism further gets divided in 3 different ways :
+                    a. Normal Overriding - in which normal Overriding happens.
+                        but when we have to access methods of parent data even child override parent's method then we use upcasting and down casting
+                    b. Upcasting - in which, it will execute method (method in both classes are same) according to we pass value
+                    c. Down Casting - in which, method in both classes are different and to access method of child class we have to
+                       downcast the object as we do in datatype casting.
+            2. Compile-time Polymorphism  -  (Method Overloading)
+
+
+
+
+
+18. Enums -
+    0. Use when we have to use any specific properties multiple times, in that case we make separate enum class and store them there and fetch those values from there
+    1. Enum means Enumeration.
+    2. Enumeration means listing things like months in year, number of dept in college, number of days in week, etc.
+
+
+
+
+
+19. Exception -
+        An exceptions are an unexpected event that occurs during program execution
+        Two type of exceptions
+            a. Java Runtime Exceptions - (It happens when coder makes a mistake while writing code) (code won't run)
+                Runtime Exceptions happens due to programming error. They are also known as unchecked exceptions.
+            b. Java IOException Exceptions - (code won't compile , bytecode will not generate) (we don't deal with it)
+                IOException means Input Output Exceptions that deals with secondary memory (i.e. hard disk or ssd)
+
+        Dealing with Exceptions is called as Exception Handling.
+        1. try...catch
+               try{
+                  // code that may cause failure
+               }
+               catch(exception){
+                  // code if failure occur, this will run
+               }
+               finally{
+                  // Whatever we write in finally block it will executes in any and how condition
+               }
+           Can use multiple catch block but instead of this, use all the exceptions in single catch block
+        2. throw
+               We use throws keyword in the method declaration to declare the type of exceptions that might occur within it.
+                public static void main(String[] args) {
+                    int a[] = new int[5];
+                    try {
+                        getNumberFromArray(a);
+                    } catch (Exception e) {
+                        System.out.println("Exception occurs here : " + e.getMessage());
+                    }
+                }
+                static int getNumberFromArray(int a[]) throws Exception{
+                            return a[8];
+                }
+        3. throw custom exception
+                The throw keyword is used to explicitly throw a single exception is Custom Exception.
+                    public static void divideByZero(){
+                         throw new ArithmeticException("Trying to divide by 0");
+                    }
+
+
+
+
+
+20. Wrapper class -
+    1. A wrapper class in java is a class, whose object wraps or contains primitive data types.
+    2. When we create an object to a wrapper class, it contains a field, and in that field we can store primitive data types.
+    3. It is already present in JDK
+    4. Collection framework like ArrayList, LinkedList, etc does not support primitive data type. So there we need Wrapper Classes
+                          primitive data types                        Wrapper Class
+                        --------------------------------------------------------------
+                                char                                    Character
+                                byte                                    Byte
+                                short                                   Short
+                                int                                     Integer
+                                long                                    Long
+                                float                                   Float
+                                double                                  Double
+                                boolean                                 Boolean
+    5. Example -
+               Integer obj2 = Integer.valueOf(30);
+               System.out.println(obj2);
+                    OR
+               Integer obj = 10;    // Autoboxing
+               System.out.println(obj);
+
+
+
+
+
+21. Autoboxing and Unboxing -
+    1. Autoboxing - The conversion of primitive types to the object of their corresponding wrapper class is known as Autoboxing.
+        Integer obj = 10;    // Autoboxing
+        System.out.println(obj);
+    2. Unboxing - Automatically converting an object of wrapper class to its corresponding primitive data type is known as Unboxing.
+        int a = obj;        // Unboxing
+        System.out.println(a);
+
+
+
+
+
+22. Generics -
+    1. Generics mean parameterized types.
+    2. Using Generics, it is possible to create classes that works with different data types.
+    3. class, interface or method that operated on a parameterized type is a generic entity.
+    4. Generics can be used in,
+        1. Class -> we can use generic data type in class in <> with class name
+        2. Methods -> we can use generic data type in methods as well
+
+
+
+
+
+23. Collection Framework -
+
+
+
+
+
+24. String vs StringBuilder vs StringBuffer
+        String          - immutable, slow, stored in String pool, no method chaining, thread-safe
+        StringBuilder   - mutable, faster, stored in heap, method chaining, not thread-safe
+        StringBuffer    - mutable, faster than string but slower than StringBuilder, stored in heap, method chaining, thread-safe

@@ -1,0 +1,30 @@
+Vector -
+    1. Vector is present in Java since Java 1.
+    2. Vector is synchronised means threadsafe, unlike ArrayList and LinkedList (Synchronised mean in multithreaded environment, Vector is synchronized, so it prevents concurrent access to its methods by multiple threads. However, ArrayList and LinkedList are not synchronized, which means multiple threads can access the same method at the same time, potentially causing inconsistent data or unexpected behavior.)
+    3. It is synchronised, so there is overhead of Vectors as well like, processing time is higher and took more extra Memory
+    4. Due to this overhead, it is generally recommended to use ArrayList in single-threaded scenarios And Vectors in MultiThreaded environment.(Vector has synchronization overhead, meaning it uses extra time and memory to ensure thread safety in a multithreaded environment.)
+    5. Vector is useful in multithreading environment where thread safety is concern.
+    6. So while learnig DSA we don't deal with multithreading so we won't use Vectors
+    7. Features of Vector -
+        • Dynamic Array : Like ArrayList, Vector is Dynamic Array that grows automatically when more elements are added than
+                          its capacity.
+        • Synchronised : All methods in Vector are synchronised, which makes it thread-safe. It means multiple head can work on
+                         Vector without the risk of corrupting the data. However, this can introduce performance overhead in single-threaded environment
+        • Legacy Class : Vector is part of Java since Java 1 means before the collection framework.
+        • Resizing : When the current capacity of vector is exceeded, it doubles its size by default (or increase by a specific
+                     capacity increament if provided).
+        • Random Access : Similar to arrays and ArrayList, Vector allows access to elements, making it efficient for accessing
+                          elements using an index.
+
+    It includes methods of Collection and Lists as well :
+    Methods of Vector :
+        1. capacity() – Gets current capacity of the vector
+        2. ensureCapacity(int) – Ensures capacity is at least specified
+        3. trimToSize() – Trims the capacity to current size
+        4. firstElement() – Returns first element
+        5. lastElement() – Returns last element
+        6. elementAt(int index) – Gets element at index
+        7. insertElementAt(E obj, int index) – Inserts element at index
+        8. removeElementAt(int index) – Removes element at index
+        9. removeElement(Object obj) – Removes first occurrence of element
+        10. setElementAt(E obj, int index) – Replaces element at index

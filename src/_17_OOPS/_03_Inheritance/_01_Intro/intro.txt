@@ -1,0 +1,34 @@
+Inheritance :
+    1. Inheritance is one of the features of OOP that allows us to create a new class from an existing class.
+
+    2. Inheritance means a class (parent class) can inherit its properties and methods to its subclass (child class of parent class).
+
+    3. we can make as many as child classes from one parent class.
+
+    4. The new class that is created is known as subclass (child or derived class).
+
+    5. The existing class from where the child is derived is known as superclass (parent class or base class).
+
+    6.                          |------------------|
+                                |   parent class   |
+                                |------------------|
+                                          ^
+                                          |
+                                          |
+                                |------------------|
+                                |   child class    |
+                                |------------------|
+                                
+    7. we have to state, extends parent_class name , in a class which we want to make subclass
+                public class parent_class{
+                    // properties
+                    // methods
+                }
+                public class child_class extends parent_class{
+                    public static void main(String[]args){
+                        child_class object_name = new child_class();
+                        object_name.properties;
+                        object_name.methods();
+                    }
+                }
+        here, child_class will inherit all the properties and methods of parent_class

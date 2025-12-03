@@ -1,0 +1,39 @@
+Method Overloading : 
+    1. With the help of method overloading, two or more methods can have same name inside the same class if they accept different arguments or 
+       different data types. It is known as method overloading
+    2. Method Overloading is used when we have to make multiple number of functions with same name.
+    3. Method Overloading is achieved by,
+       a. by changing the number parameters :- if we pass 2 int type of parameters in function 1 then we have to pass different number of int type
+                                               of parameters in rest of all function with who have same name. 
+                                               e.g. 
+                                               public static int numberParameter(int a, int b){
+                                                        return a+b
+                                               }
+                                               public static int numberParameter(int a, int b, int c){
+                                                        return a+b+c;
+                                               }
+                                               public static int numberParameter(int a, int b, int c, int d){
+                                                        return a+b+c+d;
+                                               }
+                                               in first function we passed 2 int type of parameters & in second we passed 3 int types of parameters whereas, in third we passed 4 int type of parameters.
+                                               we can use same name for multiple functions with same data type as parameters but with different
+                                               numbers of same data type as paramters in every function that has same name.
+
+       b. by changing the data type of parameters :- if we passed 2 int type of parameters in function 1 then we have to pass 2 float or byte or
+                                                     etc. type of paramters in other functions with same of function 1
+                                                     e.g. 
+                                                     public static int dataTypeParameters(int a, int b){
+                                                              return a+b;
+                                                     }
+                                                     public static float dataTypeParameters(float a, float b){
+                                                              return a+b+c;
+                                                     }
+                                                     public static long dataTypeParameters(long a, long b){
+                                                              return a+b+c+d;
+                                                     }
+                                                     here, in first function we passed 2 int type of parameters & in second function we passed 2
+                                                     float type of paramters & in third function we passed 2 long type of data type.
+                                                     so in this type of overloading, we can keep same number of data types for parameters but It
+                                                     must have different type of data type for all the function paramters that has same fn name.
+    4. It is not overloading if we only change return type of methods. Method overloading is not achieved by just changing return type. Method 
+       Overloading depends on parameters only.

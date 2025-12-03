@@ -1,0 +1,45 @@
+Constructors
+    1. When you call an object of class, in that case Constructor is called with object
+    2. class_name object_name = new class_name();
+                                        ||
+                                        ^
+                                this is constructor
+    3. Constructors are invoked implicitly when you instantiate objects (instance = object).
+       initialization = it means an object is created, and you are initializing it with some value
+       instantiate = it is a first step, means step of creation of object
+    4. Two rules for creating constructors,
+       a. name of constructor must be same as class name.
+       b. Constructor must not have return type.
+    5. When we don't make any constructor, then java makes default constructor and that default constructor has value 0.
+    6. every object initialize through constructor value.
+    7. If we make constructor in class and pass values to constructors in object, then object initialization will take place according to
+       constructor values otherwise if we don't give values then java reckon constructor value as 0.
+    8.
+      public class Constructor {
+        public static void main(String[] args) {
+            -------------->------------------>-------------->---|       // this is control flow of object. Every object invokes constructor
+            Complex firstConstructor = new Complex("Hey",4,6);  |
+            firstConstructor.print();--<---------------<-----<--|                        
+            Complex secondConstructor = new Complex("Hello",8,9);
+            secondConstructor.print();
+        }
+      }
+
+      class Complex{
+        String name;
+        int a, b;
+        public Complex(String constructorName, int num1, int num2){
+            name = constructorName;
+            a = num1;
+            b = num2;
+        }
+
+        void print(){
+            System.out.println(name + " " + a + " + " + b + "i");
+        }
+      }
+    9. If we override constructor in class and don't pass value in object constructor, then it will show error.
+    10. a constructor can't be abstract or static or final (should not use these keywords while creating constructor)
+    11. Constructor can be overload but can't be override
+            overload : it means we can create make as many as constructor with rules of method overloading
+            override : we can't change the value of constructor parameter again and again in same class.

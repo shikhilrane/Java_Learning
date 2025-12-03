@@ -1,0 +1,49 @@
+Method Overriding -
+    1. Method Overriding allows a child class to provide its own implementation of a method that's already defined in its parentclass.
+
+    2. In method overriding child can make its own methods even the same methods are present in parentclass.
+
+    3. and compiler will execute child's methods first, if methods are not present in child class then compiler
+       will look into its parent class to execute those methods.
+
+    4. 
+                                                 |-------------|
+                                                 | Object Class|
+                                                 |-------------|
+                                                        ^
+                                                        |
+                                                 |-------------|       |-------------|      |-------------|
+                                                 |      A      |<------|      N      |<-----|      M      |                     
+                                                 |    move();  |       |    move();  |      |    move();  |                      
+                                                 |-------------|       |-------------|      |-------------|                   
+                                                        ^
+                                                        |
+                                                 |-------------|
+                                                 |      B      |
+                                                 |    move();  |
+                                                 |-------------|
+                                                        ^
+                                                        |
+                                                 |-------------|
+                                                 |      C      |
+                                                 |    move();  |
+                                                 |-------------|
+
+    5. here, 
+        # Class C is child class of B, class B is child class of class A, and class A is our main class but our main class A is even a child class of Object class(root class of java which is developed and maintain by java developers).
+        # if class C overrides method move(); from its parent class B which has method move(); then compiler will executes child's method i.e. of class c's method and 
+        # same will in case of class B and class A
+        # if in case method move(); is not present in C ,then in that case compiler will look for method move(); in to its parent class i.e. class B and execute that method move(); for class C and in method move(); is not even present in class B then compiler will loook to class B's parent class i.e. class A, if method move(); present in class A then compiler will execute that method move(); from class A for class C
+
+        # and as we know we can make as many as child classes from a single class but we should also know that child class can only make single parent class, so N is also child class of A and M is the child class of N. Same rules of overriding we saw for A,B,C class will be applied to classes A,N,M
+
+        Object Class => Object Class is upper most class (root of the class hierarchy) in java which is developed by java developers, it contains methods like toString(), method hashCode() method, equals(Object obj) method, finalize() method, getClass() method, clone() method, wait(), notify() notifyAll() methods 
+        these methods are present in java which is developed by java developers in Object class
+
+    6. we can even asssign values to properties of parent classes, like if some property is present in class A, then we can assign value to that 
+       property in class B and class C,
+
+    7. child class can even have its properties as well, like class B and class C can make its own properties.
+
+    6. Method Overriding is also called as runtime polymorphysm and Method Overloading is also called as compiletime polymorphysm. (we will see 
+       polymorphysm later)

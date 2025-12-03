@@ -1,0 +1,16 @@
+As we have saw Synchronisation, that was even a locking because we were locking the method for other thread till the current thread completes its execution completely using synchronized keyword
+
+There are 2 types of locks :
+    1. Intrinsic : These are built into every object in java. You don't see them but they are there. When you use synchronized keyword, you're using these automatic locks.
+
+    2. Explicit : These are more advance locks that you can control by yourself using the lock class from java.util.concurrent.locks. You explicitly say when yo lock and unlock, giving you more control over how and when people can write in the notebook. It is also called manual lock.
+        To use manual lock,
+            1. We have to make object of Lock interface, but as we know we can't create object of interfaces, we will use implementation class with it.
+                e.g. Lock lock = new ReentrantLock();
+                Every object we create normally, that brings built-in lock with it and that is synchronized lock, but by using Lock interface we replace that built-in lock with manual lock
+                The thread that acquire this manual lock, only that thread can get access to the critical section.
+            2.  lock will have 3 methods like,
+                    1. .tryLock();    - The thread that will run this statement, then it will try to acquire the lock, if the lock is free then that statement will get immediate access to critical section and if some other thread acquired this lock, then it will have it will get false value. And if .tryLock(long time, TimeUnit.unit) is specified then other thread will wait till specified time and if thread completed its work within given time then other thread will aquire the critical section and if not then it will return false and will enter into catch block. (when we use timed based .lock() method then we have to use try catch block because if time exceeded then we have to catch it in catch block)
+                    2. .lock();  - It it same as synchronized lock. if we want to use it then use it just exact before .tryLock()
+                    3. .unlock();  - If any thread acquired .lock() method then it gives key to other thread to access the critical section.
+                    4. .lockInterruptibly(); - if we used Thread.interrupt() in main method then we can interrupt current lock by using this lock

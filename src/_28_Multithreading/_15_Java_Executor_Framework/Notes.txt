@@ -1,0 +1,81 @@
+Executor Framework :
+    The executor framework was introduced in Java 5 as a part of the java.util.concurrent packageto simplify the development of concurrent applications by abstracting away many of the complexities involved in creating and managing threads.
+    It means we don't have to create threads manually, instead we can use an executor framework to create threads easily.
+
+Problems prior to an executor framework:
+    1. Manual Thread Management
+    2. Resource Management
+    3. Scalability
+    4. Thread Reuse
+    5. Error Handling
+
+Hierarchy of Java Executors framework :
+    java.lang.Object
+       └── java.lang.Runnable
+       └── java.util.concurrent.Callable<V>
+
+    java.util.concurrent.Executor (interface)
+       └── java.util.concurrent.ExecutorService (interface)
+             └── java.util.concurrent.ScheduledExecutorService (interface)
+
+    java.util.concurrent.Future<V> (interface)
+       └── java.util.concurrent.ScheduledFuture<V> (interface)  // extends Future<V>
+
+    java.util.concurrent.Delayed (interface)
+       └── java.util.concurrent.ScheduledFuture<V> (interface)  // extends Delayed
+
+
+There are 3 core interfaces in an Executor Framework :
+    1. Executor
+    2. ExecutorService
+    3. ScheduledExecutorService
+
+    1. java.util.concurrent.Executor
+    Instance Methods:
+    void execute(Runnable command)
+
+    2. java.util.concurrent.ExecutorService (extends Executor)
+    Instance Methods:
+    void shutdown()
+    List<Runnable> shutdownNow()
+    boolean isShutdown()
+    boolean isTerminated()
+    boolean awaitTermination(long timeout, TimeUnit unit) — may throw InterruptedException
+    Oracle Documentation
+    +1
+    <T> Future<T> submit(Callable<T> task)
+    <T> Future<T> submit(Runnable task, T result)
+    Future<?> submit(Runnable task)
+    <T> List<Future<T>> invokeAll(Collection<? extends Callable<T>> tasks)
+    <T> List<Future<T>> invokeAll(Collection<? extends Callable<T>> tasks, long timeout, TimeUnit unit)
+    <T> T invokeAny(Collection<? extends Callable<T>> tasks)
+    <T> T invokeAny(Collection<? extends Callable<T>> tasks, long timeout, TimeUnit unit) — may throw InterruptedException, ExecutionException, TimeoutException
+    Oracle Documentation
+    +1
+
+    3. java.util.concurrent.ScheduledExecutorService (extends ExecutorService)
+    Instance Methods (specific to scheduling):
+    ScheduledFuture<?> schedule(Runnable command, long delay, TimeUnit unit)
+    <V> ScheduledFuture<V> schedule(Callable<V> callable, long delay, TimeUnit unit)
+    ScheduledFuture<?> scheduleAtFixedRate(Runnable command, long initialDelay, long period, TimeUnit unit)
+    ScheduledFuture<?> scheduleWithFixedDelay(Runnable command, long initialDelay, long delay, TimeUnit unit)
+    Oracle Documentation
+    +1
+    Also inherits all methods from ExecutorService and Executor — see above.
+
+    4. Static Factory Methods (Executors class)
+    These are not part of the interface definitions themselves but are widely used to obtain implementations:
+    Executors.newFixedThreadPool(int nThreads)
+    Executors.newFixedThreadPool(int nThreads, ThreadFactory threadFactory)
+    Executors.newSingleThreadExecutor()
+    Executors.newSingleThreadExecutor(ThreadFactory threadFactory)
+    Executors.newCachedThreadPool()
+    Executors.newCachedThreadPool(ThreadFactory threadFactory)
+    Executors.newScheduledThreadPool(int corePoolSize)
+    Executors.newScheduledThreadPool(int corePoolSize, ThreadFactory threadFactory)
+    Executors.newSingleThreadScheduledExecutor()
+    Executors.newSingleThreadScheduledExecutor(ThreadFactory threadFactory)
+    Executors.unconfigurableExecutorService(ExecutorService executor)
+    Executors.unconfigurableScheduledExecutorService(ScheduledExecutorService executor)
+    Executors.newWorkStealingPool()
+    Executors.newWorkStealingPool(int parallelism)

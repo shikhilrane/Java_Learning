@@ -1,0 +1,25 @@
+Introduction to Servlets:
+    1. Servlets are Java Program that run on a web server, handling client requests and generating dynamic responses.
+    2. Servlets used to process or store data submitted by an HTML form, provide dynamic content like returning results from a database query, manage state information, etc.
+
+Servlet Lifecycle : The servlet control by container (e.g. Tomcat) and it goes through the following Stages :
+    1. Loading and Instantiation : The servlet class is loaded and its object is created.
+    2. Initialization (init Method) : The init method is called once to initialize the servlet,
+    3. Request Handling (service method) : The service method is called for each request to process it.
+    4. Destruction (destroy method) : The destroy method is called once before the servlet is removed from service
+
+Setting up the Environment :
+    Required Tools
+        1. JDK (Download JDK)
+        2. Tomcat (Web Server and servlet container)
+        3. IDE : eclipse
+        4. Configure IDE with Tomcat -
+            1. download eclipse installer
+            2. get Java EE from installer and open
+            3. go to window > Show View > Servers (we can see servers tab below on the screen)
+            4. Add server, right click on server window add go to tomcat folder open that there
+            5. We can see server on server window
+            6. We can configure serer by clicking right on the server
+            7. Go to File > New > Dynamic Web Project
+
+(Check Other package for JSP Servlet)

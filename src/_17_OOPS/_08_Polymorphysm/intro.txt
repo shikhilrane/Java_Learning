@@ -1,0 +1,13 @@
+Polymorphism -
+    1. Polymorphism allows us to perform single action in different ways.
+    2. In other words, Polymorphism allows us to define one interface and have multiple implementation.
+    3. The word 'poly' means many and 'morph' means forms, So it means many forms.
+    4. There are two types of Polymorphysm : 
+        1. Run-time Polymorphysm  -  (Method Overriding)
+            Run-time Polymorphysm further gets divided in 3 different ways : 
+                a. Normal Overriding - in which normal Overriding happens.
+                    but when we have to access methods of parent data even child override parent's method then we use upcasting and downcasting
+                b. Upcasting - in which, it will execute method (method in both classes are same) according to we pass value
+                c. Downcasting - in which, method in both classes are different and to access method of child class we have to
+                   downcast the object as we do in datatype casting.
+        2. Compile-time Polymorphysm  -  (Method Overloading)

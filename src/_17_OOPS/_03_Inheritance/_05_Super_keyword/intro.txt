@@ -1,0 +1,73 @@
+Super keyword
+    1. super is useful to invoke parent and to access parent methods.
+
+    2. Super is a keyword in java that is used to refer object of immediate parent class.
+
+    3. uses of super keyword
+        i.   it is use to refer to an instance variable of immediate parent class.
+        ii.  It is use to invoke method of immediate parent class
+        iii. It is use to invoke constructor of immediate parent class.
+
+
+    4. we have to invoke method of parent class inside method of child class. like super.method();
+
+    5. we have to invoke constructor of parent class inside constructor of child class. like, super(); (we have to pass argument inside bracked 
+       if constructor of parent is parameterised e.g super(5); & if constructor of parent is non-parameterised then keep it blank)
+       
+    6. basically super is used to access methods and constructor of its immediate parent.
+
+        public class c1{
+            int i;
+            void move(){
+                System.out.println("this is c1");
+            };
+            c1(){
+                System.out.println("non parameterised constructor executed");
+            }
+            c1(int i){
+                this.i = i;
+                System.out.println("parameterised constructor executed");
+            }
+            public static void main(String[] args) {
+                c1 firstClass = new c1(3);
+                firstClass.move();
+            }
+        }
+        public class c2 extends c1{
+            void move1(
+                super.move();
+                System.out.println("this is c2");
+            );
+            c2(){
+                super(2);
+                System.out.println("this is c2's constructor");
+            }
+            public static void main(String[] args) {
+                c2 firstClass = new c2(23);
+                firstClass.move1();
+            }
+        }
+        public class c3 extends c2{
+            void move2(
+                super.move1(); <= this will execute 
+                System.out.println("this is c3");
+            );
+            c3(){
+                super(); <= this will execute c2 and c1's constructor
+                System.out.println("this is c3's constructor");
+            }
+            public static void main(String[] args) {
+                c3 firstClass = new c3();
+                firstClass.move2();
+            }
+        }
+    here, 
+        for c1 execution,
+            1. line 32 : parameterised constructor will execute as we passed parameter in object's constructor
+            2. line 33 : move(); from line 21 will execute.
+        for c2 execution,
+            1. line 46 : constructor of AAA then constructor of BBB will execute
+            2. line 47 : move1(); from line 37 will execute.
+        for c3 execution,
+            1. line 60 : constructor of AAA then constructor of BBB then constructor of CCC will execute
+            1. line 61 : move2; from line 51 will execute.

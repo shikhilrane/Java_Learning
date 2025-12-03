@@ -1,0 +1,6 @@
+If a class of which we want to create thread extending another class then we can't use Thread class becasue as we know multiple inheritance with classes is not possible in java in that case we have to implement Runnable interface because as we know we can extend class and implement multiple interfaces.
+If the class we want to run as a thread is already extending another class, then we cannot extend the Thread class directly, because Java does not support multiple inheritance with classes.
+
+In such cases, we should implement the Runnable interface instead, because Java allows a class to extend one class and implement multiple interfaces.
+
+This way, we can still define the thread's logic inside the run() method and pass the object to a Thread constructor.

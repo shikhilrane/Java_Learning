@@ -1,0 +1,53 @@
+Static keyword : 
+    1. If we want to access class member without creating an object of the class, we need to declare class member as static.
+
+    2. Static variables can be accessed by calling the name of the class.
+       Example : class ClassName {
+                    static int i = 10;
+                 }
+                 psvm{
+                    System.out.println(ClassName.i) => o/p = 10
+                 }
+
+    3. There is no need to create object of the class for accessing static variables because static variables are class 
+       variables and are shared amongst all the class objects.
+
+    4. we can even update value of static variables in main method (Which is not recommended)
+       Example : class ClassName {
+                    static int i = 10;
+                 }
+                 psvm{
+                    System.out.println(ClassName.i) => o/p = 10
+                    ClassName.i = 15;
+                    System.out.println(ClassName.i) => o/p = 15
+                 }
+
+    5. It is a class level variable, memory allocation of such variables happens once when the class is loaded in the memory.
+       static variable executes at compile time while non static variable compiles at runtime. (flow of execution class load > function load > execution)
+
+    6. If in main method, object updates value of static variable, change is reflected across all objects.(as we saw in pt 4)
+
+    7. Static type of variable can be used in any type of method i.e. static or non-static. (because we know that static 
+       methods executes with or without object so it can be execute in non-static method as well but if we put non-static variable in static method then it can't be possible)
+
+    8. Non-static variables can't be use inside static method. it will throw complie time error
+
+    9. If we think, method of which we dont need to make object for that method then we can use staic methods
+
+   10. we can't use this and super keyword for static method or variable
+
+   11. Static block runs at starting before main method. we can add in things in static block if we want to execute something at
+       time of class loading
+
+   11. it is not good practice to change value for static variable so we can use final keyword with static keyword.
+       Example : class ClassName {
+                    static final int i = 10;
+                 }
+                 psvm{
+                    System.out.println(ClassName.i) => o/p = 10 
+                    ClassName.i = 15;
+                    System.out.println(ClassName.i) => o/p = 10
+                 }
+        we can't change value for i here
+
+NOTE : code attached with this are to understand basics without packages and import, if want to know proper code then open these program (Macintosh > Uses > shikhilrane > Ideaprojects > Encapsulation) in intellij code editor

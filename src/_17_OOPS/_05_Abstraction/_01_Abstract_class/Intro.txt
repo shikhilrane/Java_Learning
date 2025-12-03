@@ -1,0 +1,62 @@
+Abstraction 
+    1. Abstraction is a keyword to make class abstract (means which is not defined).
+
+    2. Abstract can be classes and methods.
+
+    3. Though abstract classes can't be instantiated, we can make subclasses from it. we can then access members of abstract 
+       class using the object of subclass.
+       Example - 
+       public class Abstraction{
+            public static void main(String[]args){
+                ChildOfAbstract c1 = new ChildOfAbstract();     // object of subclass
+                c1.a = 3;
+                c1.method1();
+                c1.method2();
+            }
+       }
+       abstract class AbstractClass{                            // Abstract class (Parent class)
+            int a;
+            abstract void method1();                
+            abstract void method2();
+       }
+       class ChildOfAbstract extend AbstractClass{              // subclass of AbstractClass
+            void method1(){
+                // code
+            }
+            void method2(){
+                // code
+            }
+       }
+
+    4. If any abstract class any abstract method, then all child classes inherited from the abstract superclass must provide 
+       the implementation of abstract method.
+
+    5. Abstract class is non-executable (i.e., can't make an object of this class), it is just conceptual class, we just define 
+       properties and methods in it and make subclasses of abstract class
+
+    6. Subclass of abstract class is executable (i.e., can't make an object of this class).
+
+    7. We have to add all the abstract methods from abstract class to its subclass otherwise it will give compile time error.
+
+    8. We can't make abstract variable.
+
+    9. We can't make abstract method as static because, as we know, static methods can even execute with or without making an 
+       object but to execute abstract method we must need to make an object.
+
+   10. If we make any method as abstract method, then we have to make whole class abstract
+
+   11. We can make an object of subclasses to execute.
+
+   12. all the variables in abstract class are 'public static final' by nature, so we can't update them in main method.
+
+   13. all the methods in abstract class are 'public' to give access to its child class.
+
+   14. concrete methods in abstract class are execute in object only if they called by object
+
+
+   14.  class Animal {
+            String name;
+            abstract int legs();     // if we make any of the methods abstract, then we have to make whole class abstract
+        }
+
+NOTE : code attached with this are to understand basics without packages and import, if want to know proper code then open these program (Macintosh > Uses > shikhilrane > Ideaprojects > Abstraction) in intellij code editor

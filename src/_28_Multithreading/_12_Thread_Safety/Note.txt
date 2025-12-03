@@ -1,0 +1,1 @@
+Thread safety : An object, is thread safe, when it guarantee that unexpected results wont come, data corruption, or no race condition will happen when multiple thread will try to access that object that particular block of code.

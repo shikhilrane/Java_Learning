@@ -1,0 +1,47 @@
+Deque :
+    1. Deque : Doubly Ended Queue. It is the queue in which we can add or remove from both sides of Queue.
+    2. It has double sided addition and deletion
+                                 __________________________
+          Addition/Deletion ->   | 1  | 2  | 3  | 4  | 5  |    -> Addition/Deletion
+                                 --------------------------
+                                   ^                   ^
+                                   |                   |
+                                  Rear               Front
+
+    3. Methods for Deque :
+        It can have methods of queue, colletion and iterables
+        Deque methods (can be appliable on ArrayDeque, LinkedList, ConcurrentLineDeque).
+
+            1. Insertion Methods :
+                Method	            Description	                    Throws Exception?	            Returns Special Value?
+                addFirst(E e)	    Inserts element at the front	Yes (IllegalStateException)	    -
+                offerFirst(E e)	    Inserts element at the front	No	                            true/false
+                addLast(E e)	    Inserts element at the end	    Yes	                            -
+                offerLast(E e)	    Inserts element at the end	    No	                            true/false
+
+            2. Removal Methods :
+               Method	            Description	                        Throws Exception?	            Returns null if Empty?
+               removeFirst()	    Removes and returns first element	Yes (NoSuchElementException)	No
+               pollFirst()	        Removes and returns first element	No	                            Yes
+               removeLast()	        Removes and returns last element	Yes	                            No
+               pollLast()	        Removes and returns last element	No	                            Yes
+
+            3. Peek Methods (Retrieve without removing) :
+               Method	        Description	                Throws Exception?	            Returns null if Empty?
+               getFirst()	    Gets first element	        Yes (NoSuchElementException)	No
+               peekFirst()	    Peeks first element	        No	                            Yes
+               getLast()	    Gets last element	        Yes	                            No
+               peekLast()	    Peeks last element	        No                              Yes
+
+            4. Stack-style Methods (LIFO behavior)
+                These allow Deque to be used as a stack :
+                Method	        Description
+                push(E e)	    Adds element at the front
+                pop()	        Removes and returns front element
+                peek()	        Retrieves front element
+
+            5. Other Useful Methods :
+               Method	                            Description
+               removeFirstOccurrence(Object o)	    Removes the first occurrence of the specified element
+               removeLastOccurrence(Object o)	    Removes the last occurrence of the specified element
+               descendingIterator()	                Returns an iterator from tail to head

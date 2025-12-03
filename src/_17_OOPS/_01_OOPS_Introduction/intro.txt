@@ -1,0 +1,13 @@
+1. OOPS stands for Object Oriented Programming System
+2. The main purpose of OOPS is to deal with real world entity using programming language
+3. In Procedural type of programming language, it was hard to solve real world problems that's why OOPS are introduced
+4. Structure of Java is based on OOPS
+5. Each and everything in Java is a member of class and interface (We will see the interface later)
+6. Java doesn't let you write anything outside class
+7. we will write everything inside class and interface.
+8. features of OOPS : a. class          : it is a template where we only define logic
+                      b. Object         : When we make an object for a class only then memory is defined for that class. It is an instance of class
+                      c. Inheritance    : it allows a class to inherit the properties and methods of another class
+                      d. Polymorphism   : same object or reference having different behavior
+                      e. Encapsulation  : bundling Data and methods within a single unit, like a class, and controlling their access
+                      f. Abstraction    : It is the process of hiding unnecessary information and only displaying what is needed to the user.

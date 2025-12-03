@@ -1,0 +1,48 @@
+Introduction ->
+    Java 7 had long code writing style.
+    So Java 8 comes with Java Streams to write code in minimal statements
+    like forEach loop can be replaced by only 1 line of code
+    conditionals are minimal too
+
+Features of Java 8 ->
+    Java 8 support OOPS so functional programming was missing in it.
+    So java 8 comes with functional programming features.
+    Java 8 still works on the concept of OOPS, but now it includes features of functional programming languages too.
+    Java 8 comes with -> lambda expression, Streams, Date and Time API
+
+Functional Programming ->
+    Function used as variable is called as Functional Programming.
+    The Best example of functional Programming is Lambda Expression.
+    e.g. MathOperation sumOperation = (a,b) -> a+b;
+        MathOperation = Predefined class
+        sumOperation = name of object of MathOperation
+        (a,b) = parameters (it knows as we are using MathOperation class then it definitely number then it dont as to apply int)
+        a+b = addition of given numbers
+
+Predicate -> Functional Interface
+    It is a boolean valued function
+    It holds a condition
+    It has only one abstract method.
+    we can use and or methods on it
+
+Function -> Functional Interface
+    same as Predicate but It returns the value
+    It holds two values and return single value
+    We can use methods like andThen and compose (compose is reverse of andThen)
+
+Consumer -> (Functional Interface, It doesn't return anything)
+    It takes but doesn't return
+
+Supplier -> Functional Interface
+    It doesn't take anything but returns
+
+We can use all the above 4 methods to work
+
+There are BiPredicate, BiFunction, BiConsumer methods as well who accepts 2 parameters and has same methods as above
+
+UnaryOperator (It extends Function. It provides writing comfort than Function when we know it give and provide same data type like Integer)
+
+BinaryOperator (It extends BiFunction. It provides writing comfort than BiFunction when we know it give and provide same data type like Integer)
+
+Method Reference ->
+    use method without invoking and in place of lambda expression

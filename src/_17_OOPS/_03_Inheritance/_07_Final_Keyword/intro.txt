@@ -1,0 +1,7 @@
+final keyword 
+    1. In java, the final keyword is a non-access modifier that is used to define entities can't be changed or modified.
+    2. where ever we use final as variable, method or class then it will bacome unchangable.
+    3. use case = 
+       Final variable : variable with final keyword can't be assigned again. (use when we know that this const can't be changed e.g. Pi = 3.14)
+       Final method   : method with final keyword can't be overridden by subclasses. (use when we dont want any subclass can't override method)
+       Final class    : Class with final keyword can't be extended or inherited from other classes (Use when we dont want this class should not be any further subclass from particular class)

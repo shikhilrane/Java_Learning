@@ -1,0 +1,21 @@
+Set :
+    1. A set is a collection that can't contain duplicate elements like list.
+    2. The set interface of java collection framework provides the features of the mathematical set in java. It extends collection interface.
+    3. Consider a bag in which you are adding element randomly but you are not allowed to add duplicate elements in it. Even if you add duplicate element it won't be useful
+    4. Methods of sets :
+        | **Method**                                  | **Description**                                                                  |
+        | ------------------------------------------- | -------------------------------------------------------------------------------- |
+        | `boolean add(E e)`                          | Adds the element if it's not already present.                                    |
+        | `boolean addAll(Collection<? extends E> c)` | Adds all elements from the given collection if they're not already present.      |
+        | `void clear()`                              | Removes all elements from the set.                                               |
+        | `boolean contains(Object o)`                | Returns `true` if the set contains the specified element.                        |
+        | `boolean containsAll(Collection<?> c)`      | Returns `true` if the set contains all elements of the given collection.         |
+        | `boolean isEmpty()`                         | Returns `true` if the set has no elements.                                       |
+        | `Iterator<E> iterator()`                    | Returns an iterator over the elements in the set.                                |
+        | `boolean remove(Object o)`                  | Removes the specified element if it is present.                                  |
+        | `boolean removeAll(Collection<?> c)`        | Removes all elements in the given collection from the set.                       |
+        | `boolean retainAll(Collection<?> c)`        | Retains only the elements that are also in the specified collection.             |
+        | `int size()`                                | Returns the number of elements in the set.                                       |
+        | `Object[] toArray()`                        | Returns an array containing all elements of the set.                             |
+        | `<T> T[] toArray(T[] a)`                    | Returns an array containing all elements of the set in the specified array type. |
+        | `Spliterator<E> spliterator()`              | Creates a late-binding and fail-fast `Spliterator` over the elements.            |

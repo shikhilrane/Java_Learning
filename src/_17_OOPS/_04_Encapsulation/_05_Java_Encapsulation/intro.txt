@@ -1,0 +1,30 @@
+Java Encapsulation : 
+    1. Encapsulation is fundamental concept of OOPS that involves bundling data and methods into a single class, usually a class.
+    2. It prevents outer classes from accessing and changing fields and methods of class, it also helps for data hiding.
+    3. In Encapsulation we will learn about data hiding because as we know data security is even more important & Encapsulation let us do that.
+    4. It can be achived by using access modifiers.
+    5. same type of data stored into single file is called as encapsulation.
+    6. Like in code, we have attached private variables in single class
+
+Data Hiding : 
+    1. Data hiding is way of restricting the access of our data members by hiding implementation details.
+    2. Encapsulation also provides a way for data hiding.
+    3. we use access modifiers to achieve data hiding.
+    4. NOTE : people often use encapsulation for data hiding, but thats not entirely true. Encapsulation refers to bundling of related fields and methods together. This can use to achieve data hiding.
+    5. Encapsulation in itself is not data hiding. It means Encapsulation can do more things & not just data hiding. data hiding is part of encapsulation.
+    6. Data hiding can be done by using getter and setter method.
+
+Getters and Setters : 
+    1. Data hiding can be done by using getter and setter method.
+    2. setter means sets the value of private variable.
+    3. getter means access the value of private variable
+    4. set method : public void setVariablename(){          <= it will set value for private variable in another class object
+                        // code
+                    }
+    5. get method : public int getVariablename(){           <= it will get value from private variable in another class object
+                        // code
+                    }
+    6. we can even apply conditions like when to execute getter and setter methods.
+
+
+NOTE : code attached with this are to understand basics without packages and import, if want to know proper code then open these program (Macintosh > Uses > shikhilrane > Ideaprojects > Encapsulation) in intellij code editor

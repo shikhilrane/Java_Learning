@@ -1,0 +1,100 @@
+This 
+    1. In java, this keyword is used to refer a current object inside method or constructor
+
+    2. This keyword is used to remove ambiguity(confusion)
+
+    3. when name of parameters in constructor are same as our values in class 
+       class UnderstandingThis{
+            int a;
+            int b;
+
+            public UnderstandingThis(int a, int b){
+                a = a;
+                b = b;
+            }
+
+            void print(){
+                System.out.println(a+b);
+            }
+        }
+
+    4. in above case of constructor, compiler will gets confuse to decide which value is of parameter and which value is of variable so to remove this kind of confusion 'this' keyword is use, 'this' keyword refers that this value is going to place in object
+        class UnderstandingThis{
+            int a;
+            int b;
+
+            public UnderstandingThis(int a, int b){
+                this.a = a;
+                this.b = b;
+            }
+
+            void print(){
+                System.out.println(a+b);
+            }
+        }
+
+    5. in above example, this.a and this.b will be the arguments inside object of UnderstandingThis class.
+        public static void main(String[] args) {
+            UnderstandingThis obj1 = new UnderstandingThis(12,54); // this.a = 12 & this.b = 54
+            obj1.print();
+            UnderstandingThis obj2 = new UnderstandingThis(23,65); // this.a = 23 & this.b = 65
+            obj2.print();
+        }
+
+    6. so we use this keyword to remove any ambiguity in variable name.
+    7. we can also use this keyword to invoke methods of current class or to invoke a constructor of current class, inshort we can invoke method 
+       inside constructor or vice versa
+
+        (refer program of java file (ThisComplex.java))
+       public class ThisComplex {
+            public static void main(String[] args) {
+                Complex num1 = new Complex(2, 4);
+                num1.print();
+                Complex num2 = new Complex(4, 1);
+                num2.print();
+                Complex num3 = new Complex(3, 5);
+                num3.print();
+        
+                System.out.println("Adding first two complex numbers");
+                Complex res = num1.add(num2);
+                res.print();
+                System.out.println(num1);         // it will print reference of current object (reference of num1) (reference = unique identifier)
+        
+                System.out.println("Adding second and third complex numbers");
+                Complex result = num2.add(num2,num3);
+                result.print();
+                System.out.println(num2);         // it will print reference of current object (reference of num2) (reference = unique identifier)
+            }    
+        }
+
+        class Complex{
+                int a;                                          // made an int a
+                int b;                                          // made an int b
+
+                public Complex(int a, int b){
+                this.a=a; // this.a = int a and a = value we gonna put in object constructor
+                this.b=b; // this.b = int b and b = value we gonna put in object constructor
+        }
+
+        void print(){
+            System.out.println(a + " + " + b + "i");
+        }
+
+        here current object is num1
+        Complex add(Complex num2){
+            print();// it will call current object on which we have applied method 
+            this.print(); // it is as same as above, because we know this calls current object, here current object is num1
+            num2.print(); // here we have called num2's print method
+            System.out.println(this);   // it will print reference of current object(current object is num1)(reference = unique identifier)
+            return new Complex(a+num2.a, b+num2.b);
+        }
+
+        here current object is num2
+        Complex add(Complex num2, Complex num3){
+            print();// it will call current object on which we have applied method
+            this.print(); // it is as same as above, because we know this calls current object, here current object is num2
+            num3.print(); // here we have called num3's print method
+            System.out.println(this);   // it will print reference of current object (current object is num2)(reference = unique identifier)
+            return new Complex(num2.a+num3.a, num2.b+num3.b);
+        }
+        }

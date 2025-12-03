@@ -1,0 +1,15 @@
+To create a new thread in java, you can either 'extend the Thread Class' or 'implement the Runnable Interface'.
+
+Thread class :
+    1. Extend a class with Thread class
+    2. Implement a run method
+    3. Create an object of the class that implements Thread class in main method
+    4. Then start the thread execution by calling start() method
+
+Runnable Interface :
+    1. Implement a class with Runnable Interface.
+    2. Implement a run method
+    3. Create an object of the class that implements Runnable Interface in the main method.
+    4. Create an object of Thread class in the main method, and pass object of the class that implements Runnable Interface.
+    5. Then start the thread execution by calling start() method
+

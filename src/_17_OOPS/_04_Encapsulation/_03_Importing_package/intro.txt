@@ -1,0 +1,37 @@
+Importing a package : 
+    1. when we have to use package in some other package, to do that thing we need to import package.
+
+    2. java has an import statement that allows you to import an entire package or only certain classes and interfaces defined in package.
+        Example : 
+            import java.util.Date;   // it will import only Date class
+            import java.io.*;        // it will import everthing inside java.io packages (* is used to access all the classes inside package).
+
+    3. in java, the import statement is written directly after the package statement (if it exist) and before the class defination.
+       Example : 
+         package package.Name;       // package
+         import package.className;   // wrote import statement between package and class
+         class MyClass{              // class
+            // body             
+         }
+
+    04. Understanding whole packaging : 
+            16OOPS > 04Encapsulation > 04AccessModifiers > AccessModifiers.java
+            so in file it will be like,
+   
+            package 16OOPS.04Encapsulation.04AccessModifiers;
+   
+            public class AccessModifiers{
+      
+            }
+            this is how we can have packaging
+
+        Understanding importing package : 
+            package 16OOPS.04Encapsulation.04AccessModifiers;
+
+            import java.16OOPS.15BitManupulation.*;
+
+            public class AccessModifiers{
+      
+            }
+        we need to import things if classes are present in other package if classes are present in same package then there's no need to import
+        NOTE : we have program for packages, importing package and access modifiers in packagess folder of root

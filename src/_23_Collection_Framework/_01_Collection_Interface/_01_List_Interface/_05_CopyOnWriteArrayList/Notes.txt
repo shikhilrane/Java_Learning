@@ -1,0 +1,42 @@
+🔹 What is CopyOnWriteArrayList?
+    CopyOnWriteArrayList is a thread-safe version of ArrayList in Java.
+    It's part of the java.util.concurrent package.
+    It allows safe access from multiple threads without needing explicit synchronization.
+    It’s best suited when you read more often and write (modify) less.
+
+🔹 Why is it called “CopyOnWrite”?
+    Because when you modify (add, remove, update) the list, it creates a copy of the array underneath.
+    ✅ Read operations happen on the current array.
+    ❗ Write operations (like add/remove/set) create a new copy of the array.
+    This means:
+    No ConcurrentModificationException during iteration.
+    Safe to iterate even while other threads modify the list.
+    But copying on every write makes it slow if you write frequently.
+
+🔹 When should you use CopyOnWriteArrayList?
+    ✅ Use when:
+    You have multiple threads accessing a list.
+    Most operations are read-only.
+    You want to avoid ConcurrentModificationException.
+    ❌ Don’t use when:
+    There are frequent updates/writes — it becomes inefficient due to copying.
+
+🔹 Comparison with ArrayList
+    Feature	                                ArrayList	                    CopyOnWriteArrayList
+    Thread-safe?	                        ❌ No	                        ✅ Yes
+    Allows concurrent access?	            ❌ Risky	                    ✅ Safe
+    Fast for reading?	                    ✅ Yes	                        ✅ Yes
+    Fast for writing?	                    ✅ Yes	                        ❌ Slower (copies on write)
+    Fails during concurrent iteration?	    ✅ Yes (throws exception)	    ❌ No (safe iteration)
+
+🔹 Real-Life Analogy
+    Imagine a whiteboard in a classroom:
+    Students are reading from it (like reading a list).
+    When the teacher wants to make changes, instead of erasing the board, they bring a new board, make changes there, and then swap it in.
+    This avoids disturbing students currently reading the old board.
+    That’s how CopyOnWriteArrayList works — make a copy on write, leave readers undisturbed.
+
+
+    1. removeIf(Predicate) – Removes elements that match condition
+    2. replaceAll(UnaryOperator) – Replace each element using a function
+    3. sort(Comparator) – Sorts the list in natural order

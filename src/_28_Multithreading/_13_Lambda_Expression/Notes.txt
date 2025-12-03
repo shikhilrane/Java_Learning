@@ -1,0 +1,3 @@
+As we know, Runnable interface only has single abstract method in it (i.e. run() method) so it is Functional Interface (Functional Interface = interface with single abstract method only).
+
+And functional interface can be replaced by lambda expression.

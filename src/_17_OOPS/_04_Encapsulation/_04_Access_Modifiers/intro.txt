@@ -1,0 +1,24 @@
+Access Modifiers
+    1. Access Modifiers are used to define accessebility.
+
+    2. we can use Access Modifiers to control the visibility and accessibility of classes, methods, variables, constructors, interfaces, data 
+       members and setter methods.
+
+    3. There are 4 types of access modifiers in java , 1.Public 2.protected 3.private 4.default
+
+    4. access modifiers or access specifiers, these are keywords that tells which data is accessible to whom, means which data and function can
+       be use by part of code
+        Access modifiers        within class        within package      outside package by subclass only        outside package
+        1. Private                   Y                    N                           N                                N
+        2. Default                   Y                    Y                           N                                N
+        3. Protected                 Y                    Y                           Y                                N
+        4. Public                    Y                    Y                           Y                                Y
+    
+    5. refer pacakgess folder to understand this following analogy, 
+        1. Private = only accessible within class. (i.e. only within Teacher class, not even to person class which is present in same package)
+        2. Default (Package private) = It is available in package but not available outside package (only within packageone folder)
+        3. Protected  = it is accessible everywhere in same package and only outside package if that outside package class is child of current 
+           class (accessible to AnotherPack class, as we have made AnotherPack class child of Teacher class, also available to person class becasue by using protected we can give access anywhere within same package) (available to only subclass, doesn't care if that subclass is present in same package or different package)
+        4. Public = anywhere accessible.
+
+NOTE : code attached with this are to understand basics without packages and import, if want to know proper code then open these program (Macintosh > Uses > shikhilrane > Ideaprojects > Encapsulation) in intellij code editor

@@ -1,0 +1,15 @@
+Generic Methods -
+    1. Similar to generic class, we can also create generic method that can be use with any data type of data. Such method is
+       known as generic method
+    2. Example - public <T> void genericMethod (T data) {...}
+                 here, the tyoe parameter <T> is inserted after the modifier public and before the return type void.
+    3. We can call generics methods by placing the actual type <String> and <Integer> inside the bracket before the method name.
+        Example - demo.<String>genericMethod("Java Programming");
+                  demo.<Integer>genericMethod(25);
+    4. similar to generic class generic methods works, we dont have to state primitive data type for it, just state capital
+       letter/s at place of data type.
+    5. We can create generic static and generic non-static methods
+    6. If we create non-static method then we have to create object for it as we do generally
+    7. we can even pass class object in generic variable
+    8. we can extend generic variable to Number class as well so it will only let us execute numbers (this is called bounded
+       generics).

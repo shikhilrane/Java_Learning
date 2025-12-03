@@ -1,0 +1,10 @@
+throw keyword - 
+    1. The throw keyword is used to explicitly throw a single exception.
+    2. This is also called Custom Exception.
+    3. public static void divideByZero(){
+            throw new ArithmeticException("Trying to divide by 0");
+       }
+    4. we have to create class to throw exception and extend our class with Exception class
+    5. then create a constructor and pass String message as parameter
+    6. use super keyword to show message in our custom exception, super(message) it is a standard statement in Exception class
+    4. we can even throw inbuilt exception here

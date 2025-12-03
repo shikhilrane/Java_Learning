@@ -1,0 +1,44 @@
+Java Packages : (Package creation)
+    1. A Packages simply a container that groups related types (Java classes, Interfaces, enumerations(not imp) & annotations(not imp)).
+    
+    2. To define package in java, you use keyword 'package'.
+
+    3. Java uses file system directories,
+        Example : 
+        |____com                // folder com
+           |____test            // inner fodler of com
+              |____Test.java    // inner file of com => test
+
+        package com.test
+        class Test{
+             public static void main(String[]args){
+                System.out.println("Hello World!");
+             }
+        }
+
+    4. packages are not just folders these packages provide more than folders
+
+    5. packages are made automatically in the IDE.
+
+    6. It is used to group similar types of data
+
+    7. packages are not important while learning dsa, because while doing DSA, we work on single file.
+
+    8. whereas, in java development there are many folders so we have to manage many folders there with java packages
+
+    9. to make java package we need to write at starting of file : 
+       package folder1.folder2.folder3
+       (NOTE : we should not have spaces between name of folders to vreate java package)
+
+   10. this is how we can create package.
+
+   11. Understanding whole packaging : 
+        16OOPS > 04Encapsulation > 04AccessModifiers > AccessModifiers.java
+        so in file it will be like,
+   
+        package 16OOPS.04Encapsulation.04AccessModifiers;
+   
+        public class AccessModifiers{
+      
+        }
+        this is how we can have packaging

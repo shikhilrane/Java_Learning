@@ -1,0 +1,48 @@
+Class : 
+    1. Class is a collection of Properties and methods
+    2. It doesn't take any memory in memory as it doesn't exist physically. class is logical (i.e. heap or stack memory)
+    3. Class is available in .java and in .class , java file => source code of class and .class file => byte code of class
+    4. Class name can be started by capital letters
+    5. There is only 1 public class in Java, which is associated with our java main class file name
+    6. When function defined within class is called method & when function defined outside class is called function
+    7. there are 2 types of java classes : ---------|----------------|
+                                                    |                |
+                                                    |                |
+                                                pre-defined      user-defined
+                                                  class             class
+                                                1. Scanner        1. Dog
+                                                2. Console        2. A
+                                                3. System         3. Test
+                                                4. String         4. Demo
+                                                5. Math
+                            pre-defined : class where java developers already wrote code for many class
+                            user-defined : class which we made
+    8. Syntax of class : 
+        class ClassName {
+            // Properties
+            // methods
+        }
+    9. Classes doesn't get stored in heap and stack memory, metadata(i.e. properties and methods) of class stored in memory it & that memory is
+       meta space memory
+
+Object : 
+    1. Object is an instance of a class that executes the class
+    2. Once an object is created, it takes space in memory like other variable in memory
+    3. We have to write object in main method
+    4. Syntax of Object : 
+        class_name object_name = new class_name();
+        object_name.Property;
+        method();
+        OR
+        class_name object_name;
+        object_name = new class_name();
+        object_name.Property;
+        method();
+        here , class_name = it is name of the class by which we are making a Object e.g. Car
+               object_name = name of the object that we want to create e.g. BMW
+               new = it specifies space in memory for the respective object. It allocated dynamic memory
+               class_name() = constructor (Will see later)
+               . = instance of operator (dot operator)
+               so we can say that 'object_name' is instance of class 'class_name'
+    5. In Java, we strictly need .class file to define object of class and as well as to call method of that class we need .class file.
+    6. Objects got stored in heap memory

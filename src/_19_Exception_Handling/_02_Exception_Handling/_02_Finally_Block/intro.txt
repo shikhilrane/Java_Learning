@@ -1,0 +1,11 @@
+try catch-finally block
+    1. In java, We can also use the finally block after the try...catch block.
+    2. In this case, finally block will always executed whether there is an exception inside the try block or not.
+    3. It is good practice to use finally block to include important cleanup like closing file or connection.
+    4. We can use multiple catch block before finally block but we can use finally block only once.
+    5. finally block is similar like default in switch cases and else in conditional statemwnts
+
+    NOTE : There are some cases when a finally block does not execute : 
+            1. Use of System.exit() method
+            2. An exception occurs in the finally block
+            3. The death of thread

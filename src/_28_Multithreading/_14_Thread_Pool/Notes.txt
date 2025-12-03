@@ -1,0 +1,10 @@
+Thread Pool is set of pre-initialized thread.
+
+why? -
+    1. Resource management - It will be expensive to create and destroy resource again and again. So we will make pool of it and call them when we need them.  i.e. Creating and destroying threads repeatedly is expensive (CPU + memory). A thread pool reuses threads, saving system resources.
+
+    2. Increase in Respsonse time - As we will have threads already in pool to perform specific task so we don't have to use create them so there will be increase in response time. i.e. Threads are already created and waiting in the pool. So tasks are picked up and executed quickly — no creation delay.
+
+    3. Control Over Thread Count -  You can limit how many threads run concurrently. Prevents system overload due to too many active threads.
+
+    4. Easy Task Scheduling - You can submit tasks to a pool using ExecutorService. It handles the thread assignment and scheduling internally.

@@ -1,0 +1,106 @@
+Java Exceptions - 
+    1. An exceptions are an unexpected event that occurs during program execution
+
+    2. Java Exceptions affect the flow of program instructions which can cause the program to terminate abnormally.
+
+    3. An exception can occur for many reasons. Some of them are : 
+        * Invalid user input
+        * Device failure
+        * Loss of network connection
+        * Physical limitations (Out of disk memory)
+        * Code errors
+        * Opening an unavailable file.
+
+    4. There are two types of exceptions
+        a. Java Runtime Exceptions - (It happens when coder makes a mistake while writing code) (code won't run)
+            * Runtime Exceptions happens due to programming error. They are also known as unchecked exceptions.
+            * These Exceptions are not checked at compile time (because at compile time just linking of class and bytecode
+              generation happens). Some of the common runtime exceptions are :
+                1. Null pointer access(missing the initialisation of variable) - NullPointerException
+                    in linkedlist if we try to access a particular node and if that node is not present there then NullPointerException will happen there (we will see link list later)
+                2. Out-of-bounds array access - ArrayIndexOutOfBoundException
+                    when our array length is 5, and we are trying to access 6th 7th or any number of element thenArrayIndexOutOfBoundException will happen there
+                3. Dividing a number by 0 - ArithmeticException
+            * NullPointerException, ArrayIndexOutOfBoundException and ArithmeticException are the classes which are present in 
+              exception class (i.e. these classes are inheriting from exception class).
+        b. Java IOException Exceptions - (code won't compile , bytecode will not generate)
+            * IOException means Input Output Exceptions that deals with secondary memory (i.e. hard disk or ssd)
+            * An is also known as checked exceptions (because it gets checked at compile time) 
+            * They are checked by the compiler (javac) at the compile-time & programmer is prompted to handle these exceptions :
+                1. Trying to open a file that doesn't exist - FileNotFoundException
+                2. Trying to read past the end of file
+            * we don't deal with it
+
+    5. Exception is the class and all the exceptions (NullPointerException, ArrayIndexOutOfBoundException and ArithmeticException) are child classes of the Exception class
+
+        Serializable
+        └── Throwable
+            ├── Error
+            │   ├── AssertionError
+            │   ├── LinkageError
+            │   │   ├── ClassCircularityError
+            │   │   ├── ClassFormatError
+            │   │   ├── ExceptionInInitializerError
+            │   │   ├── IncompatibleClassChangeError
+            │   │   │   ├── AbstractMethodError
+            │   │   │   ├── IllegalAccessError
+            │   │   │   ├── InstantiationError
+            │   │   │   ├── NoSuchFieldError
+            │   │   │   ├── NoSuchMethodError
+            │   │   ├── UnsupportedClassVersionError
+            │   ├── OutOfMemoryError
+            │   ├── StackOverflowError
+            │   ├── UnknownError
+            │   └── VirtualMachineError
+            │       ├── InternalError
+            │       ├── OutOfMemoryError
+            │       ├── StackOverflowError
+            │       └── UnknownError
+            └── Exception
+                ├── RuntimeException
+                │   ├── ArithmeticException
+                │   ├── ArrayStoreException
+                │   ├── ClassCastException
+                │   ├── EnumConstantNotPresentException
+                │   ├── IllegalArgumentException
+                │   │   └── NumberFormatException
+                │   ├── IllegalMonitorStateException
+                │   ├── IllegalStateException
+                │   ├── IndexOutOfBoundsException
+                │   │   ├── ArrayIndexOutOfBoundsException
+                │   │   └── StringIndexOutOfBoundsException
+                │   ├── NegativeArraySizeException
+                │   ├── NullPointerException
+                │   ├── SecurityException
+                │   ├── TypeNotPresentException
+                │   └── UnsupportedOperationException
+                ├── IOException
+                │   ├── EOFException
+                │   ├── FileNotFoundException
+                │   ├── InterruptedIOException
+                │   ├── ObjectStreamException
+                │   │   ├── InvalidClassException
+                │   │   ├── InvalidObjectException
+                │   │   ├── NotActiveException
+                │   │   ├── NotSerializableException
+                │   │   ├── StreamCorruptedException
+                │   │   └── WriteAbortedException
+                │   └── UTFDataFormatException
+                ├── ClassNotFoundException
+                ├── CloneNotSupportedException
+                ├── InstantiationException
+                ├── InterruptedException
+                ├── NoSuchFieldException
+                ├── NoSuchMethodException
+                └── ReflectiveOperationException
+                    ├── ClassNotFoundException
+                    ├── IllegalAccessException
+                    ├── InstantiationException
+                    ├── InvocationTargetException
+                    ├── NoSuchFieldException
+                    └── NoSuchMethodException
+
+            Serializable -> Throwable -> Error -> LinkageError -> IncompatibleClassChangeError -> AbstractMethodError
+            Serializable -> Throwable -> Exception -> RuntimeException -> NullPointerException
+            Serializable -> Throwable -> Exception -> IOException -> ObjectStreamException -> NotSerializableException
+            Serializable -> Throwable -> Exception -> ReflectiveOperationException -> InvocationTargetException

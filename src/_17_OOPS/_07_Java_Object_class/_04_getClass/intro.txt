@@ -1,0 +1,2 @@
+getClass(); method - 
+    1. getClass(); method is use to check object belongs to which class.

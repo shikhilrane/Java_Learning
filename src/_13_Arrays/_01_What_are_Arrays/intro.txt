@@ -1,0 +1,4 @@
+Que :- what is array?
+ans :- arrays are one of the data types that store only the same type of data i.e. we can't store int, float, long, byte etc. in a single array.
+       all the values stored in array must be of the same type as it should be only int or byte or char or float etc.
+       It stores data in contiguous manner

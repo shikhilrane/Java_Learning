@@ -1,0 +1,15 @@
+Unfair Lock:
+    Lock does not follow order of waiting threads (not FIFO).
+    A thread that just became ready can jump ahead and get the lock first.
+    Some threads might get the lock many times.
+    Some threads might wait for a long time or never get the lock (called starvation).
+    Default mode of Java’s ReentrantLock.
+    Can lead to faster performance but less fairness.
+
+Fair Lock:
+    Lock follows strict first-come, first-served (FIFO) order.
+    Threads acquire the lock in the order they requested it.
+    No thread gets skipped or waits forever.
+    Prevents starvation.
+    Created by new ReentrantLock(true) in Java.
+    Might be slightly slower due to overhead of managing queue order.

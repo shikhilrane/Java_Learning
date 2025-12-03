@@ -1,0 +1,54 @@
+Interfaces
+    1. An Interfaces are fully abstract class. it includes a group of abstract methods (Methods without body).
+
+    2. we use interface keyword to create an interface in java.
+
+    3. Like abstract classes, we can't create object of interfaces.
+
+    4. To use an interface, other classes must implement it. We use implement keyword to implement interface in subclass
+
+    5. Interface is similar like Abstract, Abstract class is non-executable (i.e., can't make an object of this class), it is just conceptual class, we just define properties and methods in it and make subclasses of abstract class. similar thing is for interface
+
+    6. as we know a single class can't extend multiple classes (means we can't make multiple parents of single abstract class)
+
+    7. But by using interface we can do that, instead of extend we have to use implement keyword to make subclass
+
+    8. we can make as many as parent class of single subclass which was not possible in abstract
+
+    9. Only use of interface of abstract is, we can implement methods of as many as parents.
+
+   10. Interface is just like Abstraction but Only difference is, we can implement methods of as many as parents.
+
+   11. multiple inheritance is possible by using Interface.
+
+   12. all the variables in interface are 'public static final' by nature, so we cant update them in main method.
+
+   13. all the methods in interface are 'public' to give access to its child class.
+
+   14. default method in interface are only execute for particular object of the interface, it does make change only for 
+       particular object of that interface not to every interface
+
+
+Advantages of Interface
+    1. Similar to abstract classes, interfaces helps us to achieve abstraction in java.
+    2. Interfaces are also used to multiple inheritance in java. (single subclass can have multiple parent class)
+    3. Note : All the methods in interface are implicitly 'public' and all the variables are implicitly 'public static final'
+
+
+Example 
+       public class Interface{
+            public static void main(String[]args){
+                ClassName c1 = new ClassName();
+            }
+       }
+       interface Line{
+            ...methods and properties
+       }
+       interface Polygon{
+            ...methods and properties
+       }
+       class ClassName implements Line, Polygon{
+            ... access Line and Polygon's methods and properties
+       }
+
+NOTE : code attached with this are to understand basics without packages and import, if want to know proper code then open these program (Macintosh > Uses > shikhilrane > Ideaprojects > Abstraction) in intellij code editor

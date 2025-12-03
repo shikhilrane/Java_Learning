@@ -1,0 +1,32 @@
+Stack -
+    1. Stack is represented in verticle manner.
+
+    2. It works on LIFO principle (i.e. Last In First Out)
+
+    3. Stack extends vector class so it is thread safe as well.
+
+    4.
+                        |                   |
+                        |        4          |
+                        |-------------------|
+                        |                   |
+                        |        3          |
+                        |-------------------|
+                        |                   |
+                        |        2          |
+                        |-------------------|
+                        |                   |
+                        |        1          |
+                        ---------------------
+        Above one is Stack, in this 1 is added first then 2 then 3 then 4 but removing 4 will remove first then 3 then 2 then 1
+        This behaviour is known as LIFO which happens in Stack
+
+    It includes methods of Collection, Lists and Vector as well :
+        1. push(E item) – Adds item to top of stack
+        2. peek() – Returns top element without removing it
+        3. pop() – Removes and returns the top element
+        4. search(Object o) – Returns position (1-based) from top of stack
+        5. empty() – Returns true if stack is empty
+        6. size() – Returns total number of elements
+        7. contains(Object o) – Checks if element is present
+        8. Iterate Stack (LIFO Order)

@@ -1,0 +1,7 @@
+throws - 
+    1. We use throws keyword in the method declaration to declare the type of exceptions that might occur within it.
+    2. public static void fileName() throws IOException{
+            // code that may produce IOException
+            File newFile = new File("test.txt");
+            FileInputStream stream = new FileInputStream(newFile);
+       }

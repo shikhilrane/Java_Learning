@@ -1,0 +1,2 @@
+PriorityQueue :
+    It is use to perform operation on the element according to priority set for them.

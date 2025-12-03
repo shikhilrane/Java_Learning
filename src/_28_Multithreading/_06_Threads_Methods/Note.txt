@@ -1,0 +1,9 @@
+1. run() - Defines code to execute in the thread. Runs on main thread if called directly.
+2. start() - Used to start a new thread. It internally calls run() but in a new thread of execution (not the main thread).
+3. sleep() - Used to pause the current thread for a specified time (in milliseconds). This allows other threads to execute during that time.
+4. join() - Used to wait for a thread to finish before allowing other threads (or the main thread) to continue.
+5. setPriority() - Used to suggest the thread’s priority (from Thread.MIN_PRIORITY [1] to Thread.MAX_PRIORITY [10]). It's just a hint — the CPU/OS may ignore it.
+6. getPriority() - Returns the current priority value of the thread, which was either set manually or defaults to Thread.NORM_PRIORITY (5).
+7. Interrupt() - Used to interrupt a thread that is sleeping, waiting, or blocked. If the thread is in sleep() or wait(), it throws an InterruptedException.
+8. yield() - Used to pause the currently executing thread to give a chance for other threads of equal priority to run. It doesn't pause for a specific time like sleep(). It's a hint to the scheduler and may be ignored.
+9. setDaemon() - Marks a thread as a daemon thread, which means it runs in the background and does not prevent JVM shutdown. Must be called before start(). When only daemon threads are left, JVM will exit.

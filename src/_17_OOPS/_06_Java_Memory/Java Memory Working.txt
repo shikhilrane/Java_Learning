@@ -1,0 +1,43 @@
+Java Memory -
+                        * There are two types of Java Memory, A. Stack Memory and B. Heap Memory *
+
+
+A. Stack Memory :-
+    1. In which, variables, local variables and object references gets stored. Also it stores primitive type of data like 
+       int i = 5, float, double, byte
+    2. with respect to image,In stack Memory, there is seperate stack for main memory and when we create another function, 
+       other stack is created for that function (foo()) in the stack Memory
+    from code and image - 
+    3. from line 2, int i = 1 which is reference & it is getting stored in stack memory. 1 is stored because is it primitive dt.
+    4. from line 3, created Object obj, when we create Object of class then its reference gets stored in stack memory. because 
+       reference will be valid till the memory is valid. but object we created new Object(); will be created in heap memory.
+    5. from line 4, created Undertaningmemory mem, when we create Object of class then its reference gets stored in stack 
+       memory. because reference will be valid till the memory is valid. but object we created new Undertaningmemory(); will be created in heap memory.
+    6. from line 5, whenever we call function mem.foo(obj) ,it started referencing 'Object', immediately substack is created    
+       under the main stack, number of functions = number of boxes in stack memory, when function completed its work then its box from stack memory gets deleted automatically.
+    7. from line 6, when we pass Object param in it function, then that param will be treated as local variable. But it is 
+       referencing object we passed at line 5 in heap memory. It means object can be referred by multiple variables or reference
+       so object can be referred by two variables which is stored in heap memory
+    8. from line 7, str gets stored in stack memory
+    9. whenever a method is invoked a new block is created in stack memory to hold local primitive value and reference to other 
+       objects in the methods as soon as the method ends, the block in stack becomes unused and available for next method.
+   10. stack memory size is very less compared to heap memory.
+   11. stack memory is thread safe
+
+B. Heap Memory  :- 
+   1. In heap Memory, In which data is stored in unorganized manner.
+   2. In which, actual values of variable and actual object gets stored.
+   3. When we want to delete data from heap memory, then garbage collector comes into picture and checks if a particular object is
+      not referred by any variable or reference, then it delete from the memory automatically in java whereas we have to do this manually in C++ language, Garbage collector only works in heap memory.
+   4. from line 3, object we created new 'Object'(); will be created in heap memory.
+   5. from line 4, object we created new Undertaningmemory(); will be created in heap memory. and mem will start referencing
+      Undertaningmemory in heap memory
+   6. from line 6, param will start referencing 'Object' in heap memory, so obj and param will refer to same object in heap.
+   7. from line 7, str will refer param.toString();, which is actually string, toString method is use to convert object into 
+      string ,(we will see these methods in Object class)
+   8. Any object created in the heap space has global access and can be referenced from anywhere of the application.
+   9. it means if we are passing reference to any particular object using method then it means many references can object can 
+      have and can change value of that object.(imp imp imp imp imp imp to understand)
+  10. stack memory is thread safe
+
+   String Pool Area - it is a area where all strings gets stored, strings are heavily used in java.

@@ -1,0 +1,8 @@
+In a multithreading environment, Threads often communicate and coordinate with each other to accomplish a task efficiently and in correct order.
+Without proper communication mechanisms, thread might end up in inefficient busy-waiting states(constantly checking a condition), leading to wastage of CPU resources and potential deadlocks.
+
+Methods for inter-thread communication
+    1. wait();      -   It says to current thread that, release the lock and wait until other thread uses notify() or notifyAll().
+    2. notify();    -   wakes up the single thread that is waiting.
+    3. notifyAll(); -   wakes up all the threads, that are waiting.
+All these methods must be called on an object the thread currently holds the lock on (i.e., inside a synchronized context).

@@ -1,0 +1,3 @@
+this vs super
+    1. we have to write super and this at starting of method and constructor
+    2. but in constructor we can only use either super or this because both of them need to be written at starting of method & its not possible.
