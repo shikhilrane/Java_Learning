@@ -5,6 +5,12 @@ ArrayList Class -
     3. ArrayList allows us to create resizable arrays.
     4. Unlike arrays, ArrayList can automatically adjust their size when we want to add or remove elements from it.
     5. ArrayList is also known as dynamic arrays.
+    6. ArrayList can store different types of data types
+    7. ArrayList can store duplicate values
+    8. ArrayList can store multiple null values
+    9. ArrayList follows the insertion order
+    10. ArrayList doesn't follow sorting order because it follows insertion order
+    11. ArrayList are non-synchronised
 
 Internal working of ArrayList -
     1. Initially, Array has certain capacity and as elements are added, it fills up.

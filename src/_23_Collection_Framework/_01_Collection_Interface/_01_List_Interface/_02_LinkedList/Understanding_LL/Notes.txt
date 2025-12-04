@@ -1,5 +1,5 @@
 LinkedList -
-    1. As we know Array stores data in a contigious manner but in LinkedList data doesn't get not stored in a contiguous manner.
+    1. As we know Array stores data in a contiguous manner but in LinkedList data doesn't get not stored in a contiguous manner.
     2. In LinkedList, every element is called as node
     3. And every node has 'data' and 'pointer or reference'.
     4. pointer means address of next node
@@ -56,9 +56,24 @@ LinkedList -
 
    10. Performance Considerations : LL has different performance characteristic compared to ArrayList
         1. Insertion & deletion : Insertion and deletion is easier in LL compared to ArrayList
-        2. random Acces : LL has slower random access compared to ArrayList becasue it has to travel the list from beginning to
+        2. random Access : LL has slower random access compared to ArrayList because it has to travel the list from beginning to
            reach the desired index
         3. Memory overhead : LL requires more Memory than ArrayList because each node in LL requires extra Memory to store
            reference to the next and previous nodes.
 
    11. Java uses Doubly LinkedList
+
+   12. Advantages -
+        1. In LL, Insertion and deletion operations are efficient
+        2. We can traverse the LL in forward and backward direction
+
+   13. Disadvantages -
+        1. Overhead of storing node addresses.
+
+   14. Properties -
+        1. LL is index based DS
+        2. LL can store heterogeneous elements
+        3. LL allows to store duplicate elements
+        4. LL can store multiple null values
+        5. LL follows insertion order but not follows the sorting order
+        6. LL are non-synchronised collection
