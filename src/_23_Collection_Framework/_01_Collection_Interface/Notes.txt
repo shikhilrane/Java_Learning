@@ -1,3 +1,11 @@
+Understanding Collection Interface -
+    1. Collection Interface is present in java.util package introduce in 1.2 version
+    2. Syntax - public interface Collection<E> extends Iterables<E> {
+                    // Code
+                }
+    3. Collection Interface has some methods that can be implemented by classes
+
+
 The collection Interface includes various methods that can be used to preform different operations on objects.
 
 Key features of List Interface: Order Preservation, Index-based access, allows duplicates.
@@ -14,3 +22,25 @@ Methods of Collection Interface :
     9. boolean retainAll(Collection<> c) : Removes all the elements from the collection that are not present in the specified collection.
     10. void clear() : Removes all elements from the collection.
     11. Object[] toArray() : Returns an array containing all the elements in the collection.
+
+
+List and Set ->
+    1. List -
+        1. List is an index based data structure
+        2. List can store duplicate objects
+        3. List can store multiple numbers of null values
+        4. List follows the insertion order because it adds elements by index
+        5. We can iterate list element by iterator(we can get element in forward direction) and ListIterator(we can get element in forward and backward direction)
+
+    2. Set -
+        1. Set isn't an index based data structure, It stores the data according to hashcode values (unique integer values)
+        2. Set doesn't allow us to store duplicate objects
+        3. Set can store only one null value
+        4. Set doesn't follows the insertion order because it adds elements by using hashcode
+        5. We can iterate the set elements by iterator
+
+Cursors ->
+    there are total 3 cursors Iterator, ListIterator and Enumeration
+    1. Iterator can be used with all like List, Set, and Queue. It can only iterate forward
+    2. ListIterator can be only used with classes of List. It can iterate forward as well as backward
+    3. Enumeration can be used with Legacy classes like Vector and stack. It can only iterate forward and can only use for read operations (hasMoreElements() and nextElement())

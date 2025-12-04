@@ -116,10 +116,17 @@ public class LearnArrayList {
         System.out.println("Last index of X: " + list.lastIndexOf("X"));
 
         // 8. listIterator() – Returns ListIterator for forward/backward traversal
-        System.out.print("ListIterator: ");
         ListIterator<String> li = list.listIterator();
+
+        System.out.print("ListIterator next: ");
         while (li.hasNext()) {
             System.out.print(li.next() + " ");
+        }
+        System.out.println();
+
+        System.out.print("ListIterator previous: ");
+        while (li.hasPrevious()) {
+            System.out.print(li.previous() + " ");
         }
         System.out.println();
 

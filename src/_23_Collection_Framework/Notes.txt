@@ -1,11 +1,51 @@
+Data Structure and Algorithm - Storing a data in the efficient way in the context of space and time
+
+                                                        Types of Data Structure
+                                                                   |
+                                                                   V
+               ---------------------------------------------------------------------------------------------------------
+               |                                                                                                        |
+               V                                                                                                        V
+          Primitive DS                                                                                          Non-Primitive DS
+   (byte, short, char, boolean                                                                                          |
+   int, long, float, double)                                                                                            V
+                                                                                          ----------------------------------------------------------------
+                                                                                          |                                                              |
+                                                                                          V                                                              V
+                                                                                     Linear DS                                                     Non-Linear DS
+                                                                           (String, Array, List, Queue, Set)                                       (Tree, Graph)
+
+    In Primitive DS - we can only save single values
+    In Non-primitive DS - we can save multiple values
+
+    In DSA, We use Non-Primitive DS to make our application faster
+
+    Collection framework is a part of Non-Primitive DS (List, Queue, Set, Map)
+
+    We have arrays to store multiple elements ,so what is need of collection framework then
+    Array -
+        1. Arrays can store primitive(int, char, float) and non-primitive DS(objects)
+        2. Arrays can store only same type of data
+        3. Arrays are fixed, we can't increase or decrease the size of an array at runtime
+        4. In Arrays, we have to develop own techniques for searching or sorting , etc
+    Collection Framework -
+        1. Collection Framework can store non-primitive DS(objects) (means everytime we add even an integer it will add as an object in it)
+        2. CF can store different or heterogeneous type of data
+        3. CF are not fixed, we can increase or decrease the size of an array at runtime
+        4. CF provides an API, which provides interface, classes and method
+
 Collection FrameWork and Lists :
-    Implementation of multiple types of Data Structure is given by Java. So we dont have to create them manually.
+    Implementation of multiple types of Data Structure is given by Java. So we don't have to create them manually.
 
     Q.What is collection?
     ans. collection is a simply object that represent a group of objects
 
     Q.What is collection Framework?
     ans. In Collection Framework there are interfaces and classes to manage collections
+
+    Collection Framework has 2 main parts -
+        1. java.util.Collection (We can directly store data)
+        2. java.util.Map (We can store data using key,value)
 
     We can apply loops on collection interface as it implements Iterable interface
 
@@ -49,6 +89,21 @@ Java Collection Framework :
                            IdentityHashMap                             NavigableMap             ConcurrentSkipListMap
 
 
+
+
+
+
+
+
+            Understanding of Collection Object and Object -
+                ArrayList al = new ArrayList();
+                al.add(10);
+                al.add("SKR");
+                al.add('a');
+
+                Here, al = Collection Object and 10, "SKR", 'a' = Object
+
+
     Description of each Interface and class :
 
         Iterable: Base interface that allows iteration over a collection’s elements.
@@ -77,7 +132,7 @@ Java Collection Framework :
 
                         ✔️ Efficient insertions and deletions.
 
-                    3. Vector (Legacy)
+                    3. Vector (Legacy Class - CF was not present in early versions of java. Instead, it defined only several classes and one interface to store objects. But when CF came, these old classes were re-engineered or modified to support CF. These old classes are known are legacy classes)
                         - Implements: List, RandomAccess, Cloneable, Serializable
                         - Extends: AbstractList
 
