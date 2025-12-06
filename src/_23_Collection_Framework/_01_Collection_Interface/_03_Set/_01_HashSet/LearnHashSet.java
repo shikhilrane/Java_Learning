@@ -76,5 +76,5 @@ public class LearnHashSet {
 Properties of properties
     1. Hashset are not index based DS, they store values according to their hashcode (unique integer value) values
     2. Hashset does not store duplicate element neither multiple null values
-    3. Hashset doesn't allow insertion order neither sorting order because it store values
+    3. Hashset doesn't allow insertion order neither sorting order because it store values, added
 */
