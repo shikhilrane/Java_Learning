@@ -1,6 +1,7 @@
 package _23_Collection_Framework._01_Collection_Interface._03_Set._01_HashSet;
 
 // HashSet executes number in random order
+// Hashset is backed up by map (means when we create hashtable, map is created in background)
 // It generates hashcode for every single element in the set and store it in hashtable. And as we know HashCode must not be equal for two elements. So we use it in Set
 
 import java.util.*;
@@ -70,3 +71,10 @@ public class LearnHashSet {
         System.out.println("After clear(), is set empty? " + set.isEmpty());
     }
 }
+
+/*
+Properties of properties
+    1. Hashset are not index based DS, they store values according to their hashcode (unique integer value) values
+    2. Hashset does not store duplicate element neither multiple null values
+    3. Hashset doesn't allow insertion order neither sorting order because it store values
+*/

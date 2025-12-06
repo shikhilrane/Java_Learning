@@ -1,5 +1,5 @@
 Vector -
-    1. Vector is present in Java since Java 1.
+    1. Vector is present in Java since Java 1 and it is also called as legacy class.
     2. Vector is synchronised means threadsafe, unlike ArrayList and LinkedList (Synchronised mean in multithreaded environment, Vector is synchronized, so it prevents concurrent access to its methods by multiple threads. However, ArrayList and LinkedList are not synchronized, which means multiple threads can access the same method at the same time, potentially causing inconsistent data or unexpected behavior.)
     3. It is synchronised, so there is overhead of Vectors as well like, processing time is higher and took more extra Memory
     4. Due to this overhead, it is generally recommended to use ArrayList in single-threaded scenarios And Vectors in MultiThreaded environment.(Vector has synchronization overhead, meaning it uses extra time and memory to ensure thread safety in a multithreaded environment.)
@@ -15,6 +15,7 @@ Vector -
                      capacity increament if provided).
         • Random Access : Similar to arrays and ArrayList, Vector allows access to elements, making it efficient for accessing
                           elements using an index.
+    8. Vector follows the insertion order but does not allow the sorting order.
 
     It includes methods of Collection and Lists as well :
     Methods of Vector :

@@ -1,5 +1,5 @@
 Stack -
-    1. Stack is represented in verticle manner.
+    1. Stack is represented in vertical manner.
 
     2. It works on LIFO principle (i.e. Last In First Out)
 
