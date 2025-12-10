@@ -151,5 +151,121 @@ public class LearnArrayList {
 
         // Final output
         System.out.println("Final list: " + list);
+
+        //------------------------ Deep understanding of ArrayList ------------------------
+        ArrayList<Integer> al = new ArrayList<>();
+        // adding
+        al.add(1);
+        al.add(5);
+        al.add(80);
+
+        // getting by index
+        System.out.println(al.get(2));
+        // number of objects in arraylist
+        System.out.println(al.size());
+
+        // Iterating on arraylist using for loop
+        for (int i = 0; i<al.size(); i++){
+            System.out.println(al.get(i));
+        }
+
+        // Iterating on arraylist using forEach loop
+        for(int x : al){
+            System.out.println(x);
+        }
+
+        // Check if given object is present or not
+        System.out.println(al.contains(5));
+
+        // Removing object from particular index
+        System.out.println(al.remove(1));
+
+        // Adding an object to specified index
+        al.add(1, 50);
+        for(int x : al){
+            System.out.println(x);
+        }
+
+        // Setting an object on particular index
+        al.set(2, 90);
+        for(int x : al){
+            System.out.println(x);
+        }
+
+        // Internal working of ArrayList (Look for notes of ArrayList for better understanding)
+        ArrayList<Integer> alSize1 = new ArrayList<>();     // Initial size if not defined by us then it will be 10 by default
+        ArrayList<Integer> alSize2 = new ArrayList<>(100);  // This is how we can define capacity of ArrayList, capacity = 100 but size = 0
+        ArrayList<Integer> alSize3 = new ArrayList<>(50);
+        for (int i = 0; i < 15; i++) {
+            alSize3.add(i);
+        }
+        System.out.println(alSize3);
+        alSize3.trimToSize();   // this will make capacity of alSize3 to 15
+
+        // Type of creating ArrayList
+        // 1. By using ArrayList<>(); (can add object in middle of the two existing objects using add(index, object) and can set value of existing object using set(index, object))
+        List<Object> creatingAl1 = new ArrayList<>();
+        // 2. By using Arrays.asList(); (can't add object in middle of the two existing objects but can set value of existing object using set(index, object) )
+        List<Object> creatingAl2 = Arrays.asList(1,2,3);
+        // 3. By using List.of(); (Neither can add object in middle of the two existing objects nor can set value of existing object )
+        List<Object> creatingAl3 = List.of(4,5,6);
+
+        // Adding in ArrayList
+        // adding collection
+        ArrayList<Integer> addingInAl = new ArrayList<>(al);
+        addingInAl.add(2);
+        addingInAl.add(45);
+        addingInAl.add(85);
+        System.out.println(addingInAl);
+        // adding List.of() in new ArrayList<>()
+        List<Integer> listof = List.of(11, 12, 13);
+        addingInAl.addAll(listof);      // listof.addAll(addingInAl); (we can't do this because we know List.of() is unmodifiable)
+        System.out.println(addingInAl);
+
+        // Removing from ArrayList
+        // String
+        ArrayList<String> fruits = new ArrayList<>();
+        fruits.add("apple");
+        fruits.add("banana");
+        fruits.add("pineapple");
+        fruits.remove("apple"); // it will remove object by specifying itself
+        System.out.println(fruits);
+        // Integer
+        ArrayList<Integer> removingFromAl = new ArrayList<>();
+        removingFromAl.add(11);
+        removingFromAl.add(22);
+        removingFromAl.add(33);
+        removingFromAl.add(44);
+        // removingFromAl.remove(11);  // This remove element from given index
+        removingFromAl.remove(Integer.valueOf(11)); //so will use wrapper class to remove value directly
+
+        // Converting to Array (List to Array)
+        ArrayList<Integer> convertingLtoA = new ArrayList<>();
+        convertingLtoA.add(1);
+        convertingLtoA.add(2);
+        convertingLtoA.add(3);
+        Object[] ar = convertingLtoA.toArray();     // This will create array of objects
+        Integer[] intArr = convertingLtoA.toArray(new Integer[0]); // This will create array of Integers, (because our array object is of Integer), (new array of size 0)
+
+        // Sorting of an array
+        // By using Collection (Method of Collection)
+        ArrayList<Integer> sortingAlCollection = new ArrayList<>();
+        sortingAlCollection.add(4);
+        sortingAlCollection.add(3);
+        sortingAlCollection.add(1);
+        sortingAlCollection.add(5);
+        sortingAlCollection.add(2);
+        Collections.sort(sortingAlCollection);
+        System.out.println(sortingAlCollection);
+        // By using List (Method of List)
+        ArrayList<Integer> sortingAlList = new ArrayList<>();
+        sortingAlList.add(4);
+        sortingAlList.add(3);
+        sortingAlList.add(1);
+        sortingAlList.add(5);
+        sortingAlList.add(2);
+        sortingAlList.sort(null);
+        System.out.println(sortingAlList);  // It is using Comparator (we will learn comparator in further chapter)
+
     }
 }

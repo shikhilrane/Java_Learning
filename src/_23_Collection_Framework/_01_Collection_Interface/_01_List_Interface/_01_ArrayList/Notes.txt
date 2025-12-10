@@ -19,7 +19,7 @@ Internal working of ArrayList -
     4. However, frequent resizing operations can lead to performance overhead, so ArrayList increases its capacity by certain
        factor to minimize frequency of resizing.
 
-       when we initailly create an ArrayList, 10 size array will be created
+       when we initially create an ArrayList, 10 size array will be created
        List<Integer> list = new ArrayList<>();
        list.add(2);
        list.add(3);
@@ -50,7 +50,7 @@ Internal working of ArrayList -
          ______________________________________________________________________
         | 2 | 3 | 8 | 4 | 6 | 9 | 5 | 6 | 1 | 7 | 13 | 16 | 18 | 15 | 20 | 11 |
         -----------------------------------------------------------------------
-        So this will be our new array, it happens in background, we dont have to take care of it
+        So this will be our new array, it happens in background, we don't have to take care of it
 
 
         Stating capacity of ArrayList - List<Integer> list = new ArrayList<>(100);
