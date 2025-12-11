@@ -143,5 +143,131 @@ public class LearnLinkedList {
 
         // Final output
         System.out.println("Final list: " + list);
+
+        //------------------------ Deep understanding of LinkedList ------------------------
+        LinkedList<Integer> ll = new LinkedList<>();
+        // adding
+        ll.add(1);
+        ll.add(5);
+        ll.add(80);
+
+        // getting by index
+        System.out.println(ll.get(2));
+        // number of objects in LinkedList
+        System.out.println(ll.size());
+
+        // Iterating on LinkedList using for loop
+        for (int i = 0; i<ll.size(); i++){
+            System.out.println(ll.get(i));
+        }
+
+        // Iterating on LinkedList using forEach loop
+        for(int x : ll){
+            System.out.println(x);
+        }
+
+        // Check if given object is present or not
+        System.out.println(ll.contains(5));
+
+        // Removing object from particular index
+        System.out.println(ll.remove(1));
+
+        // Adding an object to specified index
+        ll.add(1, 50);
+        for(int x : ll){
+            System.out.println(x);
+        }
+
+        // Setting an object on particular index
+        ll.set(2, 90);
+        for(int x : ll){
+            System.out.println(x);
+        }
+
+        // Internal working of ArrayList (Look for notes of ArrayList for better understanding)
+        ArrayList<Integer> llSize1 = new ArrayList<>();     // Initial size if not defined by us then it will be 10 by default
+        ArrayList<Integer> llSize2 = new ArrayList<>(100);  // This is how we can define capacity of LinkedList, capacity = 100 but size = 0
+        ArrayList<Integer> llSize3 = new ArrayList<>(50);
+        for (int i = 0; i < 15; i++) {
+            llSize3.add(i);
+        }
+        System.out.println(llSize3);
+        llSize3.trimToSize();   // this will make capacity of llSize3 to 15
+
+        // Type of creating LinkedList<>()
+        // 1. By using LinkedList<>()<>(); (can add object in middle of the two existing objects using add(index, object) and can set value of existing object using set(index, object))
+        List<Object> creatingll1 = new LinkedList<>();
+        creatingll1.add(5);
+        creatingll1.add(25);
+        creatingll1.add(35);
+        System.out.println(creatingll1);
+        creatingll1.add(1,15);  // adding
+        System.out.println(creatingll1);
+        creatingll1.set(1,20);  // setting
+        System.out.println(creatingll1);
+        // 2. By using Arrays.asList(); (can't add object in middle of the two existing objects but can set value of existing object using set(index, object) )
+        List<Object> creatingll2 = Arrays.asList(1,2,3);
+        creatingll2.set(1,20);  // setting
+        System.out.println(creatingll2);
+        // 3. By using List.of(); (Neither can add object in middle of the two existing objects nor can set value of existing object )
+        List<Object> creatingll3 = List.of(4,5,6);
+
+        // Adding in LinkedList
+        // adding collection
+        LinkedList<Integer> addingInll = new LinkedList<>(ll);
+        addingInll.add(2);
+        addingInll.add(45);
+        addingInll.add(85);
+        System.out.println(addingInll);
+        // adding List.of() in new ArrayList<>()
+        List<Integer> listof = List.of(11, 12, 13);
+        addingInll.addAll(listof);      // listof.addAll(addingInll); (we can't do this because we know List.of() is unmodifiable)
+        System.out.println(addingInll);
+
+        // Removing from LinkedList
+        // String
+        LinkedList<String> fruits = new LinkedList<>();
+        fruits.add("apple");
+        fruits.add("banana");
+        fruits.add("pineapple");
+        fruits.remove("apple"); // it will remove object by specifying itself
+        System.out.println(fruits);
+        // Integer
+        LinkedList<Integer> removingFromll = new LinkedList<>();
+        removingFromll.add(11);
+        removingFromll.add(22);
+        removingFromll.add(33);
+        removingFromll.add(44);
+        // removingFromll.remove(11);  // This remove element from given index
+        removingFromll.remove(Integer.valueOf(11)); //so will use wrapper class to remove value directly
+        System.out.println(removingFromll);
+
+        // Converting to Array (List to Array)
+        LinkedList<Integer> convertingLtoA = new LinkedList<>();
+        convertingLtoA.add(1);
+        convertingLtoA.add(2);
+        convertingLtoA.add(3);
+        Object[] ar = convertingLtoA.toArray();     // This will create array of objects
+        Integer[] intArr = convertingLtoA.toArray(new Integer[0]); // This will create array of Integers, (because our array object is of Integer), (new array of size 0)
+
+        // Sorting of an array
+        // By using Collection (Method of Collection)
+        LinkedList<Integer> sortingLlCollection = new LinkedList<>();
+        sortingLlCollection.add(4);
+        sortingLlCollection.add(3);
+        sortingLlCollection.add(1);
+        sortingLlCollection.add(5);
+        sortingLlCollection.add(2);
+        Collections.sort(sortingLlCollection);
+        System.out.println(sortingLlCollection);
+        // By using List (Method of List)
+        LinkedList<Integer> sortingAlList = new LinkedList<>();
+        sortingAlList.add(4);
+        sortingAlList.add(3);
+        sortingAlList.add(1);
+        sortingAlList.add(5);
+        sortingAlList.add(2);
+        sortingAlList.sort(null);
+        System.out.println(sortingAlList);  // It is using Comparator (we will learn comparator in further chapter)
     }
 }

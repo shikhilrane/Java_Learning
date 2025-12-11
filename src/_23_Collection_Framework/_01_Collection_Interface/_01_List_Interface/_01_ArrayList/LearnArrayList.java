@@ -205,8 +205,18 @@ public class LearnArrayList {
         // Type of creating ArrayList
         // 1. By using ArrayList<>(); (can add object in middle of the two existing objects using add(index, object) and can set value of existing object using set(index, object))
         List<Object> creatingAl1 = new ArrayList<>();
+        creatingAl1.add(5);
+        creatingAl1.add(25);
+        creatingAl1.add(35);
+        System.out.println(creatingAl1);
+        creatingAl1.add(1,15);  // adding
+        System.out.println(creatingAl1);
+        creatingAl1.set(1,20);  // setting
+        System.out.println(creatingAl1);
         // 2. By using Arrays.asList(); (can't add object in middle of the two existing objects but can set value of existing object using set(index, object) )
         List<Object> creatingAl2 = Arrays.asList(1,2,3);
+        creatingAl2.set(1,20);  // setting
+        System.out.println(creatingAl2);
         // 3. By using List.of(); (Neither can add object in middle of the two existing objects nor can set value of existing object )
         List<Object> creatingAl3 = List.of(4,5,6);
 
@@ -238,6 +248,7 @@ public class LearnArrayList {
         removingFromAl.add(44);
         // removingFromAl.remove(11);  // This remove element from given index
         removingFromAl.remove(Integer.valueOf(11)); //so will use wrapper class to remove value directly
+        System.out.println(removingFromAl);
 
         // Converting to Array (List to Array)
         ArrayList<Integer> convertingLtoA = new ArrayList<>();
