@@ -183,5 +183,131 @@ public class LearnVector {
 
         // Final output
         System.out.println("Final vector: " + list);
+
+        //------------------------ Deep understanding of ArrayList ------------------------
+        Vector<Integer> vect = new Vector<>();
+        // adding
+        vect.add(1);
+        vect.add(5);
+        vect.add(80);
+
+        // getting by index
+        System.out.println(vect.get(2));
+        // number of objects in arraylist
+        System.out.println(vect.size());
+
+        // Iterating on arraylist using for loop
+        for (int i = 0; i<vect.size(); i++){
+            System.out.println(vect.get(i));
+        }
+
+        // Iterating on arraylist using forEach loop
+        for(int x : vect){
+            System.out.println(x);
+        }
+
+        // Check if given object is present or not
+        System.out.println(vect.contains(5));
+
+        // Removing object from particular index
+        System.out.println(vect.remove(1));
+
+        // Adding an object to specified index
+        vect.add(1, 50);
+        for(int x : vect){
+            System.out.println(x);
+        }
+
+        // Setting an object on particular index
+        vect.set(2, 90);
+        for(int x : vect){
+            System.out.println(x);
+        }
+
+        // Internal working of Vector (Look for notes of Vector for better understanding)
+        Vector<Integer> vector1 = new Vector<>();     // Initial size if not defined by us then it will be 10 by default
+        Vector<Integer> vector2 = new Vector<>(100);  // This is how we can define capacity of ArrayList, capacity = 100 but size = 0
+        Vector<Integer> vector3 = new Vector<>(50);
+        for (int i = 0; i < 15; i++) {
+            vector3.add(i);
+        }
+        System.out.println(vector3);
+        vector3.trimToSize();   // this will make capacity of alSize3 to 15
+
+        // Type of creating Vector
+        // 1. By using Vector<>(); (can add object in middle of the two existing objects using add(index, object) and can set value of existing object using set(index, object))
+        List<Object> creatingVect1 = new Vector<>();
+        creatingVect1.add(5);
+        creatingVect1.add(25);
+        creatingVect1.add(35);
+        System.out.println(creatingVect1);
+        creatingVect1.add(1,15);  // adding
+        System.out.println(creatingVect1);
+        creatingVect1.set(1,20);  // setting
+        System.out.println(creatingVect1);
+        // 2. By using Arrays.asList(); (can't add object in middle of the two existing objects but can set value of existing object using set(index, object) )
+        List<Object> creatingVect2 = Arrays.asList(1,2,3);
+        creatingVect2.set(1,20);  // setting
+        System.out.println(creatingVect2);
+        // 3. By using List.of(); (Neither can add object in middle of the two existing objects nor can set value of existing object )
+        List<Object> creatingVect3 = List.of(4,5,6);
+
+        // Adding in ArrayList
+        // adding collection
+        Vector<Integer> addingInVect = new Vector<>(vect);
+        addingInVect.add(2);
+        addingInVect.add(45);
+        addingInVect.add(85);
+        System.out.println(addingInVect);
+        // adding List.of() in new Vector<>()
+        List<Integer> listof = List.of(11, 12, 13);
+        addingInVect.addAll(listof);      // listof.addAll(addingInVect); (we can't do this because we know List.of() is unmodifiable)
+        System.out.println(addingInVect);
+
+        // Removing from Vector
+        // String
+        Vector<String> fruits = new Vector<>();
+        fruits.add("apple");
+        fruits.add("banana");
+        fruits.add("pineapple");
+        fruits.remove("apple"); // it will remove object by specifying itself
+        System.out.println(fruits);
+        // Integer
+        Vector<Integer> removingFromVect = new Vector<>();
+        removingFromVect.add(11);
+        removingFromVect.add(22);
+        removingFromVect.add(33);
+        removingFromVect.add(44);
+        // removingFromVect.remove(11);  // This remove element from given index
+        removingFromVect.remove(Integer.valueOf(11)); //so will use wrapper class to remove value directly
+        System.out.println(removingFromVect);
+
+        // Converting to Array (List to Array)
+        Vector<Integer> convertingLtoA = new Vector<>();
+        convertingLtoA.add(1);
+        convertingLtoA.add(2);
+        convertingLtoA.add(3);
+        Object[] ar = convertingLtoA.toArray();     // This will create array of objects
+        Integer[] intArr = convertingLtoA.toArray(new Integer[0]); // This will create array of Integers, (because our array object is of Integer), (new array of size 0)
+
+        // Sorting of an array
+        // By using Collection (Method of Collection)
+        Vector<Integer> sortingVectCollection = new Vector<>();
+        sortingVectCollection.add(4);
+        sortingVectCollection.add(3);
+        sortingVectCollection.add(1);
+        sortingVectCollection.add(5);
+        sortingVectCollection.add(2);
+        Collections.sort(sortingVectCollection);
+        System.out.println(sortingVectCollection);
+        // By using List (Method of List)
+        Vector<Integer> sortingVectList = new Vector<>();
+        sortingVectList.add(4);
+        sortingVectList.add(3);
+        sortingVectList.add(1);
+        sortingVectList.add(5);
+        sortingVectList.add(2);
+        sortingVectList.sort(null);
+        System.out.println(sortingVectList);  // It is using Comparator (we will learn comparator in further chapter)
     }
 }

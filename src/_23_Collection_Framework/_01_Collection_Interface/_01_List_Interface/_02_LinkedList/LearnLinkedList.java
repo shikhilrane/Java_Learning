@@ -184,19 +184,9 @@ public class LearnLinkedList {
             System.out.println(x);
         }
 
-        // Internal working of ArrayList (Look for notes of ArrayList for better understanding)
-        ArrayList<Integer> llSize1 = new ArrayList<>();     // Initial size if not defined by us then it will be 10 by default
-        ArrayList<Integer> llSize2 = new ArrayList<>(100);  // This is how we can define capacity of LinkedList, capacity = 100 but size = 0
-        ArrayList<Integer> llSize3 = new ArrayList<>(50);
-        for (int i = 0; i < 15; i++) {
-            llSize3.add(i);
-        }
-        System.out.println(llSize3);
-        llSize3.trimToSize();   // this will make capacity of llSize3 to 15
-
         // Type of creating LinkedList<>()
         // 1. By using LinkedList<>()<>(); (can add object in middle of the two existing objects using add(index, object) and can set value of existing object using set(index, object))
-        List<Object> creatingll1 = new LinkedList<>();
+        LinkedList<Object> creatingll1 = new LinkedList<>();
         creatingll1.add(5);
         creatingll1.add(25);
         creatingll1.add(35);
