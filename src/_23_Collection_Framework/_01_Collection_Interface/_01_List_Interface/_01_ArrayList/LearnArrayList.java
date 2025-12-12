@@ -278,5 +278,93 @@ public class LearnArrayList {
         sortingAlList.sort(null);
         System.out.println(sortingAlList);  // It is using Comparator (we will learn comparator in further chapter)
 
+        // Comparator
+        // Sorting using Class
+        List<Integer> list1 = Arrays.asList(5, 4, 7, 3, 2, 9, 8);
+        // 1. Sorting Integers in Ascending order
+        list1.sort(null);
+        System.out.println(list1);
+        // 2. Sorting Integers in Descending order
+        list1.sort(new IntComparator());
+        System.out.println(list1);
+
+        // Sorting using Lambda Expression
+        List<Integer> list2 = Arrays.asList(50, 40, 70, 30, 20, 90, 80);
+        // 1. Sorting Integers in Ascending order
+        list2.sort((a,b) -> a-b);
+        System.out.println(list2);
+        // 2. Sorting Integers in Descending order
+        list2.sort((a,b) -> b-a);
+        System.out.println(list2);
+
+        List<String> list3 = Arrays.asList("cat", "pineapple", "dog", "apple", "banana");
+        // Sorting String from a to z order
+        list3.sort(null);
+        System.out.println(list3);
+        // Sorting String from z to a order
+        list3.sort(new StringDescendingComparator());
+        System.out.println(list3);
+        // Sorting String in Ascending of length
+        list3.sort(new StringLengthComparatorAscLeng());
+        System.out.println(list3);
+        // Sorting String in Descending of length
+        list3.sort(new StringLengthComparatorDescLeng());
+        System.out.println(list3);
+
+        // Sorting using Lambda Expression
+        List<String> list4 = Arrays.asList("Air", "Balloon", "Car", "Duck", "Elephant");
+        // Sorting String from a to z order
+        list4.sort((a,b) -> a.compareTo(b));
+        System.out.println(list4);
+        // Sorting String from z to a order
+        list4.sort((a,b) -> b.compareTo(a));
+        System.out.println(list4);
+        // Sorting String in Ascending of length
+        list4.sort((a,b) -> a.length()-b.length());
+        System.out.println(list4);
+        // Sorting String in Ascending of length
+        list4.sort((a,b) -> b.length()-a.length());
+        System.out.println(list4);
+    }
+}
+
+// Sorting logic ->
+// Ascending - o1 is first element and o2 is second element, if substraction is positive then 2nd number first and if substraction is negative then 1st number first and if substraction is equal then both numbers are at same position
+// Descending - o2 is second element and o1 is first element, if substraction is positive then 2nd number first and if substraction is negative then 1st number first and if substraction is equal then both numbers are at same position
+
+// Integers
+class IntComparator implements Comparator<Integer>{
+
+    @Override
+    public int compare(Integer o1, Integer o2) {
+//        return o1-o2;       // This will return numbers in ascending order
+        return o2-o1;       // This will return numbers in descending order
+    }
+}
+
+
+// String
+class StringDescendingComparator implements Comparator<String> {
+
+    @Override
+    public int compare(String o1, String o2) {
+        return o2.compareTo(o1);  // Reverse of natural order
+    }
+}
+
+
+class StringLengthComparatorAscLeng implements Comparator<String>{
+
+    @Override
+    public int compare(String o1, String o2) {
+        return o1.length()-o2.length();
+    }
+}
+
+class StringLengthComparatorDescLeng implements Comparator<String>{
+
+    @Override
+    public int compare(String o1, String o2) {
+        return o2.length()-o1.length();
     }
 }
