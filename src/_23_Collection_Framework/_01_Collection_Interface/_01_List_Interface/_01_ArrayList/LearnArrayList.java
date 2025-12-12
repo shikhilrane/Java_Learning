@@ -325,6 +325,73 @@ public class LearnArrayList {
         // Sorting String in Ascending of length
         list4.sort((a,b) -> b.length()-a.length());
         System.out.println(list4);
+
+        // Sorting on Basis of name and gpa
+        List<Student> students = new ArrayList<>();
+        students.add(new Student("Charlie", 3.5));
+        students.add(new Student("Bob", 3.7));
+        students.add(new Student("Alice", 3.5));
+        students.add(new Student("Adam", 3.9));
+
+        // 1. Sorting in Ascending order of marks
+        students.sort((a,b) -> {
+            if ((b.getGpa()-a.getGpa())>0){
+                return 1;   // Return 1 means b is greater, from previous sorting knowledge
+            } else if ((b.getGpa()-a.getGpa())<0) {
+                return -1;  // Return -1 means a is greater, from previous sorting knowledge
+            } else {
+                return 0;
+            }
+        });
+
+        for(Student std : students){
+            System.out.println(std.getName() + " " + std.getGpa());
+        }
+
+        // 2. Sorting in Descending order of marks
+        students.sort((a,b) -> {
+            if ((a.getGpa()-b.getGpa())>0){
+                return 1;   // Return 1 means b is greater
+            } else if ((a.getGpa()-b.getGpa())<0) {
+                return -1;  // Return -1 means a is greater
+            } else {
+                return 0;
+            }
+        });
+
+        for(Student std : students){
+            System.out.println(std.getName() + " " + std.getGpa());
+        }
+
+        // 3. Sorting name letter from a to z
+        students.sort((a,b) -> {
+            if ((a.getName().compareTo(b.getName()))>0){
+                return 1;   // Return 1 means b is greater
+            } else if ((a.getName().compareTo(b.getName()))<0) {
+                return -1;  // Return -1 means a is greater
+            } else {
+                return 0;
+            }
+        });
+
+        for(Student std : students){
+            System.out.println(std.getName() + " " + std.getGpa());
+        }
+
+        // 4. Sorting name letter from z to a
+        students.sort((a,b) -> {
+            if ((b.getName().compareTo(a.getName()))>0){
+                return 1;   // Return 1 means b is greater from previous sorting
+            } else if ((b.getName().compareTo(a.getName()))<0) {
+                return -1;  // Return -1 means a is greater
+            } else {
+                return 0;
+            }
+        });
+
+        for(Student std : students){
+            System.out.println(std.getName() + " " + std.getGpa());
+        }
     }
 }
 
@@ -366,5 +433,24 @@ class StringLengthComparatorDescLeng implements Comparator<String>{
     @Override
     public int compare(String o1, String o2) {
         return o2.length()-o1.length();
+    }
+}
+
+// Class for sorting on field of class
+class Student{
+    private String name;
+    private double gpa;
+
+    public Student(String name, double gpa) {
+        this.name = name;
+        this.gpa = gpa;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public double getGpa() {
+        return gpa;
     }
 }
