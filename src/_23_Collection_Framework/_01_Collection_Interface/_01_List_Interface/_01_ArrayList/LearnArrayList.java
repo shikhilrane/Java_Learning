@@ -438,8 +438,8 @@ class StringLengthComparatorDescLeng implements Comparator<String>{
 
 // Class for sorting on field of class
 class Student{
-    private String name;
-    private double gpa;
+    private final String name;
+    private final double gpa;
 
     public Student(String name, double gpa) {
         this.name = name;
