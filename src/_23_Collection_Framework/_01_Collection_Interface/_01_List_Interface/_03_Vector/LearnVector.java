@@ -252,7 +252,7 @@ public class LearnVector {
         // 3. By using List.of(); (Neither can add object in middle of the two existing objects nor can set value of existing object )
         List<Object> creatingVect3 = List.of(4,5,6);
 
-        // Adding in ArrayList
+        // Adding in Vector
         // adding collection
         Vector<Integer> addingInVect = new Vector<>(vect);
         addingInVect.add(2);

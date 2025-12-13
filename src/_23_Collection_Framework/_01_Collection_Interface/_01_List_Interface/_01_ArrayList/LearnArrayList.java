@@ -278,7 +278,7 @@ public class LearnArrayList {
         sortingAlList.sort(null);
         System.out.println(sortingAlList);  // It is using Comparator (we will learn comparator in further chapter)
 
-        // Comparator
+        //------------------------ Comparator ------------------------
         // Sorting using Class
         List<Integer> list1 = Arrays.asList(5, 4, 7, 3, 2, 9, 8);
         // 1. Sorting Integers in Ascending order
