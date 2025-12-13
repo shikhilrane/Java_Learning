@@ -218,6 +218,123 @@ public class LearnStack {
         // Final Output
         System.out.println("\nFinal stack: " + stack);
 
+        //------------------------ Deep understanding of Stack ------------------------
+        Stack<Integer> stc = new Stack<>();
+        stc.add(78);
+        stc.add(63);
+        stc.add(35);
+        stc.add(84);
+        stc.add(92);
 
+        // getting by index
+        System.out.println(stc.get(2));
+        // number of objects in arraylist
+        System.out.println(stc.size());
+
+        // Iterating on arraylist using for loop
+        for (int i = 0; i<stc.size(); i++){
+            System.out.println(stc.get(i));
+        }
+
+        // Iterating on arraylist using forEach loop
+        for(int x : stc){
+            System.out.println(x);
+        }
+
+        // Check if given object is present or not
+        System.out.println(stc.contains(5));
+
+        // Removing object from particular index
+        System.out.println(stc.remove(1));
+
+        // Adding an object to specified index
+        stc.add(1, 50);
+        for(int x : stc){
+            System.out.println(x);
+        }
+
+        // Setting an object on particular index
+        stc.set(2, 90);
+        for(int x : stc){
+            System.out.println(x);
+        }
+
+        // Type of creating Stack
+        // 1. By using Stack<>(); (can add object in middle of the two existing objects using add(index, object) and can set value of existing object using set(index, object))
+        List<Object> creatingStc1 = new Stack<>();
+        creatingStc1.add(5);
+        creatingStc1.add(25);
+        creatingStc1.add(35);
+        System.out.println(creatingStc1);
+        creatingStc1.add(1,15);  // adding
+        System.out.println(creatingStc1);
+        creatingStc1.set(1,20);  // setting
+        System.out.println(creatingStc1);
+        // 2. By using Arrays.asList(); (can't add object in middle of the two existing objects but can set value of existing object using set(index, object) )
+        List<Object> creatingStc2 = Arrays.asList(1,2,3);
+        creatingStc2.set(1,20);  // setting
+        System.out.println(creatingStc2);
+        // 3. By using List.of(); (Neither can add object in middle of the two existing objects nor can set value of existing object )
+        List<Object> creatingStc3 = List.of(4,5,6);
+
+        // Adding in Stack
+        // adding collection
+        Stack<Integer> addingInStc = new Stack<>();
+        addingInStc.add(2);
+        addingInStc.add(45);
+        addingInStc.add(85);
+        System.out.println(addingInStc);
+        addingInStc.addAll(stc);
+        System.out.println(addingInStc);
+        // adding List.of() in new Stack<>()
+        List<Integer> listof = List.of(11, 12, 13);
+        addingInStc.addAll(listof);      // listof.addAll(addingInStc); (we can't do this because we know List.of() is unmodifiable)
+        System.out.println(addingInStc);
+
+        // Removing from Stack
+        // String
+        Stack<String> fruits = new Stack<>();
+        fruits.add("apple");
+        fruits.add("banana");
+        fruits.add("pineapple");
+        fruits.remove("apple"); // it will remove object by specifying itself
+        System.out.println(fruits);
+        // Integer
+        Stack<Integer> removingFromStc = new Stack<>();
+        removingFromStc.add(11);
+        removingFromStc.add(22);
+        removingFromStc.add(33);
+        removingFromStc.add(44);
+        // removingFromStc.remove(11);  // This remove element from given index
+        removingFromStc.remove(Integer.valueOf(11)); //so will use wrapper class to remove value directly
+        System.out.println(removingFromStc);
+
+        // Converting to Array (List to Array)
+        Stack<Integer> convertingLtoA = new Stack<>();
+        convertingLtoA.add(1);
+        convertingLtoA.add(2);
+        convertingLtoA.add(3);
+        Object[] ar = convertingLtoA.toArray();     // This will create array of objects
+        Integer[] intArr = convertingLtoA.toArray(new Integer[0]); // This will create array of Integers, (because our array object is of Integer), (new array of size 0)
+
+        // Sorting of a Stack
+        // By using Collection (Method of Collection)
+        Stack<Integer> sortingStcCollection = new Stack<>();
+        sortingStcCollection.add(4);
+        sortingStcCollection.add(3);
+        sortingStcCollection.add(1);
+        sortingStcCollection.add(5);
+        sortingStcCollection.add(2);
+        Collections.sort(sortingStcCollection);
+        System.out.println(sortingStcCollection);
+        // By using List (Method of List)
+        Stack<Integer> sortingStcList = new Stack<>();
+        sortingStcList.add(4);
+        sortingStcList.add(3);
+        sortingStcList.add(1);
+        sortingStcList.add(5);
+        sortingStcList.add(2);
+        sortingStcList.sort(null);
+        System.out.println(sortingStcList);  // It is using Comparator (we will learn comparator in further chapter)
     }
 }
