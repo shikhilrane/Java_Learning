@@ -144,6 +144,37 @@ public class LearnLinkedList {
         // Final output
         System.out.println("Final list: " + list);
 
+        //------------------------ LinkedList specific methods ------------------------
+        LinkedList<Integer> llSpecific = new LinkedList<>();
+        llSpecific.add(2);
+        llSpecific.add(3);
+        llSpecific.add(3);
+        llSpecific.add(4);
+        llSpecific.add(5);
+
+        System.out.println(llSpecific);
+
+        llSpecific.addFirst(1);
+        llSpecific.addLast(6);
+        System.out.println(llSpecific);
+
+        System.out.println(llSpecific.getFirst());
+        System.out.println(llSpecific.getLast());
+
+        llSpecific.removeFirst();
+        llSpecific.removeLast();
+        System.out.println(llSpecific);
+
+        llSpecific.removeFirstOccurrence(3);
+        llSpecific.removeFirstOccurrence(4);
+        System.out.println(llSpecific);
+
+        llSpecific.removeIf(x -> x%2 !=0);
+        System.out.println(llSpecific);
+
+        Object clone = llSpecific.clone();
+        System.out.println(clone);
+
         //------------------------ Deep understanding of LinkedList ------------------------
         LinkedList<Integer> ll = new LinkedList<>();
         // adding
