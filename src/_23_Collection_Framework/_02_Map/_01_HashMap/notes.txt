@@ -29,26 +29,43 @@ How data is stored in HashMap :
 
                         ---------------------------------------------------------------------------------------------------------------------
                         |   --------------  --------------  --------------  --------------  --------------  --------------  --------------  |
+                        |   |   Index 0  |  |   Index 1  |  |   Index 2  |  |   Index 3  |  |   Index 4  |  |   Index 5  |  |   Index 6  |  |
                         |   |   key      |  |   key      |  |   key      |  |   key      |  |   key      |  |   key      |  |   key      |  |
                         |   |   value    |  |   value    |  |   value    |  |   value    |  |   value    |  |   value    |  |   value    |  |
-                        |   |   Bucket0  |  |   Bucket1  |  |   Bucket2  |  |   Bucket3  |  |   Bucket4  |  |   Bucket5  |  |   Bucket6  |  |
                         |   --------------  --------------  --------------  --------------  --------------  --------------  --------------  |
-                        ---------------------------------------------------------------------------------------------------------------------
-                                                                                Array
+                        ------^--------------------------------------------------------------------------------------------------------------
+                              |                                                  Array
+    Buckets ------------------|
 
     e.g. =>
         HashMap<String, Integer> fruits = new HashMap<>();
-        fruits.put("apple", 30);    Hashcode from hashfunction = 3544354    => saved at 4th index
-        fruits.put("banana", 40);   Hashcode from hashfunction = 2154566    => saved at 7th index
-        fruits.put("orange", 50);   Hashcode from hashfunction = 2154566    => saved at 7th index
+        fruits.put("apple", 30);    Hashcode from hashFunction = 3544354    => saved at 4th index
+        fruits.put("banana", 40);   Hashcode from hashFunction = 2154566    => saved at 7th index
+        fruits.put("orange", 50);   Hashcode from hashFunction = 2154566    => saved at 7th index
+
+        Working
+        1 - It will create an array of size 16, and this array has 16 buckets and those buckets will be used to store key-value pair when we perform .put() operation
+        2 - As we have performed, fruits.put("apple", 30); then hashFunction will create a unique value called hashcode and by some internal operations it will allot index in array.
+        3 - It will store its key value on index 4 bucket
+        4 - same goes for fruits.put("banana", 40); and allot the index 7 bucket
+        5 - If hash value of "orange" came same as of "banana", so their index value will also going to be same, Java will use .equals() method to compare 2 keys and if answer is true, and it will erase the previous entry (i.e. "banana", 40) and store new entry (i.e. "orange", 50) but it is not ideal way to deal with the situation and it will results into hash collision.
+        6 - So, to resolve this issue, according to new update, if the number of entries in single bucket is less than 8 then it will create LinkedList of it, and if it exceeds more than 8 then it will create it converts the LinkedList to red-black tree known as self-balancing binary tree
+        7 - If all buckets about to get filled with self-balancing binary tree, then array will get doubled when 75% of array filled
 
         Bucket Array
-        0   ->
-        1   ->
-        2   ->
-        3   ->
-        4   ->  "apple", 30
-        5   ->
-        6   ->
-        7   ->  "banana", 40 -> "orange", 50    // This will be linkedlist
-        8   ->
+        0    ->
+        1    ->
+        2    ->
+        3    ->
+        4    ->  "apple", 30
+        5    ->
+        6    ->
+        7    ->  "banana", 40 -> "orange", 50    // This will be linked-list
+        8    ->
+        9    ->
+        10   ->
+        11   ->
+        12   ->
+        13   ->
+        14   ->
+        15   ->
