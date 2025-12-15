@@ -102,8 +102,8 @@ public class LearnHashMap {
         System.out.println(hashmap);
 
         // To delete
-        hashmap.remove(3);
-        hashmap.remove(5,"E");
+        hashmap.remove(3);  // Removed by just key
+        hashmap.remove(5,"E");   // Removed by key and value (If we provide value that is not linked with key then it won't remove anything)
         System.out.println(hashmap);
 
         // clear – Removes all entries

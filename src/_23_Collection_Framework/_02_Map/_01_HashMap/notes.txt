@@ -1,8 +1,15 @@
+HashMap :
+    1. Unordered : It does not maintain any order of its elements
+    2. Allows null keys and values : can have only one null key and multiple null values
+    3. Not Synchronised : Not thread-safe, Requires external synchronisation if used in a multi-threaded context
+    4. Performance : Offers constant time performance (O(1)) for basic operations like get and put, assuming the hash function spreads elements properly
+
 Internal Structure of HashMap :
     Key -> Identifier use to retrieve value.
     Value -> The data associated with key.
-    Bucket -> It is a array in which key-value of hashmap is stored. (Initial size = 16)
-    Hash function -> takes the key from bucket into index for storage. It is algorithm that takes an key and returns fixed size string of bytes, typically a numeric value. The output is known as hashcode or hash value or simply hash. It will always produce the same output for the same input. This is a fast algorithm.
+    Bucket -> It is a array in which key-value of hashmap is stored on single index. (Initial size = 16)
+    Hash function -> Hash function is used to compute a hashCode for a key to determine its bucket location
+    takes the key from bucket into index for storage. It is algorithm that takes a key and returns fixed size string of bytes, typically a numeric value. The output is known as hashcode or hash value or simply hash. It will always produce the same output for the same input. This is a fast algorithm. (Converts a key into an index (bucket location) for storage)
 
 How data is stored in HashMap :
     Step 1 -> Hashing the key,
@@ -19,6 +26,15 @@ How data is stored in HashMap :
     So, how multiple key-value stored at same it is because, every key-value stored as a linkedlist at an index.
 
     Rehashing = As we know capacity of ArrayList can be increase or decrease with the help of threshold, We can use same mechanism for Bucket as well. Initial threshold for bucket is 0.75
+
+                        ---------------------------------------------------------------------------------------------------------------------
+                        |   --------------  --------------  --------------  --------------  --------------  --------------  --------------  |
+                        |   |   key      |  |   key      |  |   key      |  |   key      |  |   key      |  |   key      |  |   key      |  |
+                        |   |   value    |  |   value    |  |   value    |  |   value    |  |   value    |  |   value    |  |   value    |  |
+                        |   |   Bucket0  |  |   Bucket1  |  |   Bucket2  |  |   Bucket3  |  |   Bucket4  |  |   Bucket5  |  |   Bucket6  |  |
+                        |   --------------  --------------  --------------  --------------  --------------  --------------  --------------  |
+                        ---------------------------------------------------------------------------------------------------------------------
+                                                                                Array
 
     e.g. =>
         HashMap<String, Integer> fruits = new HashMap<>();
