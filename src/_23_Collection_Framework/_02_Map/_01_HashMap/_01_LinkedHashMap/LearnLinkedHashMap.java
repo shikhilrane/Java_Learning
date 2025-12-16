@@ -49,7 +49,11 @@ public class LearnLinkedHashMap {
             System.out.println("Accessing after lhm1.get(\"Apple\"); method From Constructor of LinkedHashMap : " + str);
         }
 
-        // Apple=20 goes last because we set true in constructor of the lhm1, if it is false (if we didn't set in explicitly then it is by default false) then it will maintain the insertion order even after accessing any object from LinkedHashMap, but if we set it as true, then it will maintain access order, means latest access object will goes in the last of the of execution. It follows algorithm like least access object algo
+        // Apple=20 goes last because
+        // we set true in constructor of the lhm1,
+        //  if it is false (if we didn't set in explicitly then it is by default false) then it will maintain the insertion order even after accessing any object from LinkedHashMap,
+        //  but if we set it as true, then it will maintain access order, means latest access object will goes in the last of the of execution.
+        //  It follows algorithm Least Recently Used (LRU) algorithm
     }
 }
 
