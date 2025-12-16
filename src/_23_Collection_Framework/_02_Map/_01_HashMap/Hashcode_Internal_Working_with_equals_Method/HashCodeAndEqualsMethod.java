@@ -13,7 +13,7 @@ public class HashCodeAndEqualsMethod {
         map.put(p2, "Designer");    // Hashcode2 --> index2
         map.put(p3, "Manager");     // Hashcode3 --> index3, here nothing will be changed because p1 and p3 both are created at different location using new keyword
 
-        // Indexing for "OBJECT AS KEY"
+        // Indexing for "String AS KEY"
         HashMap<String, Integer> newMap = new HashMap<>();
         newMap.put("Mumbai", 200);  // Hashcode1 --> index1
         newMap.put("Pune", 300);    // Hashcode2 --> index2

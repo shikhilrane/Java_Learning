@@ -49,7 +49,7 @@ How data is stored in HashMap :
         3 - It will store its key value on index 4 bucket
         4 - same goes for fruits.put("banana", 40); and allot the index 7 bucket
         5 - If hash value of "orange" came same as of "banana", so their index value will also going to be same, Java will use .equals() method to compare 2 keys and if answer is true, and it will erase the previous entry (i.e. "banana", 40) and store new entry (i.e. "orange", 50) but it is not ideal way to deal with the situation and it will results into hash collision.
-        6 - So, to resolve this issue, according to new update, if the number of entries in single bucket is less than 8 then it will create LinkedList of it, and if it exceeds more than 8 then it will create it converts the LinkedList to red-black tree known as self-balancing binary tree
+        6 - So, to resolve this issue, according to new update, if the number of entries in single bucket is less than 8 then it will create LinkedList of it, and if it exceeds more than 8 then it will create it converts the LinkedList to red-black tree known as self-balancing binary search tree
         7 - If all buckets about to get filled with self-balancing binary tree, then array will get doubled when 75% of array filled
 
         Bucket Array
