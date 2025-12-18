@@ -24,6 +24,7 @@ public class GC {
         System.out.println(phoneWeakReference.get());
         // Here, WeakReference<> doesn't hold the Strong Reference so Garbage Collector of JVM doesn't care if it is in the memory or not
         // That's why if we want to remove unused object then we have to run System.gc(); explicitly here
+        // WeakReference is least used in codes
     }
 }
 
