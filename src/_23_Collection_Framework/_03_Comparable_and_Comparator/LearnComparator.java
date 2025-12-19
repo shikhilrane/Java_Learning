@@ -26,12 +26,12 @@ public class LearnComparator {
         System.out.println("Before sorting:");
         System.out.println(dogs);
 
-        Collections.sort(dogs, new MyCustomDogComparator());
+        dogs.sort(new MyCustomDogComparator());
 
         System.out.println("After sorting by weight:");
         System.out.println(dogs);
 
-        Collections.sort(dogs, new Comparator<Animal>() {
+        dogs.sort(new Comparator<Animal>() {
             @Override
             public int compare(Animal o1, Animal o2) {
                 return o1.name.compareTo(o2.name);
