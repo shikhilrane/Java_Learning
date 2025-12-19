@@ -1,0 +1,22 @@
+SortedMap and NavigableMap are the interfaces and can be implemented by TreeMap
+
+                                                           SortedMap-------<-----
+                                                                |               |
+                                                           NavigableMap         |
+                                                                -------<---------
+                                                                                |
+                                                                             Treemap
+
+                                                                     OR
+
+                                                                     Map
+                                                                      |
+                                                                  SortedMap
+                                                                      |
+                                                                NavigableMap
+                                                                      |
+                                                                   TreeMap
+
+
+1. SortedMap Interface - Implemented by TreeMap class. Used when we have to perform operations on first or last objects. (i.e. first/last & range-based operations)
+2. NavigableMap Interfaces - Implemented by TreeMap class. Used when we have to perform operations on middle objects. (i.e. closest, lower, higher, forward/backward navigation) We can use methods of SortedMap Interface here
