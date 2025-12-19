@@ -281,50 +281,62 @@ public class LearnArrayList {
         //------------------------ Comparator ------------------------
         // Sorting using Class
         List<Integer> list1 = Arrays.asList(5, 4, 7, 3, 2, 9, 8);
+        System.out.println("list1 = Arrays.asList(5, 4, 7, 3, 2, 9, 8)");
         // 1. Sorting Integers in Ascending order
-        list1.sort(null);
-        System.out.println(list1);
+        list1.sort( null);
+        System.out.println("Sorting Integers in Ascending order using Class : " + list1);
         // 2. Sorting Integers in Descending order
         list1.sort(new IntComparator());
-        System.out.println(list1);
+        System.out.println("Sorting Integers in Descending order using Class : " + list1);
+
+        System.out.println();
 
         // Sorting using Lambda Expression
         List<Integer> list2 = Arrays.asList(50, 40, 70, 30, 20, 90, 80);
+        System.out.println("list2 = Arrays.asList(50, 40, 70, 30, 20, 90, 80)");
         // 1. Sorting Integers in Ascending order
         list2.sort((a,b) -> a-b);
-        System.out.println(list2);
+        System.out.println("Sorting Integers in Ascending order using Lambda expression : " + list2);
         // 2. Sorting Integers in Descending order
         list2.sort((a,b) -> b-a);
-        System.out.println(list2);
+        System.out.println("Sorting Integers in Descending order using Lambda expression: " + list2);
+
+        System.out.println();
 
         List<String> list3 = Arrays.asList("cat", "pineapple", "dog", "apple", "banana");
+        System.out.println("list3 = Arrays.asList(\"cat\", \"pineapple\", \"dog\", \"apple\", \"banana\")");
         // Sorting String from a to z order
         list3.sort(null);
-        System.out.println(list3);
+        System.out.println("Sorting String from a to z order : " + list3);
         // Sorting String from z to a order
         list3.sort(new StringDescendingComparator());
-        System.out.println(list3);
+        System.out.println("Sorting String from z to a order : " + list3);
         // Sorting String in Ascending of length
         list3.sort(new StringLengthComparatorAscLeng());
-        System.out.println(list3);
+        System.out.println("Sorting String in Ascending of length : " + list3);
         // Sorting String in Descending of length
         list3.sort(new StringLengthComparatorDescLeng());
-        System.out.println(list3);
+        System.out.println("Sorting String in Descending of length : " + list3);
+
+        System.out.println();
 
         // Sorting using Lambda Expression
         List<String> list4 = Arrays.asList("Air", "Balloon", "Car", "Duck", "Elephant");
+        System.out.println("list4 = Arrays.asList(\"Air\", \"Balloon\", \"Car\", \"Duck\", \"Elephant\")");
         // Sorting String from a to z order
         list4.sort((a,b) -> a.compareTo(b));
-        System.out.println(list4);
+        System.out.println("Sorting String from a to z order using Lambda Expression : " + list4);
         // Sorting String from z to a order
         list4.sort((a,b) -> b.compareTo(a));
-        System.out.println(list4);
+        System.out.println("Sorting String from z to a order using Lambda Expression : " + list4);
         // Sorting String in Ascending of length
         list4.sort((a,b) -> a.length()-b.length());
-        System.out.println(list4);
-        // Sorting String in Ascending of length
+        System.out.println("Sorting String in Ascending of length using Lambda Expression : " + list4);
+        // Sorting String in Descending of length
         list4.sort((a,b) -> b.length()-a.length());
-        System.out.println(list4);
+        System.out.println("Sorting String in Descending of length using Lambda Expression : " + list4);
+
+        System.out.println();
 
         // Sorting on Basis of name and gpa
         List<Student> students = new ArrayList<>();
@@ -332,6 +344,12 @@ public class LearnArrayList {
         students.add(new Student("Bob", 3.7));
         students.add(new Student("Alice", 3.5));
         students.add(new Student("Adam", 3.9));
+
+        System.out.println("List<Student> students = new ArrayList<>();\n" +
+                "        students.add(new Student(\"Charlie\", 3.5));\n" +
+                "        students.add(new Student(\"Bob\", 3.7));\n" +
+                "        students.add(new Student(\"Alice\", 3.5));\n" +
+                "        students.add(new Student(\"Adam\", 3.9));");
 
         // 1. Sorting in Ascending order of marks
         students.sort((a,b) -> {
@@ -345,7 +363,7 @@ public class LearnArrayList {
         });
 
         for(Student std : students){
-            System.out.println(std.getName() + " " + std.getGpa());
+            System.out.println("Sorting in Ascending order of marks : " + std.getName() + " " + std.getGpa());
         }
 
         // 2. Sorting in Descending order of marks
@@ -360,7 +378,7 @@ public class LearnArrayList {
         });
 
         for(Student std : students){
-            System.out.println(std.getName() + " " + std.getGpa());
+            System.out.println("Sorting in Descending order of marks : " + std.getName() + " " + std.getGpa());
         }
 
         // 3. Sorting name letter from a to z
@@ -375,7 +393,7 @@ public class LearnArrayList {
         });
 
         for(Student std : students){
-            System.out.println(std.getName() + " " + std.getGpa());
+            System.out.println("Sorting name letter from a to z : " + std.getName() + " " + std.getGpa());
         }
 
         // 4. Sorting name letter from z to a
@@ -390,14 +408,15 @@ public class LearnArrayList {
         });
 
         for(Student std : students){
-            System.out.println(std.getName() + " " + std.getGpa());
+            System.out.println("Sorting name letter from z to a : " + std.getName() + " " + std.getGpa());
         }
     }
 }
 
 // Sorting logic ->
-// Ascending - o1 is first element and o2 is second element, if substraction is positive then 2nd number first and if substraction is negative then 1st number first and if substraction is equal then both numbers are at same position
-// Descending - o2 is second element and o1 is first element, if substraction is positive then 2nd number first and if substraction is negative then 1st number first and if substraction is equal then both numbers are at same position
+// Ascending - o1 is first element and o2 is second element (o1-o2), if substraction is positive then 2nd number first and if substraction is negative then 1st number first and if substraction is equal then both numbers are at same position
+// Descending - o2 is second element and o1 is first element (o2-o1), if substraction is positive then 2nd number first and if substraction is negative then 1st number first and if substraction is equal then both numbers are at same position
+// That is, if substraction = positive then o2 will be preferred and if negative then o1 will be preferred, in any situation
 
 // Integers
 class IntComparator implements Comparator<Integer>{
