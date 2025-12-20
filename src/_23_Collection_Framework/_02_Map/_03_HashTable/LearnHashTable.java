@@ -5,6 +5,7 @@ import java.util.Hashtable;
 
 public class LearnHashTable {
     public static void main(String[] args) {
+        // HashTable is same as HashMap
         Hashtable<Integer, String > hashtable = new Hashtable<>();
         hashtable.put(32, "thirty two");
         hashtable.put(55, "fifty five");    // All operations are same as HashMap

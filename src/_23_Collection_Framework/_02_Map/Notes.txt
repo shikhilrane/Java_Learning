@@ -18,3 +18,43 @@ Map :
           From above example, we can conclude that key must be unique whereas values can be repetitive.
 
 
+Methods -
+    1. Basic Operations
+            1. int size()
+            2. boolean isEmpty()
+            3. boolean containsKey(Object key)
+            4. boolean containsValue(Object value)
+            5. V get(Object key)
+            6. V put(K key, V value)
+            7. V remove(Object key)
+            8. void putAll(Map<? extends K, ? extends V> m)
+            9. void clear()
+
+    2. View Operations
+            1. Set<K> keySet()
+            2. Collection<V> values()
+            3. Set<Map.Entry<K, V>> entrySet()
+
+    3. Comparison & Equality
+           1. boolean equals(Object o)
+           2. int hashCode()
+
+    4. Default Methods (Java 8+)
+           1. V getOrDefault(Object key, V defaultValue)
+           2. void forEach(BiConsumer<? super K, ? super V> action)
+           3. void replaceAll(BiFunction<? super K, ? super V, ? extends V> function)
+           4. V putIfAbsent(K key, V value)
+           5. boolean remove(Object key, Object value)
+           6. boolean replace(K key, V oldValue, V newValue)
+           7. V replace(K key, V value)
+           8. V computeIfAbsent(K key, Function<? super K, ? extends V> mappingFunction)
+           9. V computeIfPresent(K key, BiFunction<? super K, ? super V, ? extends V> remappingFunction)
+           10. V compute(K key, BiFunction<? super K, ? super V, ? extends V> remappingFunction)
+           11. V merge(K key, V value, BiFunction<? super V, ? super V, ? extends V> remappingFunction)
+
+    5. Nested Interface
+            interface Map.Entry<K, V>
+            Common Map.Entry methods:
+                K getKey()
+                V getValue()
+                V setValue(V value)

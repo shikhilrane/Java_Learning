@@ -34,7 +34,7 @@ public class LearnSortedMap {
 /*
     TreeMap = Red-Black tree or Self-balancing binary search tree
     1. SortedMap is used to sort collection on basis of keys on basis of Natural ordering of keys (Comparable) or A custom order provided using a Comparator
-    2. HashMap is not sorted by default, we have to we have to apply some custom comparator or comparable to sort them but SortedMap is sorted by default
+    2. HashMap is not sorted by default, we have to apply some custom comparator or comparable to sort them but SortedMap is sorted by default
     3. SortedMap is an interface and its implementation class is TreeMap(). So, SortedMap<String, Integer> map = new TreeMap<>();
 
     NOTE : SortedMap = When we have to use first and last keys AND NavigableMap = When we have to use around keys of specified key
