@@ -79,14 +79,14 @@ Java Collection Framework :
                                                                 2.Map
                                                                   |
                                                                   V
-                                ---------------------------------------------------------------------
-                                |                   |                       |                       |
-                                V                   V                       V                       V
-                              HashMap            HashTable              SortedMap             ConcurrentMap
-                                |                (Legacy)                   |                       |
-                           LinkedHashmap                                    V                       V
-                           WeakHashMap                                 TreeMap                  ConcurrentHashmap
-                           IdentityHashMap                             NavigableMap             ConcurrentSkipListMap
+                ------------------------------------------------------------------------------------------------------------------
+                |                   |                       |                       |                           |                |
+                V                   V                       V                       V                           V                V
+              HashMap            HashTable              SortedMap             ConcurrentMap                  EnumMap        ImmutableMap
+                |                (Legacy)                   |                       |
+           LinkedHashmap                                    V                       V
+           WeakHashMap                                 TreeMap                  ConcurrentHashmap
+           IdentityHashMap                             NavigableMap             ConcurrentSkipListMap
 
 
 
