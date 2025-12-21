@@ -53,28 +53,59 @@ Java Collection Framework :
     Java Collection Framework provides a set of interfaces and classes to implement various data structures and algorithms.
     These include several methods to perform different operations on collections.
 
-                                                            1.Iterable
-                                                                |
-                                                                V
-                                                        Collection Interface
-                                                                |
-                                                                V
-                                    ----------------------------------------------------------
-                                    |                           |                            |
-                                    V                           V                            V
-                               List interface             Set Interface               Queue Interface--------->Deque Interface
-                                    |                           |                            |                        |
-                                    V                           V                            V                        V
-                               ArrayList                    HashSet                     LinkedList                ArrayDeque
-                               LinkedList                   LinkedHashSet               PriorityQueue             LinkedList
-                               Vector                       TreeSet                     BlockingQueue             ConcurrentLinkedDeque
-                               Stack                        EnumSet                     ArrayBlockingQueue
-                               CopyOnWriteArrayList         ConcurrentSkipListSet       LinkedBlockingQueue
-                                                            CopyOnWriteArraySet         PriorityBlockingQueue
-                                                            ImmutableSet                SynchronousQueue
-                                                                                        DelayQueue
-                                                                                        ConcurrentLinkedQueue
-                                                                                        ConcurrentLinkedDeque
+                                                                 1.Iterable
+                                                                     |
+                                                                     V
+                                                            Collection Interface
+                                                                     |
+                                                                     V
+               --------------------------------------------------------------------------------------------------------------------------------------
+               |                                                     |                                                                              |
+               V                                                     |                                                                              |
+          List Interface                                             |                                                                              |
+               |                                                     |                                                                              |
+   ----------------------------------------------                    |                                                                              |
+   |            |           |          |                             |                                                                              |
+   V            V           V          V                             |                                                                              |
+ArrayList   LinkedList    Vector    CopyOnWriteArrayList             |                                                                              |
+                            |                                        |                                                                              |
+                            V                                        |                                                                              |
+                          Stack                                      |                                                                              |
+                                                                     |                                                                              |
+                                                                     |                                                                              |
+                                                                     V                                                                              |
+                                                                 Set Interface                                                                      |
+                                                                     |                                                                              |
+                   ----------------------------------------------------------------------------------------------------------                       |
+                   |              |               |            |               |                     |                      |                       |
+                   V              V               V            V               V                     V                      V                       |
+                HashSet     LinkedHashSet       TreeSet      EnumSet     ConcurrentSkipListSet    CopyOnWriteArraySet    ImmutableSet               |
+                                                                                                                                                    |
+                                                                                                                                                    |
+                                                                                                                                                    |
+                                                                                                                                                    |
+                                                                                                                                                    |
+                                                                                                                                                    V
+                                                                                                                                                  Queue
+                                                                                                                                                    |
+                                                     --------------------------------------------------------------------------------------------------------
+                                                     |                 |                  |                  |                       |                      |
+                                                     V                 V                  V                  V                       V                      V
+                                                 LinkedList          Deque            PriorityQueue     BlockingQueue       ConcurrentLinkedQueue   ConcurrentLinkedDeque
+                                                                       |                                     |
+                                                                       V                                     |
+                                                      ----------------------------------                     |
+                                                      |                |               |                     |
+                                                      V                V               V                     |
+                                                  ArrayDeque       LinkedList     ConcurrentLinkedDeque      |
+                                                                                                             |
+                                                                                                             |
+                                                                                                             |
+                                                                ---------------------------------------------------------------------------------------
+                                                                |                     |                      |                     |                  |
+                                                                V                     V                      V                     V                  V
+                                                        ArrayBlockingQueue     LinkedBlockingQueue    PriorityBlockingQueue    SynchronousQueue    DelayQueue
+
 
 
                                                                 2.Map
