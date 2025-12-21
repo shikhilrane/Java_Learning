@@ -1,6 +1,6 @@
 package _23_Collection_Framework._01_Collection_Interface._03_Set._02_LinkedHashSet;
 
-// LinkedHashSet executes number in random order of input. It internally use LL and as we know LL has ordered way to store data
+// LinkedHashSet executes number in random order of input. It internally use LL and as we know LL has ordered way to store data (i.e. LHS maintain insertion order)
 
 import java.util.*;
 

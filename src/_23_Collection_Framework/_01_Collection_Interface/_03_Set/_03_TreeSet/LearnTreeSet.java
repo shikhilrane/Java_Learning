@@ -1,7 +1,8 @@
 package _23_Collection_Framework._01_Collection_Interface._03_Set._03_TreeSet;
 
+// It maintains sorting order
 // It uses Binary Search Tree internally, and sets all element in ascending order.
-// It is implementation of SortedSet Interface
+// TreeSet can be implemented by SortedSet and NavigableSet. (Just same as Map)
 
 import java.util.*;
 

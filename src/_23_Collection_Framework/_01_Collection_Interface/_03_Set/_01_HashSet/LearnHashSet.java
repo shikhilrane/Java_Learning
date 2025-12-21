@@ -69,12 +69,17 @@ public class LearnHashSet {
         // clear() - removes all elements from set
         set.clear();
         System.out.println("After clear(), is set empty? " + set.isEmpty());
+
+        // Understanding Set with respect to Map
+        Map<Integer, String> map = new HashMap<>();
+        Set<Integer> keySet = map.keySet();     // Here, Keys of the maps are nothing but set. Keys of map can't repeat which is same principle of Set.
+
     }
 }
 
 /*
 Properties of properties
-    1. Hashset are not index based DS, they store values according to their hashcode (unique integer value) values
-    2. Hashset does not store duplicate element neither multiple null values
-    3. Hashset doesn't allow insertion order neither sorting order because it store values, added
+    1. HashSet are not index based DS, they store values according to their hashcode (unique integer value) values
+    2. HashSet does not store duplicate element neither multiple null values
+    3. HashSet doesn't allow insertion order neither sorting order
 */

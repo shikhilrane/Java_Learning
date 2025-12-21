@@ -1,5 +1,6 @@
 package _23_Collection_Framework._01_Collection_Interface._03_Set._04_EnumSet;
 
+// Exactly same like EnumMap
 // EnumSet is perfect when you want to work with sets of enum values.
 // More efficient than HashSet<Enum>.
 // Doesn't allow null.

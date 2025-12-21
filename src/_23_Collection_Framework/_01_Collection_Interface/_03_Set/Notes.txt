@@ -1,8 +1,14 @@
+NOTE : Learn Map before Set for better understanding of Set
+
 Set :
-    1. A set is a collection that can't contain duplicate elements like list.
-    2. The set interface of java collection framework provides the features of the mathematical set in java. It extends collection interface.
-    3. Consider a bag in which you are adding element randomly but you are not allowed to add duplicate elements in it. Even if you add duplicate element it won't be useful
-    4. Methods of sets :
+    1. A set is a collection that can't contain duplicate elements like list unlike List.
+    2. Set is based on principles of hashmap, so time complexity of find is O(1), insert is O(1)
+    3. Faster Operations
+    4. As we know, Implementation of Map = HashMap, LinkedHashMap, TreeMap, EnumMap. So Same will happen in Set as well
+    5. Implementation of Set = HashSet, LinkedHashSet, TreeSet, EnumSet
+    6. The set interface of java collection framework provides the features of the mathematical set in java. It extends collection interface.
+    7. Consider a bag in which you are adding element randomly but you are not allowed to add duplicate elements in it. Even if you add duplicate element it won't be useful
+    8. Methods of sets :
         | **Method**                                  | **Description**                                                                  |
         | ------------------------------------------- | -------------------------------------------------------------------------------- |
         | `boolean add(E e)`                          | Adds the element if it's not already present.                                    |
