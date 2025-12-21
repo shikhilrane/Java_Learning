@@ -9,8 +9,8 @@ Deque :
                                   Rear               Front
 
     3. Methods for Deque :
-        It can have methods of queue, colletion and iterables
-        Deque methods (can be appliable on ArrayDeque, LinkedList, ConcurrentLineDeque).
+        It can have methods of queue, collection and iterables
+        Deque methods (can be applicable on ArrayDeque, LinkedList, ConcurrentLineDeque).
 
             1. Insertion Methods :
                 Method	            Description	                    Throws Exception?	            Returns Special Value?

@@ -26,6 +26,9 @@ public class LinkedListDeque {
         dq.pollLast();
         System.out.println(dq);
 
+        // dq.remove(30);               This operation like to remove in middle is more efficient in LLD
+        // System.out.println(dq);
+
         // 3. Stack operations
         dq.push(20);
         dq.push(30);

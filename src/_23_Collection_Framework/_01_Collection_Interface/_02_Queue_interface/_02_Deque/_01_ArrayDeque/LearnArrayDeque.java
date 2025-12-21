@@ -25,6 +25,9 @@ public class LearnArrayDeque {
         dq.pollLast();          // It will remove last element of queue
         System.out.println(dq);
 
+        // dq.remove(30);               We can do this as well, but it will be more efficient to use it in LLD because middle insertion and deletion is more efficient in LL
+        // System.out.println(dq);
+
         // 3. ArrayDeque as stack   (USE STACK FROM ARRAYDEQUE rather than LIST STACK)
         dq.push(20);         // Add to stack
         dq.push(30);
@@ -58,3 +61,12 @@ public class LearnArrayDeque {
         }
     }
 }
+
+/*
+    1. ArrayDeque is resizable array implementation
+    2. This class is likely to be faster than stack when used as stack, and faster than LL when used as Queue.
+    3. we use ArrayDeque mostly over LinkedListDeque because of faster iteration, low memory, no null allowed
+    4. Internally, it works like a circular array — when the end is reached, it wraps around to the beginning. (A circular array is an array where the last position connects back to the first, so when you reach the end, you start again from the beginning instead of stopping.)
+    5. No shifting of elements is needed; only the front and rear pointers move, making operations efficient.
+    6. LinkedListDeque is used when insertion & deletion somewhere in middle
+*/

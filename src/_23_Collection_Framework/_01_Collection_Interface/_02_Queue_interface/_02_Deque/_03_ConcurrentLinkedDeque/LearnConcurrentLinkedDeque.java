@@ -47,6 +47,7 @@ public class LearnConcurrentLinkedDeque {
         dq.removeLastOccurrence(10);
         System.out.println(dq);
 
+        // 6. Descending
         ConcurrentLinkedDeque<String> dqIterator = new ConcurrentLinkedDeque<>();
         dqIterator.add("A");
         dqIterator.add("B");
@@ -56,5 +57,12 @@ public class LearnConcurrentLinkedDeque {
         while (it.hasNext()) {
             System.out.println(it.next());
         }
+
+        // 7. Concurrent Operation on ConcurrentLinkedDeque
+        for (Integer num : dq){
+            System.out.println(num);
+            dq.add(35);
+        }
+        System.out.println(dq);
     }
 }

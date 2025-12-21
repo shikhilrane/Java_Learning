@@ -71,9 +71,10 @@ Java Collection Framework :
                                Stack                        EnumSet                     ArrayBlockingQueue
                                CopyOnWriteArrayList         ConcurrentSkipListSet       LinkedBlockingQueue
                                                             CopyOnWriteArraySet         PriorityBlockingQueue
-                                                            ImmutableSet                Synchronous Queue
+                                                            ImmutableSet                SynchronousQueue
                                                                                         DelayQueue
                                                                                         ConcurrentLinkedQueue
+                                                                                        ConcurrentLinkedDeque
 
 
                                                                 2.Map

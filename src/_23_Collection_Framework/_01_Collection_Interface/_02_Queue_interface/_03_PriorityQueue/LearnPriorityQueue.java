@@ -66,3 +66,11 @@ public class LearnPriorityQueue {
         }
     }
 }
+
+/*
+    1. PriorityQueue is used to perform operation on the element according to priority set for them.
+    2. Orders elements based on their natural ordering (for primitives lowest first)
+    3. Custom Comparator for customised ordering
+    4. Does not allow null elements
+    5. Internally PriorityQueue uses min-heap (A min-heap is a special tree-like structure where the smallest element is always at the top, and every parent is smaller than its children—so you can quickly get the minimum value.) by default
+*/
