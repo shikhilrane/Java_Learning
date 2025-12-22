@@ -13,7 +13,7 @@ it requires source, intermediate operation and terminal operation
 e.g.
 List<Integer> numbers = Arrays.asList(1,2,3,4,5);
 numbers.stream().filter(x -> x % 2 == 0).count()
-here, numbers = source
+here, numbers.stream() = source
       intermediate operation = filter(x -> x % 2 == 0)
       terminal operation = count()
 

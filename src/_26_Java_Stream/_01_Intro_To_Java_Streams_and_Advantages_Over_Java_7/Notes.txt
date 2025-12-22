@@ -19,22 +19,22 @@ Functional Programming ->
         (a,b) = parameters (it knows as we are using MathOperation class then it definitely number then it dont as to apply int)
         a+b = addition of given numbers
 
-Predicate -> Functional Interface
-    It is a boolean valued function
+Predicate -> Functional Interface because it only has one abstract method test() in it.
+    It is a boolean-valued function
     It holds a condition
     It has only one abstract method.
     we can use and or methods on it
 
-Function -> Functional Interface
+Function -> Functional Interface because it only has one abstract method apply() in it.
     same as Predicate but It returns the value
     It holds two values and return single value
     We can use methods like andThen and compose (compose is reverse of andThen)
 
 Consumer -> (Functional Interface, It doesn't return anything)
-    It takes but doesn't return
+    It takes, but doesn't return
 
 Supplier -> Functional Interface
-    It doesn't take anything but returns
+    It doesn't take anything, but returns
 
 We can use all the above 4 methods to work
 

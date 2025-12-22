@@ -1,3 +1,0 @@
-Intermediate Operations :
-    1. Intermediate Operations transforms stream into another stream
-    2. They are lazy, meaning they don't execute until a terminal operation is invoked.
