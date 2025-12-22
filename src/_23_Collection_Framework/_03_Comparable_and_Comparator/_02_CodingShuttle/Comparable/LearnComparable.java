@@ -1,10 +1,10 @@
-package _23_Collection_Framework._03_Comparable_and_Comparator;
+package _23_Collection_Framework._03_Comparable_and_Comparator._02_CodingShuttle.Comparable;
 
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-public class LearnComparableAndComparator {
+public class LearnComparable {
     public static void main(String[] args) {
         Animal a1 = new Animal(4,"Leo", 10);
         Animal a2 = new Animal(2,"Bruno", 4);
@@ -27,3 +27,4 @@ public class LearnComparableAndComparator {
 
     }
 }
+

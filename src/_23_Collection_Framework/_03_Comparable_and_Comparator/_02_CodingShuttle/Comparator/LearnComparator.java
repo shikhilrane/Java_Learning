@@ -1,4 +1,6 @@
-package _23_Collection_Framework._03_Comparable_and_Comparator;
+package _23_Collection_Framework._03_Comparable_and_Comparator._02_CodingShuttle.Comparator;
+
+import _23_Collection_Framework._03_Comparable_and_Comparator._02_CodingShuttle.Comparable.Animal;
 
 import java.util.*;
 
@@ -6,7 +8,7 @@ class MyCustomDogComparator implements Comparator<Animal> {
 
     @Override
     public int compare(Animal o1, Animal o2) {
-        return Integer.compare(o1.weight, o2.weight);
+        return Integer.compare(o1.getWeight(), o2.getWeight());
     }
 }
 
@@ -34,13 +36,13 @@ public class LearnComparator {
         dogs.sort(new Comparator<Animal>() {
             @Override
             public int compare(Animal o1, Animal o2) {
-                return o1.name.compareTo(o2.name);
+                return o1.getName().compareTo(o2.getName());
             }
         });
         System.out.println("After sorting by name:");
         System.out.println(dogs);
 
-        Collections.sort(dogs, ( o1, o2) -> Integer.compare(o1.age, o2.age));
+        Collections.sort(dogs, ( o1, o2) -> Integer.compare(o1.getAge(), o2.getAge()));
         System.out.println("After sorting by age:");
         System.out.println(dogs);
 
@@ -65,3 +67,8 @@ public class LearnComparator {
         }
     }
 }
+
+// Sorting logic ->
+// Ascending - o1 is first element and o2 is second element (o1-o2), if substraction is positive then 2nd number first and if substraction is negative then 1st number first and if substraction is equal then both numbers are at same position
+// Descending - o2 is second element and o1 is first element (o2-o1), if substraction is positive then 2nd number first and if substraction is negative then 1st number first and if substraction is equal then both numbers are at same position
+// That is, if substraction = positive then o2 will be preferred and if negative then o1 will be preferred, in any situation
