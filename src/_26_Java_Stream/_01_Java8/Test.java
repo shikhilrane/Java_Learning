@@ -1,4 +1,4 @@
-package _26_Java_Stream._01_Intro_To_Java_Streams_and_Advantages_Over_Java_7;
+package _26_Java_Stream._01_Java8;
 
 import java.util.Arrays;
 import java.util.List;

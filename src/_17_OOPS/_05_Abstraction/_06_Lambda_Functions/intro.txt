@@ -3,8 +3,8 @@ Lambda Expressions -
     2. As Functional Interfaces only has single methods thats why Lambda Expressions only works on Functional Interfaces
     3. Before implementing Lambda Expressions we must know thats we are using Functional Interfaces
     4. We can even make anonymous class of it but we have to write so many things in it, so it becomes tidious works
-    5. So Lambda Expressions simplyfy that thing if Interface only have single method
-    6. differece bettween anonymous Interface and Functional Interface is, anonymous Interface can have 1 or more methods in it 
+    5. So Lambda Expressions simplify that thing if Interface only have single method
+    6. difference between anonymous Interface and Functional Interface is, anonymous Interface can have 1 or more methods in it
        but Lambda Expressions must have only single method in it
     7. Syntax - 
         public class ClassName{

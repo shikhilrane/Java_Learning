@@ -10,6 +10,15 @@ Features of Java 8 ->
     Java 8 still works on the concept of OOPS, but now it includes features of functional programming languages too.
     Java 8 comes with -> lambda expression, Streams, Date and Time API
 
+Lambda Expression ->
+    1. Lambda Expressions only works on Functional Interfaces
+    2. As Functional Interfaces only has single abstract method thats why Lambda Expressions only works on Functional Interfaces
+    3. Before implementing Lambda Expressions we must know that we are using Functional Interfaces
+    4. We can even make anonymous class of it but we have to write so many things in it, so it becomes tedious works
+    5. So Lambda Expressions simplify that thing if Interface only have single method
+    6. difference between anonymous Interface and Functional Interface is, anonymous Interface can have 1 or more methods in it
+       but Lambda Expressions must have only single method in it
+
 Functional Programming ->
     Function used as variable is called as Functional Programming.
     The Best example of functional Programming is Lambda Expression.

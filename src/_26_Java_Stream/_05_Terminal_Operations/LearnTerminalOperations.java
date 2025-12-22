@@ -60,14 +60,52 @@ public class LearnTerminalOperations {
         Optional<Integer> findFirstList = list
                 .stream()
                 .skip(3)
-                .findFirst();
-        System.out.println(findFirstList);
+                .findFirst();                   // It will give first number after mentioned skip number
+        System.out.println(findFirstList);      // it will return optional result like Optional[4]
+
+        Integer findFirstByInt = findFirstList.get();   // it will return result in Integer like 4
+        System.out.println(findFirstByInt);
 
         // 8. findAny-
         Optional<Integer> findAnyList = list
                 .stream()
                 .skip(3)
-                .findAny();
+                .findAny();                 // It will get any random number from collection
         System.out.println(findAnyList);
+
+        // Stream Example :
+        // Example 1 : Filtering and collecting names according to condition
+        List<String> names = Arrays.asList("Anna", "Bob", "Charlie", "David");
+        List<String> nameLength = names
+                .stream()
+                .filter(x -> x.length()>4)
+                .toList();
+        System.out.println(nameLength);
+
+        // Example 2 : squaring and sorting numbers
+        List<Integer> numbers = Arrays.asList(5,2,9,1,6);
+        List<Integer> squareAndSort = numbers
+                .stream()
+                .map(x -> x * x)
+                .sorted()
+                .toList();
+        System.out.println(squareAndSort);
+
+        // Example 3 : Summing Values
+        List<Integer> numberss = Arrays.asList(1,2,3,4,5);
+        int summed = numberss
+                .stream()
+                .reduce(0,(x,y) -> x+y);
+        System.out.println(summed);
+
+        // Example 4 : Counting Occurrences of a Character
+        String sentence = "Hello World";
+        long countChar = sentence
+                .chars()
+                .filter(x -> x == 'l')
+                .count();
+        System.out.println(countChar);
     }
 }
+
+// Optional<T> in Java is a container object that may or may not contain a value, used mainly as a method return type to avoid NullPointerException.

@@ -1,4 +1,4 @@
-package _26_Java_Stream._03_Intermediate_Operations;
+package _26_Java_Stream._04_Intermediate_Operations;
 
 import java.util.Arrays;
 import java.util.List;
@@ -8,7 +8,7 @@ import java.util.stream.Stream;
 //    1. Intermediate Operations transforms stream into another stream
 //    2. They are lazy, meaning they don't execute until a terminal operation is invoked.
 
-public class InterMediateOps {
+public class IntermediateOperation {
     public static void main(String[] args) {
         List<String> list = Arrays.asList("Australia", "Britain", "China", "China", "Denmark");
 
