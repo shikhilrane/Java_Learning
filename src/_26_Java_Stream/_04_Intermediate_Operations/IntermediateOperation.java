@@ -19,21 +19,21 @@ public class IntermediateOperation {
                 .filter(x -> x.startsWith("A")); // to execute this we need to perform terminal ops, thats why it is lazy
         // No filtering at this point because no terminal ops has performed
         long filterResult = filteredStream.count();   // To stop filtering, we need to apply terminal operations like .count() or .collect() or etc.
-        System.out.println(filterResult);
+        System.out.println("Stream filter : " + filterResult);
 
         // In List<>
         List<String> filteredStreamListToList = list
                 .stream()                                   // Source (Learnt in last chapter)
                 .filter(x -> x.endsWith("a"))        // Intermediate Operations  (Currently learning in this chapter)
                 .collect(Collectors.toList());              // Terminal Operations (We will see this in next chapter)
-        System.out.println(filteredStreamListToList);
+        System.out.println("List filter : " + filteredStreamListToList);
 
         // 2. map()
         List<String> mapStream = list
                 .stream()
                 .map(x -> x.toUpperCase())
                 .collect(Collectors.toList());
-        System.out.println(mapStream);
+        System.out.println("map : " + mapStream);
         
         // 3. sorted()
         // Sorted stream using natural comparator
@@ -41,13 +41,13 @@ public class IntermediateOperation {
                 .stream()
                 .sorted()
                 .toList();
-        System.out.println(sortedStream);
+        System.out.println("sorted : " + sortedStream);
         // Sorted stream using Custom Comparator
         List<String> sortedStreamDesc = list
                 .stream()
                 .sorted((a,b) ->  b.compareTo(a))
                 .collect(Collectors.toList());
-        System.out.println(sortedStreamDesc);
+        System.out.println("sorted with custom comparator : " + sortedStreamDesc);
 
         // 4. distinct
         List<String> dinstinctStream = list
@@ -55,14 +55,14 @@ public class IntermediateOperation {
                 .filter(x -> x.endsWith("a"))   // Filter elements that endsWith("A");
                 .distinct()                           // From filtered elements, if there are same elements found, then all those will be considered as single element
                 .collect(Collectors.toList());
-        System.out.println(dinstinctStream);
+        System.out.println("distinct : " + dinstinctStream);
 
         // 5. limit (Use to limit the infinite streams like .iterate())
         List<Integer> iterateLimit = Stream
                 .iterate(1, x -> x + 1)  // It will start counting from 1 to run infinite
                 .limit(50)                    // As we have limit it to 50, then it will stop at 50
                 .collect(Collectors.toList());
-        System.out.println(iterateLimit);
+        System.out.println("limit : " + iterateLimit);
 
         // 6. skip
         List<Integer> iterateSkipLimit = Stream
@@ -70,7 +70,7 @@ public class IntermediateOperation {
                 .skip(10)                          // Ignores the first 10 elements of the stream and processes the remaining elements.
                 .limit(50)                    // As we have limit it to 50, then it will stop at 50
                 .collect(Collectors.toList());
-        System.out.println(iterateSkipLimit);
+        System.out.println("skip : " + iterateSkipLimit);
 
         // 7. char  (creates a stream for character)
         String name = "Shikhil Kishor Rane";
@@ -78,14 +78,14 @@ public class IntermediateOperation {
                 .chars()
                 .filter(x -> x == 'i')
                 .count();
-        System.out.println(countLetters);
+        System.out.println("chars : " + countLetters);
 
         // 8. peek
         Stream
                 .iterate(1, x -> x + 1)
                 .skip(10)
                 .limit(50)
-                .peek(x -> System.out.println(x))   // result got from limit will get printed here
+                .peek(x -> System.out.println("peek : " + x))   // result got from limit will get printed here
                 .count();
 
         // 9. flatMap
@@ -96,15 +96,15 @@ public class IntermediateOperation {
                   Arrays.asList("Apple", "Banana"),
                   Arrays.asList("Orange", "kiwi"),
                   Arrays.asList("Pear", "Grape")
-        );                                              // It is like a 2D list
-        System.out.println(listOfList.get(1).get(0));   // It will print "Orange"
+        );                                                                          // It is like a 2D list
+        System.out.println("Finding from 2D List : " + listOfList.get(1).get(0));   // It will print "Orange"
 
         List<String> flatMapList = listOfList
                 .stream()
                 .flatMap(x -> x.stream())
                 .map(x -> x.toUpperCase())
                 .toList();
-        System.out.println(flatMapList);
+        System.out.println("flatMap : " + flatMapList);
 
         List<String> sentences = Arrays.asList(
                 "Hello world",
@@ -116,7 +116,7 @@ public class IntermediateOperation {
                 .flatMap(x -> Arrays.stream(x.split(" ")))  // Converts each sentence into words and flattens them into a single stream
                 .map(x -> x.toUpperCase())
                 .toList();
-        System.out.println(splitArray);
+        System.out.println("flatMap using split : " + splitArray);
 
     }
 }

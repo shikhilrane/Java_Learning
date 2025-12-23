@@ -11,11 +11,14 @@ public class StreamSource {
         // 1 From Collections
         List<Integer> list = Arrays.asList(1,2,3,4,5);
         Stream<Integer> stream = list.stream();
+
         // 2 from Arrays
         String[] array = {"a", "b", "_02_Stream"};
         Stream<String> stream1 = Arrays.stream(array);
+
         // 3 Using Stream.of()
         Stream<String> stream2 = Stream.of("x", "y", "z");
+
         // 4 Infinite Stream
         Stream<Integer> stream3 = Stream.generate(() -> 1).limit(10); //all the stream will have 1 in it if we add limit then only 10 streams (we will this see later)
         // 2nd way of creating infinite stream

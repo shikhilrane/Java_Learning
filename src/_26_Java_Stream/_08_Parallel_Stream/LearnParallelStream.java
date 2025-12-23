@@ -12,12 +12,12 @@ import java.util.stream.Stream;
 public class LearnParallelStream {
     public static void main(String[] args) {
         // Factorial (Parallel Stream on Stateless Operation)
+        // Factorial with stream
         long startTime = System.currentTimeMillis();
         List<Integer> list = Stream
                 .iterate(1, x -> x + 1)
                 .limit(20000)
                 .toList();
-
         List<Long> factorialList = list
                 .stream()
                 .map(x -> factorial(x))
@@ -25,6 +25,7 @@ public class LearnParallelStream {
         long endTime = System.currentTimeMillis();
         System.out.println("Time taken with sequential stream : " + (endTime-startTime) + " ms");
 
+        // Factorial with parallelStream
         startTime = System.currentTimeMillis();
         factorialList = list
                 .parallelStream()

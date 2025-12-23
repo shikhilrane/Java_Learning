@@ -18,28 +18,28 @@ public class LearnPrimitiveStreams {
         int[] numbers = {10,20,30,40,50};
         IntStream stream1 = Arrays.stream(numbers);
 
-        // range()
+        // range() (Use to print range)
         List<Integer> collectIntStr1 = IntStream
-                .range(10, 50)
+                .range(10, 50)          // inclusive, exclusive
                 .boxed()
                 .collect(Collectors.toList());
-        System.out.println(collectIntStr1);
+        System.out.println("range : " + collectIntStr1);
 
-        // rangeClosed()
+        // rangeClosed() (Use to print range)
         List<Integer> collectIntStr2 = IntStream
-                .rangeClosed(10, 50)
+                .rangeClosed(10, 50)    // inclusive, inclusive
                 .boxed()
                 .collect(Collectors.toList());
-        System.out.println(collectIntStr2);
+        System.out.println("rangeClosed : " + collectIntStr2);
 
-        // .of
+        // .of (Use to create Stream from primitive data type)
         IntStream intStream = IntStream.of(2, 4, 5, 6, 7, 9);
 
-        //
+        // Random (Use to generate random number)
         IntStream intStr = new Random().ints(5);
-        System.out.println(intStr.boxed().toList());
+        System.out.println("Random IntStream : " + intStr.boxed().toList());
 
         DoubleStream doublesStream = new Random().doubles(5);
-        System.out.println(doublesStream.boxed().toList());
+        System.out.println("Random DoubleStream : " + doublesStream.boxed().toList());
     }
 }

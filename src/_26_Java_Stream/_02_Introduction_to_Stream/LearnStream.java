@@ -18,8 +18,9 @@ public class LearnStream {
         System.out.println(count);
 
         // With Stream
-        System.out.println(numbers.stream().filter(x -> x % 2 == 0).count());
-
-
+        System.out.println(numbers
+                .stream()
+                .filter(x -> x % 2 == 0)
+                .count());
     }
 }

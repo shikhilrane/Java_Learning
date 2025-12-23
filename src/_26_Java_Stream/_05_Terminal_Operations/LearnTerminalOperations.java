@@ -18,53 +18,53 @@ public class LearnTerminalOperations {
                 .stream()
                 .skip(1)
                 .collect(Collectors.toList());
-        System.out.println(collectList);
+        System.out.println("toList : " + collectList);
 
         // 2. forEach (use to iterate over list, It does not return anything because it take consumer in it as parameter)
         list
                 .stream()
                 .skip(1)
-                .forEach(x -> System.out.println(x));
+                .forEach(x -> System.out.println("forEach : " + x));
 
         // 3. reduce (Combines the elements to produce a single elements)
         int reduceList = list
                 .stream()
                 .filter(x -> x % 2 == 0)        // It will retrieve all positive numbers from list
                 .reduce(5, (x, y) -> x + y);    // This will added all them and identity is like accumulator
-        System.out.println(reduceList);
+        System.out.println("reduce : " + reduceList);
 
         // 4. count (It counts the number of elements from stream, it returns long)
         long countList = list
                 .stream()
                 .filter(x -> x>=5)
                 .count();
-        System.out.println(countList);
+        System.out.println("count : " + countList);
 
         // Short-Circuit operations
         // 5. anyMatch (if any element meets the condition inside anyMatch then it will return true or else false, return boolean)
         boolean anyMatchList = list
                 .stream()
                 .anyMatch(x -> x % 2 == 0);
-        System.out.println(anyMatchList);
+        System.out.println("anyMatch : " + anyMatchList);
 
         // 6. allMatch (if all element meets the condition inside allMatch then it will return true or else false, return boolean)
         boolean allMatchList = list
                 .stream()
                 .allMatch(x -> x % 2 == 0);
-        System.out.println(allMatchList);
+        System.out.println("allMatch : " + allMatchList);
 
         // 7. noneMatch (if no element meets the condition inside noneMatch then it will return true or else false, return boolean)
         boolean noneMatchList = list
                 .stream()
                 .noneMatch(x -> x % 2 == 0);
-        System.out.println(noneMatchList);
+        System.out.println("noneMatch : " + noneMatchList);
 
         // 8. findFirst
         Optional<Integer> findFirstList = list
                 .stream()
                 .skip(3)
-                .findFirst();                   // It will give first number after mentioned skip number
-        System.out.println(findFirstList);      // it will return optional result like Optional[4]
+                .findFirst();                                    // It will give first number after mentioned skip number
+        System.out.println("findFirst : " + findFirstList);      // it will return optional result like Optional[4]
 
         Integer findFirstByInt = findFirstList.get();   // it will return result in Integer like 4
         System.out.println(findFirstByInt);
@@ -74,7 +74,7 @@ public class LearnTerminalOperations {
                 .stream()
                 .skip(3)
                 .findAny();                 // It will get any random number from collection
-        System.out.println(findAnyList);
+        System.out.println("findAny : " + findAnyList);
 
         // 9. toArray (use to convert Stream to an array)
         Object[] array = Stream
@@ -88,7 +88,7 @@ public class LearnTerminalOperations {
         Optional<Integer> maxNumber = Stream
                 .of(2, 44, 70)
                 .max(Comparator.naturalOrder());
-        System.out.println(maxNumber);
+        System.out.println("max : " + maxNumber);
         Integer max = maxNumber.get();
         System.out.println(max);
 
@@ -96,7 +96,7 @@ public class LearnTerminalOperations {
         Optional<Integer> minNumber = Stream
                 .of(2, 44, 70)
                 .min(Comparator.naturalOrder());
-        System.out.println(minNumber);
+        System.out.println("min : " + minNumber);
         Integer min = minNumber.get();
         System.out.println(min);
 
@@ -104,10 +104,10 @@ public class LearnTerminalOperations {
         List<Integer> nums = Arrays.asList(1,2,3,4,5,6,7,8,9);
         nums
                 .parallelStream()
-                .forEach(x -> System.out.println(x));
+                .forEach(x -> System.out.println("forEach with parallel : " + x));
         nums
                 .parallelStream()
-                .forEachOrdered(x -> System.out.println(x));    // It will maintain the order
+                .forEachOrdered(x -> System.out.println("forEachOrdered with parallel : " + x));    // It will maintain the order
 
 
         // Stateless and Stateful operations
