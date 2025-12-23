@@ -5,6 +5,7 @@ package _26_Java_Stream._09_Collectors;
 
 import java.util.*;
 import java.util.stream.Collectors;
+import java.util.stream.IntStream;
 
 public class LearnCollectors {
     public static void main(String[] args) {
@@ -81,7 +82,69 @@ public class LearnCollectors {
                 .collect(Collectors.groupingBy(x -> x.length(), () -> new TreeMap<>(), Collectors.counting()));
         System.out.println(collectGroupingByCountingTreeMap);
 
-        //
+        // Partitioning elements
+        // Partitions elements into two groups (true or false) based on a predicate
+        List<String> animals = Arrays.asList("Monkey", "Cat", "Dog", "Elephant", "Tiger");
+        Map<Boolean, List<String>> collectPartitioning = animals
+                .stream()
+                .collect(Collectors.partitioningBy(x -> x.length() > 5));
+        System.out.println(collectPartitioning);
+
+        // Mapping and Collecting
+        // Applies a mapping function before collecting (Shortcut for map method)
+        List<String> mappingAndCollecting = animals
+                .stream()
+                .collect(Collectors.mapping(x -> x.toUpperCase(), Collectors.toList()));
+        System.out.println(mappingAndCollecting);
+
+        // EXAMPLES
+        // Example 1 : Collecting Names by length
+        List<String> eg1 = Arrays.asList("Anna", "Bob", "Alexander", "Brian", "Alice");
+        Map<Integer, List<String>> collectEg1 = eg1
+                .stream()
+                .collect(Collectors.groupingBy(x -> x.length()));
+        System.out.println(collectEg1);
+
+        // Example 2 : Counting Words occurrences
+        String sentence = "hello world hello java world";
+        Map<String, Long> collectWords = Arrays
+                .stream(sentence.split(" "))
+                .collect(Collectors.groupingBy(x -> x, Collectors.counting()));
+        System.out.println(collectWords);
+
+        // Example 3 : Partitioning Even and Odd numbers
+        List<Integer> integerList = Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8, 9);
+        Map<Boolean, List<Integer>> collectEvenOdd = integerList
+                .stream()
+                .collect(Collectors.partitioningBy(x -> x%2 == 0));
+        System.out.println(collectEvenOdd);
+
+        // Example 4 : Summing Values in a Map
+        HashMap<String, Integer> items = new HashMap<>();
+        items.put("Apple", 10);
+        items.put("Banana", 20);
+        items.put("Orange", 15);
+        int reducedItems = items
+                .values()
+                .stream()
+                .reduce(0, (x, y) -> x + y);
+                        //  OR
+                // collect.(Collector.summingInt(x -> x));
+        System.out.println(reducedItems);
+
+        // Example 5 : Creating a Map from stream Elements
+        List<String> froots = Arrays.asList("Apple", "Banana", "Cherry");
+        Map<String, Integer> collectAsList = froots
+                .stream()
+                .collect(Collectors.toMap(x -> x.toUpperCase(), x -> x.length()));
+        System.out.println(collectAsList);
+
+        // Example 6 :
+        List<String> fruts = Arrays.asList("Apple", "Banana", "Apple", "Orange", "Banana", "Apple");
+        Map<String, Integer> collectfruts = fruts
+                .stream()
+                .collect(Collectors.toMap(k -> k, v -> 1, (x, y) -> x + y));
+        System.out.println(collectfruts);
 
     }
 }
