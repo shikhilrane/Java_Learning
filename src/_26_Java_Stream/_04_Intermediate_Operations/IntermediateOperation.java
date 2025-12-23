@@ -71,5 +71,52 @@ public class IntermediateOperation {
                 .limit(50)                    // As we have limit it to 50, then it will stop at 50
                 .collect(Collectors.toList());
         System.out.println(iterateSkipLimit);
+
+        // 7. char  (creates a stream for character)
+        String name = "Shikhil Kishor Rane";
+        long countLetters = name
+                .chars()
+                .filter(x -> x == 'i')
+                .count();
+        System.out.println(countLetters);
+
+        // 8. peek
+        Stream
+                .iterate(1, x -> x + 1)
+                .skip(10)
+                .limit(50)
+                .peek(x -> System.out.println(x))   // result got from limit will get printed here
+                .count();
+
+        // 9. flatMap
+        // Handle streams of collections, lists or arrays where each element is itself a collection
+        // flatten nested structure, so they can be processed as single sequence of elements
+        // Transform and flatten elements at the same time.
+        List<List<String>> listOfList = Arrays.asList(
+                  Arrays.asList("Apple", "Banana"),
+                  Arrays.asList("Orange", "kiwi"),
+                  Arrays.asList("Pear", "Grape")
+        );                                              // It is like a 2D list
+        System.out.println(listOfList.get(1).get(0));   // It will print "Orange"
+
+        List<String> flatMapList = listOfList
+                .stream()
+                .flatMap(x -> x.stream())
+                .map(x -> x.toUpperCase())
+                .toList();
+        System.out.println(flatMapList);
+
+        List<String> sentences = Arrays.asList(
+                "Hello world",
+                "Java streams are powerful",
+                "flatMap is useful"
+        );
+        List<String> splitArray = sentences
+                .stream()
+                .flatMap(x -> Arrays.stream(x.split(" ")))  // Converts each sentence into words and flattens them into a single stream
+                .map(x -> x.toUpperCase())
+                .toList();
+        System.out.println(splitArray);
+
     }
 }

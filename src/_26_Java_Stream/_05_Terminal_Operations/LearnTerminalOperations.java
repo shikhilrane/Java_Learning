@@ -3,9 +3,11 @@ package _26_Java_Stream._05_Terminal_Operations;
 // Terminal operations trigger and finish the stream pipeline, producing a result or side effect
 
 import java.util.Arrays;
+import java.util.Comparator;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 public class LearnTerminalOperations {
     public static void main(String[] args) {
@@ -38,6 +40,7 @@ public class LearnTerminalOperations {
                 .count();
         System.out.println(countList);
 
+        // Short-Circuit operations
         // 5. anyMatch (if any element meets the condition inside anyMatch then it will return true or else false, return boolean)
         boolean anyMatchList = list
                 .stream()
@@ -73,38 +76,43 @@ public class LearnTerminalOperations {
                 .findAny();                 // It will get any random number from collection
         System.out.println(findAnyList);
 
-        // Stream Example :
-        // Example 1 : Filtering and collecting names according to condition
-        List<String> names = Arrays.asList("Anna", "Bob", "Charlie", "David");
-        List<String> nameLength = names
-                .stream()
-                .filter(x -> x.length()>4)
-                .toList();
-        System.out.println(nameLength);
+        // 9. toArray (use to convert Stream to an array)
+        Object[] array = Stream
+                .of(1, 2, 3)
+                .toArray();
+        for (Object i : array){
+            System.out.println(i);
+        }
 
-        // Example 2 : squaring and sorting numbers
-        List<Integer> numbers = Arrays.asList(5,2,9,1,6);
-        List<Integer> squareAndSort = numbers
-                .stream()
-                .map(x -> x * x)
-                .sorted()
-                .toList();
-        System.out.println(squareAndSort);
+        // 10. max
+        Optional<Integer> maxNumber = Stream
+                .of(2, 44, 70)
+                .max(Comparator.naturalOrder());
+        System.out.println(maxNumber);
+        Integer max = maxNumber.get();
+        System.out.println(max);
 
-        // Example 3 : Summing Values
-        List<Integer> numberss = Arrays.asList(1,2,3,4,5);
-        int summed = numberss
-                .stream()
-                .reduce(0,(x,y) -> x+y);
-        System.out.println(summed);
+        // 10. max
+        Optional<Integer> minNumber = Stream
+                .of(2, 44, 70)
+                .min(Comparator.naturalOrder());
+        System.out.println(minNumber);
+        Integer min = minNumber.get();
+        System.out.println(min);
 
-        // Example 4 : Counting Occurrences of a Character
-        String sentence = "Hello World";
-        long countChar = sentence
-                .chars()
-                .filter(x -> x == 'l')
-                .count();
-        System.out.println(countChar);
+        // 11. forEachOrdered on parallelStream
+        List<Integer> nums = Arrays.asList(1,2,3,4,5,6,7,8,9);
+        nums
+                .parallelStream()
+                .forEach(x -> System.out.println(x));
+        nums
+                .parallelStream()
+                .forEachOrdered(x -> System.out.println(x));    // It will maintain the order
+
+
+        // Stateless and Stateful operations
+        // Stateless - Stateless operations are stream operations where each element is processed independently, without remembering or depending on previously seen elements. (e.g. Checking each student’s height individually). Like map(), filter(), peek(), flatMap(), mapToInt(), mapToLong(), mapToDouble(), boxed()
+        // Stateful : Stateful operations are stream operations where processing an element depends on previously processed elements or requires maintaining internal state. (Ranking students by height (need all data first)). Like distinct(), sorted(), limit(), skip(), takeWhile(), dropWhile()
     }
 }
 
