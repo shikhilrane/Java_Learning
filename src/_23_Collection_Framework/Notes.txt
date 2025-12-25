@@ -15,8 +15,8 @@ Data Structure and Algorithm - Storing a data in the efficient way in the contex
                                                                                      Linear DS                                                     Non-Linear DS
                                                                            (String, Array, List, Queue, Set)                                       (Tree, Graph)
 
-    In Primitive DS - we can only save single values
-    In Non-primitive DS - we can save multiple values
+    In Primitive DS - we can only save single entity
+    In Non-primitive DS - we can save multiple entities
 
     In DSA, We use Non-Primitive DS to make our application faster
 
