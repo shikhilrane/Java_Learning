@@ -1,15 +1,14 @@
-import java.util.Scanner;
-
 public class Main {
     public static void main(String[] args) {
-        for (int i = 1 ; i <= 5; i++) {
-            for (int j = 2; j <= i; j++) {
-                System.out.print(" ");
-            }
-            for (int k = 5; k >= i ; k--) {
-                System.out.print("*");
-            }
-            System.out.println();
+        int base = 2;
+        int power = 5;
+        int ans = 1;
+        int i = 1;
+        while (i<=power){
+            ans = ans * base;
+            i++;
         }
+
+        System.out.println(ans);
     }
 }

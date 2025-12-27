@@ -12,5 +12,4 @@ public class ParametersArguments {
     public static float multi(float a, float b){            // parameters or formal parameters
         return a*b;
     }
-
 }

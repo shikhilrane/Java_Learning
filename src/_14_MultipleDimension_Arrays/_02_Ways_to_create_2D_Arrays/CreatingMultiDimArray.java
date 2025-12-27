@@ -21,7 +21,7 @@ public class CreatingMultiDimArray {
         nums[0][2] = 9;
 
         // this is how we can create direct array
-        int ages[][] = {                    // It shows construcor array when we use [][] while creating it
+        int ages[][] = {                        // It shows construcor array when we use [][] while creating it
                 {43,65,76},                     // this is 1st row
                 {30,81,23},                     // this is 2nd row
                 {14,77,92}                      // this is 3rd row

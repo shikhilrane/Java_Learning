@@ -12,5 +12,4 @@ public class MethodScope {
     public static void methodScope(){
         // System.out.println(a);               // this won't be executed as well because a is defined in another method
     }
-
 }

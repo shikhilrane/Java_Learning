@@ -14,7 +14,7 @@ public class CallByValue {
         swap(a, b);
 
     }
-    public static void swap(int a,int b){                   // but by using method we can temporary change our value for specific opn and restore
+    public static void swap(int a,int b){                   // but by using method we can temporarily change our value for specific opn and restore
         int temp = a;                                       // original value for further operation. This is called a call by value, in which original
         a = b;                                              // doesn't get change, copies of made. All the java methods use call by value
         b = temp;                                           // call by reference is where the original value gets change in function, it is followed
