@@ -30,3 +30,6 @@ bin/
 
 ### Custom ignores ###
 Main.java
+
+### Ignore specific Java file ###
+src/Main.java
