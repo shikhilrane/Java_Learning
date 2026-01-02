@@ -2,7 +2,7 @@ package _11_Loops._08_Problems._01_Normal_Problems._09_Prime_Number;
 
 public class PrimeNumber {
     public static void main(String[] args) {
-        int n = 29;
+        int n = 28;
         boolean isPrime = true;
 
         if (n <= 1) {
