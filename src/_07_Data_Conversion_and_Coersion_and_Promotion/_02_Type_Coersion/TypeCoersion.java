@@ -22,17 +22,32 @@ public class TypeCoersion {
         long d = (long)c + 3; // here we have forcefully converted double value to long with type casting so we will lose number after decimal here
         System.out.println(d);
 
+        // Character and Integer Relations
         char ch = 'A';
         char ch2 = 'Z';
         char ch3 = 'a';
         char ch4 = 'z';
-        int num = (int)ch;
-        int num2 = (int)ch2;
-        int num3 = (int)ch3;
-        int num4 = (int)ch4;
+
+        // Converting char to int (Type Conversion)
+        int num = ch;
+        int num2 = ch2;
+        int num3 = ch3;
+        int num4 = ch4;
+
         System.out.println(num); // value of A will be 65, B will be 66, C will be 67,.... Z will be 90
         System.out.println(num2);
         System.out.println(num3);// value of a will be 97, b will be 98, C will be 99,.... Z will be 122
         System.out.println(num4);
+
+        // Converting int to char (Type Coersion)
+        char newCh = (char) num;
+        char newCh2 = (char) num2;
+        char newCh3 = (char) num3;
+        char newCh4 = (char) num4;
+
+        System.out.println(newCh);
+        System.out.println(newCh2);
+        System.out.println(newCh3);
+        System.out.println(newCh4);
     }
 }
