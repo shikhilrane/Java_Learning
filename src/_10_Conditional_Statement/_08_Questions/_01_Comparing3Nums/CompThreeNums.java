@@ -1,4 +1,4 @@
-package _10_Conditional_Statement._07_Questions._01_Comparing3Nums;
+package _10_Conditional_Statement._08_Questions._01_Comparing3Nums;
 
 public class CompThreeNums {
     public static void main(String[] args) {

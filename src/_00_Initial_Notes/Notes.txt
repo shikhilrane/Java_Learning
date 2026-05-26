@@ -64,9 +64,29 @@ Introduction to Java :
 
 
     6] Features of Java :
-        i] It is object-oriented programming language.
-        ii] Java is platform independent programming language (means it doesn't compile dependent on machine code, but it compiles platform independent bytecode).
-        iii] Java is fairly simple and secure (Java has automatic garbage collection so you don't have to deallocate memory).
+        i] Simple :
+            Java is considered simpler than C++ because it removes many complex features like pointers, manual memory management, header files, operator overloading, and multiple inheritance.
+            Java also provides automatic garbage collection and runs inside JVM, which makes development easier and safer.
+        ii] Portable :
+            Java is a platform independent programming language because it converts code into bytecode, which can run on any system using JVM.
+            Platform = Processor + Operating System
+                e.g. P1 = X86 + Windows
+                     P2 = ARM + MacOS
+            So why in case of C++, platform generates different bytecode and how same same compiled byte code of Java can be run on any platform?
+                C++ directly talks to the processor and operating system, it must create different machine code for each platform.
+                    1. With Context of OS :
+                        Different OS has different commands in their library to process the code
+                        For example, printing text may use different system commands in Windows and MacOS, therefore the compiled code becomes different for each platform.
+                    2. With Context of Processor :
+                        Processor only understands its own ISA (Instruction Set Architecture), which is the set of machine instructions a CPU can execute. Different processors like x86 and ARM have different ISAs, so C++ compiler must generate different machine code for each processor type.
+                         For example, an instruction generated for x86 may not be understood by an ARM processor.
+                    Different operating systems use different system commands, therefore the compiled code becomes different for each platform.
+                Java does not directly talk to the system; JVM works as a middle layer, so the same Java bytecode can run on any platform.
+                    It first convert source code to bytecode and then JVM converts that bytecode to m/c code.
+                    JVM has to be Platform Specific
+        iii] Simple :
+             Java is fairly simple and secure (Java has automatic garbage collection so you don't have to deallocate memory).
+             Java is considered more secure than C++ because Java runs inside JVM, which checks the code and manages memory safely. Java also does not allow direct memory access and pointers, so harmful memory errors are reduced.
 
 
     7] Java Architecture :

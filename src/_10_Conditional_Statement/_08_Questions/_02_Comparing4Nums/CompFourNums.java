@@ -1,4 +1,4 @@
-package _10_Conditional_Statement._07_Questions._02_Comparing4Nums;
+package _10_Conditional_Statement._08_Questions._02_Comparing4Nums;
 
 public class CompFourNums {
     public static void main(String[] args) {
