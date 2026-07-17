@@ -20,6 +20,23 @@ public class CreatingMultiDimArray {
         nums[0][1] = 8;
         nums[0][2] = 9;
 
+        // this is how we can create constructor type of 2D array
+        int[][] firstArr = new int[3][];
+        firstArr[0] = new int[2];
+        firstArr[1] = new int[3];
+        firstArr[2] = new int[4];
+
+        firstArr[0] = new int[]{1, 2};
+        firstArr[1] = new int[]{3, 4, 5};
+        firstArr[2] = new int[]{6, 7, 8, 9};
+
+        for (int[] i : firstArr){
+            for (int j : i){
+                System.out.print(j + " ");
+            }
+            System.out.println();
+        }
+
         // this is how we can create direct array
         int ages[][] = {                        // It shows construcor array when we use [][] while creating it
                 {43,65,76},                     // this is 1st row
