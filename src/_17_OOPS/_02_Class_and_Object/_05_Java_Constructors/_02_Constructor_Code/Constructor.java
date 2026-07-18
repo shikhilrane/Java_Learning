@@ -31,6 +31,14 @@ public class Constructor {
         // 6. Copy Constructor
         Car myCar = new Car("Tesla Model S");
         System.out.println("Car model: " + myCar.model);
+
+        // 7. Constructor chaining using this keyword
+        Student s1 = new Student("Shikhil");
+        System.out.println(s1.name);
+        System.out.println(s1.age);
+        System.out.println(s1.rollNumber);
+        System.out.println(s1.college);
+        s1.markAttendance();
     }
 }
 
@@ -39,7 +47,7 @@ class NullConstructor{
     int a;
     int b;
     public NullConstructor(){
-        System.out.println(a+b);    
+        System.out.println(a+b);
     }
 }
 
@@ -119,5 +127,46 @@ class Car {
     String model;
     public Car(String model) {
         this.model = model;
+    }
+}
+
+// 7. Constructor chaining using this keyword(this is used to call another constructor of the same class.)
+class Student {
+    String name;
+    int age;
+    int rollNumber;
+    String college;
+
+    Student() {
+        this("Unknown");
+        System.out.println("I am in first constructor");
+    }
+
+    Student(String name) {
+        this(name, 0);
+        System.out.println("I am in second constructor");
+    }
+
+    Student(String name, int age) {
+        this(name, age, 0);
+        System.out.println("I am in third constructor");
+    }
+
+    Student(String name, int age, int rollNumber) {
+        this(name, age, rollNumber, "Unknown");
+        System.out.println("I am in fourth constructor");
+    }
+
+    Student(String name, int age, int rollNumber, String college) {
+        this.name = name;
+        this.age = age;
+        this.rollNumber = rollNumber;
+        this.college = college;
+
+        System.out.println("I am in fifth constructor");
+    }
+
+    void markAttendance() {
+        System.out.println("Attendance marked for student " + name);
     }
 }

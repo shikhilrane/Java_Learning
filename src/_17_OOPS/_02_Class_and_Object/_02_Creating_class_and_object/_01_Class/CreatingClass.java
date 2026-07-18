@@ -1,4 +1,4 @@
-package _17_OOPS._02_Class_and_Object._02_Creating_class_and_object;
+package _17_OOPS._02_Class_and_Object._02_Creating_class_and_object._01_Class;
 
 public class CreatingClass {
     public static void main(String[] args) {

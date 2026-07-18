@@ -1,0 +1,27 @@
+Size of Object in Heap Memory :
+    Size of Object in Heap Memory depends on following factors
+        1. Header Size or Object Headers :
+            It stores metadata of object (i.e. data about data)
+            Metadata
+                1. Mark words : includes information like class type, lock, garbage collection information, synchronization. = 8 bytes
+                2. Class Pointers : Points to the class definition in the method area. = 4 bytes
+            So, Header Size = 8 + 4 = 12 bytes
+
+        2. Exact Data :
+            Actual data that we stored in the object
+            class Student{
+                String name;     = 4 bytes
+                int age;         = 4 bytes
+                int rollNum;     = 4 bytes
+                String college;  = 4 bytes
+            }
+            so, Exact Data Size = 4 + 4 + 4 + 4 = 16 bytes
+
+        Total Object Size = Header Size + Exact Data Size = 12 + 16 = 28 bytes
+
+        3. Alignment and Padding :
+            To ensure that the object is aligned to the memory boundaries, additional padding may be added.
+            This padding is usually minimal and depends on the JVM implementation.
+            This needs to be in multiple of 8 bytes
+            so, Header Size + Exact Data Size + Padding = 12 + 16 + 4 = 32 bytes
+            added 4 to make it in multiple of 8.
