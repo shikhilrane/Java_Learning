@@ -1,0 +1,5 @@
+Types of inheritance
+    1. Simple inheritance (A extends B)
+    2. multi-level inheritance (A extends B extends C)
+    3. hierarchical inheritance (A is extended by B and C)
+    4. multiple inheritance (not supported in java i.e. one class cannot extend multiple classes)

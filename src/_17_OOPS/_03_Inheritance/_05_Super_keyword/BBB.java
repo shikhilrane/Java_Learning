@@ -1,4 +1,6 @@
-package _17_OOPS._03_Inheritance._05_Super_keyword;// child class of class AAA and parent class of class CCC
+package _17_OOPS._03_Inheritance._05_Super_keyword;
+
+// child class of class AAA and parent class of class CCC
 
 public class BBB extends AAA {
     String color;

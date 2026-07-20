@@ -1,4 +1,6 @@
-package _17_OOPS._03_Inheritance._05_Super_keyword;// main class
+package _17_OOPS._03_Inheritance._05_Super_keyword;
+
+// main class
 
 public class AAA {
     String name;

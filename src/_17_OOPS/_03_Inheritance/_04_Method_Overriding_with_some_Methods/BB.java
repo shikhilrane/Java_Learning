@@ -1,4 +1,4 @@
-// child class of class AA and parent class of class CC
+package _17_OOPS._03_Inheritance._04_Method_Overriding_with_some_Methods;// child class of class AA and parent class of class CC
 
 public class BB extends AA{
     String color;

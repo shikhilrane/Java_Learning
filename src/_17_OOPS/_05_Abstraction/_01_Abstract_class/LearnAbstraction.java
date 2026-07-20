@@ -6,6 +6,7 @@ public class LearnAbstraction {
         Car c1 = new Car();             // made object of subclass Car
         c1.name = "Mercedes";
         System.out.println(c1.name);
+        System.out.println(c1.maximumObject);
         c1.typeOfVehicle("Car");
         c1.accelerate();
         c1.wheels(4);
@@ -19,7 +20,8 @@ public class LearnAbstraction {
         Truck t1 = new Truck();         // made object of subclass Car
         t1.name = "Tata";
         System.out.println(t1.name);
-        c1.typeOfVehicle("Truck");
+        System.out.println(t1.maximumObject);
+        t1.typeOfVehicle("Truck");
         t1.accelerate();
         t1.wheels(4);
         System.out.println();
@@ -28,7 +30,8 @@ public class LearnAbstraction {
         Bike b1 = new Bike();           // made object of subclass Car
         b1.name = "Royal Enfield";
         System.out.println(b1.name);
-        c1.typeOfVehicle("Bike");
+        System.out.println(b1.maximumObject);
+        b1.typeOfVehicle("Bike");
         b1.accelerate();
         b1.wheels(2);
 

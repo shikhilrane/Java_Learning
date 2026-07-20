@@ -1,4 +1,6 @@
-package _17_OOPS._03_Inheritance._05_Super_keyword;// child class of class BBB
+package _17_OOPS._03_Inheritance._05_Super_keyword;
+
+// child class of class BBB
 
 public class CCC extends BBB{
     void move2(){

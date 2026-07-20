@@ -1,6 +1,8 @@
+package _17_OOPS._03_Inheritance._04_Method_Overriding_with_some_Methods;
+
 // child class of class BB
 
-public class CC extends BB{
+public class CC extends BB {
     public static void main(String[] args) {
         CC thirdClass = new CC();
         System.out.println(thirdClass);         // it will show reference of this class
