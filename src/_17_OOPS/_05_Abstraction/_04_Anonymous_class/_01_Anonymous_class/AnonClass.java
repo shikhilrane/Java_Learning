@@ -5,6 +5,7 @@ public class AnonClass {
         OuterClass obj = new OuterClass(){                  // 3
             @Override
             public void outerMethod(){                      // 4
+                super.outerMethod();
                 System.out.println("Overridden, This is Class");    // 5
             }
         };

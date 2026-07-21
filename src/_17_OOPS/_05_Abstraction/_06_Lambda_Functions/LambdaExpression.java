@@ -22,9 +22,9 @@ public class LambdaExpression {
     }
 }
 
-@FunctionalInterface                                                    // 1 means interface in which only one public abstract method which has no body.
-interface SuperInterface{                                               // 2
-    void interfaceMethod();                                             // 3
+@FunctionalInterface                                              // 1 means interface in which only one public abstract method which has no body.
+interface SuperInterface{                                         // 2
+    void interfaceMethod();                                       // 3
 }
 
 @FunctionalInterface

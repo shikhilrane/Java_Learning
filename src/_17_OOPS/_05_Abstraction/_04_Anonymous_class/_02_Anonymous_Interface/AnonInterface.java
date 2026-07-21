@@ -5,7 +5,7 @@ public class AnonInterface {
         SuperInterface obj = new SuperInterface() {     // 3
             @Override
             public void interfaceMethod() {             // 4
-                SuperInterface.super.interfaceMethod();
+                SuperInterface.super.interfaceMethod(); // we have to apply SuperInterface because interfaceMethod() is default method
                 System.out.println("Override, This is interface");  //5
             }
         };
