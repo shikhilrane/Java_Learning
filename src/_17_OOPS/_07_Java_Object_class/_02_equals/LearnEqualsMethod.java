@@ -1,5 +1,8 @@
 package _17_OOPS._07_Java_Object_class._02_equals;
 
+// NOTE : 1. == and without overriding equals() checks memory addresses (reference)
+//        2. by overriding equals() checks the actual values
+
 public class LearnEqualsMethod {
     public static void main(String[] args) {
         Car c1 = new Car("Honda", 2023);    // 7

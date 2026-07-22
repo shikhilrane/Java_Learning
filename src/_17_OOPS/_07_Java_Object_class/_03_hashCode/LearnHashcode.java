@@ -1,5 +1,9 @@
 package _17_OOPS._07_Java_Object_class._03_hashCode;
 
+// Without implementing hasCode() method, when we compare two objects then it compares their memory addresses (reference), so hashcode of both objects will be different
+// With implementing hashCode() method, we can compare the actual values of the objects, so hashcode of both objects will be same
+// We want hashcode of two objects with same data to be same
+
 public class LearnHashcode {
     public static void main(String[] args) {
         Car c1 = new Car("Honda", 2023);    // 9
