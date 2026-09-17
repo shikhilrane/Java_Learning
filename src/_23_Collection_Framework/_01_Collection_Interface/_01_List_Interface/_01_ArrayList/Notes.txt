@@ -54,3 +54,10 @@ Internal working of ArrayList -
 
 
         Stating capacity of ArrayList - List<Integer> list = new ArrayList<>(100);
+
+    ArrayList Methods :
+        - ArrayList()
+        - ArrayList(int initialCapacity)
+        - trimToSize()
+        - ensureCapacity(int minCapacity)
+        - sort(Comparator<? super E>)

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="toolkitAccountSettings">
+    <option name="activeRegion" value="ap-south-1" />
+    <option name="recentlyUsedRegions">
+      <list>
+        <option value="ap-south-1" />
+        <option value="us-east-1" />
+      </list>
+    </option>
+  </component>
+  <component name="toolkitConnectionManager">
+    <option name="activeConnectionId" value="sso;us-east-1;https://view.awsapps.com/start" />
+  </component>
+  <component name="toolkitExplorerToolWindow">
+    <option name="selectedTab" value="CodeCatalyst" />
+  </component>
+</project>
