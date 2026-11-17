@@ -6,7 +6,7 @@ package _05_Data_Types;
  *    i] primitive data type -> it is built-in, holds single value, can't be divided into simpler data type
  *                              a] boolean (1 byte) => range - true or false
  *                              b] char (2 byte)    => range - A to Z, a to z, special characters, single digit
- *                              _02_Stream] byte (1 byte)    => range - -128 to 127 (-2^7 to 2^7 - 1)
+ *                              c] byte (1 byte)    => range - -128 to 127 (-2^7 to 2^7 - 1)
  *                              d] short (2 byte)   => range - -32768 to 32767 (-2^15 to 2^15 - 1)
  *                              e] int (4 byte)     => range - -2 billion to 2 billion (-2^31 to 2^31 -1)
  *                              f] long (8 byte)    => range - (-2^64 to 2^64 -1)
@@ -15,7 +15,7 @@ package _05_Data_Types;
  *   ii] non-primitive data type -> user define, memory address, can be divided, complex and multiple values can be store
  *                              a] string
  *                              b] array
- *                              _02_Stream] class
+ *                              c] class
  *                              d] object
  *                              e] interface
  */
