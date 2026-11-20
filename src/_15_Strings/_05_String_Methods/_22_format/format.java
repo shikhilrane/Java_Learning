@@ -3,8 +3,22 @@ package _15_Strings._05_String_Methods._22_format;
 
 public class format {
     public static void main(String[] args) {
-        String greetings = "Hello world";
-        String greStringTwo = String.format("greetings", "3545");
-        System.out.println(greStringTwo);
+        String name = "Java";
+        int version = 25;
+
+        String result = String.format("%s version %d", name, version);
+
+        System.out.println(result);
     }
 }
+
+/*
+    Common format specifiers
+    Specifier	    Use
+    %s	            String
+    %d	            Integer
+    %f	            Floating-point
+    %c	            Character
+    %b	            Boolean
+    %.2f	        Decimal ke 2 digits
+*/

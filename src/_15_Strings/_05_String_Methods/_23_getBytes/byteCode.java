@@ -7,3 +7,5 @@ public class byteCode {
         System.out.println(java.util.Arrays.toString(by));
     }    
 }
+
+// Use to get ASCII value of each character

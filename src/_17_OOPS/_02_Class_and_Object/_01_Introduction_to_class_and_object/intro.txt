@@ -15,15 +15,14 @@ Class :
                                                 3. System         3. Test
                                                 4. String         4. Demo
                                                 5. Math
-                            pre-defined : class where java developers already wrote code for many class
+                            pre-defined : class where java developers already wrote code for many class available in Java API
                             user-defined : class which we made
     8. Syntax of class : 
         class ClassName {
             // Properties
             // methods
         }
-    9. Classes doesn't get stored in heap and stack memory, metadata(i.e. properties and methods) of class stored in memory it & that memory is
-       meta space memory
+    9. Classes doesn't get stored in heap and stack memory, metadata(i.e. properties and methods) of class stored in memory it & that memory is meta space memory
 
 Object : 
     1. Object is an instance of a class that executes the class
